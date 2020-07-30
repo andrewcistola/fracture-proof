@@ -1,0 +1,11 @@
+,Features,MaxEV,Gini,Coefficients
+0,2018 VBP Adjustment Factor,0.047987643632157656,0.27089264559160053,0.0024086829069860315
+1,Weighted Person and Community Engagement Domain Score,0.07176212604432511,0.0008528071565255184,0.002404274313163184
+2,Weighted Efficiency and Cost Reduction Domain Score,0.05936467084450304,0.0012247559339237525,-0.0007373752627099039
+3,Total Performance Score,0.05179853593626426,0.36621639187092064,-0.00031742466128993336
+4,Payment for heart failure patients,0.04689335328231092,0.0010634557009176536,0.00040975474710335186
+5,Payment for pneumonia patients,0.04711685621149926,0.003403788077645961,0.0007004574296494481
+6,Medicare hospital spending per patient (Medicare Spending per Beneficiary),0.05889862790343009,0.00703386102569861,0.0006178169465606209
+7,"Patients who ""Disagree"" or ""Strongly Disagree"" they understood their care when they left the hospital",0.06357471565381645,0.0008486895932352409,-0.00048038426540677494
+8,"Patients who ""Strongly Agree"" that the staff took my preferences into account when determining my health care needs",0.06988442849803181,0.0005306329673088355,0.000607161531914906
+9,Patients who gave their hospital a rating of 7 or 8 on a scale from 0 (lowest) to 10 (highest),0.0676889666090062,0.0006617764512195168,0.0006850079460843994
