@@ -1,0 +1,19 @@
+Coefficient,Std Error,t,p-value,95CI,95CI,Features,Labels
+33.2001,0.564,58.895,0,32.094,34.306,K00_K99_R1000,Digestive Diseases (K00-K99) population rate per 1000
+11.4898,1.97,5.831,0,7.623,15.357,N00_N99_R1000,Urinary Tract Diseases (N00-N99) population rate per 1000
+4.4848,0.485,9.239,0,3.532,5.438,Residual_R1000,Other Causes (Residual) population rate per 1000
+1.9132,0.334,5.735,0,1.258,2.568,DP05_0010PE,SEX AND AGE Total population 25 to 34 years
+1.8964,0.356,5.324,0,1.197,2.595,DP03_0048PE,CLASS OF WORKER Civilian employed population 16 years and over Government workers
+1.8207,0.321,5.675,0,1.191,2.45,DP03_0047PE,CLASS OF WORKER Civilian employed population 16 years and over Private wage and salary workers
+1.6166,0.218,7.428,0,1.19,2.044,DP03_0024PE,COMMUTING TO WORK Workers 16 years and over Worked at home
+1.2345,0.393,3.141,0.002,0.463,2.006,DP02_0115PE,"LANGUAGE SPOKEN AT HOME Population 5 years and over Spanish Speak English less than very well"""""
+0.8657,0.65,1.332,0.183,-0.41,2.142,DP03_0003PE,EMPLOYMENT STATUS Population 16 years and over In labor force Civilian labor force
+0.7256,0.208,3.483,0.001,0.317,1.134,DP03_0042PE,"INDUSTRY Civilian employed population 16 years and over Educational services, and health care and social assistance"
+0.62,0.555,1.117,0.264,-0.469,1.709,DP03_0004PE,EMPLOYMENT STATUS Population 16 years and over In labor force Civilian labor force Employed
+0.2099,0.198,1.06,0.29,-0.179,0.599,DP02_0114PE,LANGUAGE SPOKEN AT HOME Population 5 years and over Spanish
+-0.5545,0.3,-1.851,0.064,-1.142,0.033,DP03_0012PE,EMPLOYMENT STATUS Females 16 years and over In labor force Civilian labor force
+-0.5875,0.141,-4.176,0,-0.864,-0.311,DP04_0040PE,BEDROOMS Total housing units 1 bedroom
+-1.9853,0.352,-5.645,0,-2.676,-1.295,DP05_0002PE,SEX AND AGE Total population Male
+-2.1868,0.841,-2.601,0.009,-3.837,-0.537,DP02_0129PE,ANCESTRY Total population French (except Basque)
+-3.2159,0.217,-14.81,0,-3.642,-2.79,V01_Y89_R1000,External Causes (V01-Y89) population rate per 1000
+-4.1916,0.324,-12.936,0,-4.828,-3.556,DP05_0027PE,SEX AND AGE Total population 18 years and over Female

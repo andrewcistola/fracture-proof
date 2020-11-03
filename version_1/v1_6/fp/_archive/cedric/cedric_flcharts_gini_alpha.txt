@@ -1,0 +1,132 @@
+Top Causes of Mortality
+ 
+Vascular
+ 
+   County      Gini Population     Sum      Rate
+1      10 0.1879217     755983 1097623 1.4519149
+2      11 0.0000000       2018    9897 4.9043608
+3      30 0.1980900     977379 1436916 1.4701728
+4      50 0.1885137     832373 1175409 1.4121181
+5      70 0.1301641      26775   27304 1.0197572
+6      79 0.1611755      72435   93036 1.2844067
+7      90 0.1932134     794761  930204 1.1704198
+8     110 0.1744821    1530626 1872667 1.2234648
+9     111 0.1978912     359790  267960 0.7447678
+10    113 0.1627753     298763  274064 0.9173291
+ 
+	Pearson's product-moment correlation
+
+data:  df_join$Gini and df_join$Rate
+t = 5.5268, df = 63, p-value = 6.648e-07
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.3805714 0.7155955
+sample estimates:
+      cor 
+0.5714298 
+
+ 
+Cancer
+ 
+   County      Gini Population    Sum      Rate
+1      10 0.2760626     755983 504545 0.6674026
+2      11 0.0000000       2018   3497 1.7329039
+3      30 0.2882704     977379 643076 0.6579597
+4      50 0.3121361     832373 556825 0.6689609
+5      70 0.2876528      26775  12270 0.4582633
+6      79 0.2126980      72435  43436 0.5996549
+7      90 0.2699383     794761 383290 0.4822708
+8     110 0.2559716    1530626 933432 0.6098368
+9     111 0.1734315     359790 161555 0.4490258
+10    113 0.2648053     298763 124900 0.4180571
+ 
+	Pearson's product-moment correlation
+
+data:  df_join$Gini and df_join$Rate
+t = 3.0273, df = 63, p-value = 0.003572
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.1231718 0.5522631
+sample estimates:
+      cor 
+0.3563652 
+
+ 
+Metabolic
+ 
+   County      Gini Population     Sum      Rate
+1      10 0.2361976     755983  639442 0.8458418
+2      11 0.0000000       2018    5302 2.6273538
+3      30 0.2399513     977379  833567 0.8528595
+4      50 0.2435123     832373  658675 0.7913219
+5      70 0.2350008      26775   13034 0.4867974
+6      79 0.1257753      72435   64891 0.8958515
+7      90 0.2888426     794761  471144 0.5928122
+8     110 0.2872952    1530626 1023978 0.6689929
+9     111 0.2753962     359790  184968 0.5140999
+10    113 0.2649101     298763  146508 0.4903820
+ 
+	Pearson's product-moment correlation
+
+data:  df_join$Gini and df_join$Rate
+t = -1.7095, df = 63, p-value = 0.09229
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.43224651  0.03516077
+sample estimates:
+       cor 
+-0.2105439 
+
+ 
+Diabetes.Mellitus
+ 
+   County      Gini Population    Sum      Rate
+1      10 0.2958542     755983 361836 0.4786298
+2      11 0.0000000       2018   1896 0.9395441
+3      30 0.3470285     977379 424925 0.4347597
+4      50 0.3372244     832373 337278 0.4052006
+5      70 0.2853352      26775   7160 0.2674136
+6      79 0.1252685      72435  36316 0.5013598
+7      90 0.4097798     794761 240409 0.3024922
+8     110 0.3946171    1530626 548594 0.3584115
+9     111 0.3392634     359790 109371 0.3039857
+10    113 0.3293721     298763  75240 0.2518384
+ 
+	Pearson's product-moment correlation
+
+data:  df_join$Gini and df_join$Rate
+t = -1.5559, df = 63, p-value = 0.1247
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.41671546  0.05406793
+sample estimates:
+      cor 
+-0.192368 
+
+ 
+Nephritis..Nephrotic.Syndrome..Nephrosis
+ 
+   County      Gini Population    Sum      Rate
+1      10 0.4074029     755983 277606 0.3672120
+2      11 0.0000000       2018   3406 1.6878097
+3      30 0.3723498     977379 408642 0.4180998
+4      50 0.4028806     832373 321397 0.3861214
+5      70 0.2599591      26775   5874 0.2193838
+6      79 0.3217345      72435  28575 0.3944916
+7      90 0.3805547     794761 230735 0.2903200
+8     110 0.3946755    1530626 475384 0.3105814
+9     111 0.4417329     359790  75597 0.2101142
+10    113 0.3538912     298763  71268 0.2385436
+ 
+   Pearson's product-moment correlation
+
+data:  df_join$Gini and df_join$Rate
+t = -2.4523, df = 63, p-value = 0.01698
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.50288182 -0.05526826
+sample estimates:
+       cor 
+-0.2951883 
+
+ 

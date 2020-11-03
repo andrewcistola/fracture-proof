@@ -1,0 +1,81 @@
+#### References
+
+Scikit-learn: Machine Learning in Python, Pedregosa et al., JMLR 12, pp. 2825-2830, 2011.
+
+Prosperi M, Min JS, Bian J, Modave F. Big data hurdles in precision medicine and precision public health. BMC Med Inform Decis Mak. 2018;18(1):139. Published 2018 Dec 29. doi:10.1186/s12911-018-0719-2
+
+Khoury MJ, Bowen MS, Clyne M, et al. From public health genomics to precision public health: a 20-year journey. Genet Med. 2018;20(6):574–582. doi:10.1038/gim.2017.211
+
+### Random Forests
+
+## Package documentation
+
+https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
+
+## External Example
+
+https://www.datacamp.com/community/tutorials/random-forests-classifier-python
+
+##  Academic Publications
+
+Boulesteix, A.‐L., Janitza, S., Kruppa, J. and König, I.R. (2012), Overview of random forest methodology and practical guidance with emphasis on computational biology and bioinformatics. WIREs Data Mining Knowl Discov, 2: 493-507. doi:10.1002/widm.1072
+
+Shannon Wongvibulsin, Katherine C. Wu and Scott L. Zeger, Clinical risk prediction with random forests for survival, longitudinal, and multivariate (RF-SLAM) data analysis, BMC Medical Research Methodology, 10.1186/s12874-019-0863-0, 20, 1, (2019).
+
+TyG-er: An ensemble Regression Forest approach for identification of clinical factors related to insulin resistance condition using Electronic Health Records - ScienceDirect. https://www.sciencedirect.com/science/article/pii/S0010482519302355?via%3Dihub. Accessed February 21, 2020.
+
+Random forest for ordinal responses: Prediction and variable selection - ScienceDirect. https://www.sciencedirect.com/science/article/pii/S0167947315002601?via%3Dihub. Accessed February 21, 2020.
+
+Splitting on categorical predictors in random forests [PeerJ]. https://peerj.com/articles/6339/. Accessed February 21, 2020.
+
+## Textbook
+
+Qi Y. (2012) Random Forest for Bioinformatics. In: Zhang C., Ma Y. (eds) Ensemble Machine Learning. Springer, Boston, MA. https://link.springer.com/content/pdf/10.1007%2F978-1-4419-9326-7.pdf
+
+
+### Principal Components Analysis
+
+http://strata.uga.edu/software/pdf/pcaTutorial.pdf
+
+## Package documentation
+
+https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html
+
+## External Example
+
+https://scentellegher.github.io/machine-learning/2020/01/27/pca-loadings-sklearn.html
+
+## Academic examples
+
+Shuangge Ma, Ying Dai, Principal component analysis based methods in bioinformatics studies, Briefings in Bioinformatics, Volume 12, Issue 6, November 2011, Pages 714–722, https://doi.org/10.1093/bib/bbq090
+
+Decomposing the Apoptosis Pathway Into Biologically Interpretable Principal Components - Min Wang, Steven M Kornblau, Kevin R Coombes, 2018. https://journals.sagepub.com/doi/10.1177/1176935118771082. Accessed February 21, 2020.
+
+Groth D., Hartmann S., Klie S., Selbig J. (2013) Principal Components Analysis. In: Reisfeld B., Mayeno A. (eds) Computational Toxicology. Methods in Molecular Biology (Methods and Protocols), vol 930. Humana Press, Totowa, NJ
+
+Identification of differential gene pathways with principal component analysis. - PubMed - NCBI. https://www.ncbi.nlm.nih.gov/pubmed/19223452?dopt=Abstract. Accessed February 21, 2020.
+
+Principal component analysis based methods in bioinformatics studies. - PubMed - NCBI. https://www.ncbi.nlm.nih.gov/pubmed/21242203. Accessed February 21, 2020.
+
+
+### Recursive Feature Elimination
+
+## Package documentation
+
+https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.RFECV.html#sklearn.feature_selection.RFECV
+
+## External Example
+
+https://medium.com/@aneesha/recursive-feature-elimination-with-scikit-learn-3a2cbdf23fb7
+
+## Academic examples
+
+Djellali H., Zine N.G., Azizi N. (2016) Two Stages Feature Selection Based on Filter Ranking Methods and SVMRFE on Medical Applications. In: Chikhi S., Amine A., Chaoui A., Kholladi M., Saidouni D. (eds) Modelling and Implementation of Complex Systems. Lecture Notes in Networks and Systems, vol 1. Springer, Cham
+
+Recursive Cluster Elimination (RCE) for classification and feature selection from gene expression data | BMC Bioinformatics | Full Text. https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-8-144. Accessed February 21, 2020.
+
+Integration of pathway knowledge into a reweighted recursive feature elimination approach for risk stratification of cancer patients | Bioinformatics | Oxford Academic. https://academic.oup.com/bioinformatics/article/26/17/2136/198598. Accessed February 21, 2020.
+
+An Efficient Alternative to SVM Based Recursive Feature Elimination with Applications in Natural Language Processing and Bioinformatics | SpringerLink. https://link.springer.com/chapter/10.1007/11941439_21. Accessed February 21, 2020.
+
+Feature selection and analysis on correlated gas sensor data with recursive feature elimination - ScienceDirect. https://www.sciencedirect.com/science/article/pii/S0925400515001872. Accessed February 21, 2020.
