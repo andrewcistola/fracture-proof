@@ -1,0 +1,199 @@
+,Unnamed: 0,IndustryClassification,Label,Unit,TableName,LineCode,Feature
+0,33931,...,Private services-providing industries 3/,Thousands of chained 2012 dollars,CAGDP9,92.0,CAGDP9_92.0_YEAR
+1,55554,...,Private goods-producing industries 2/,Thousands of chained 2012 dollars,CAGDP9,91.0,CAGDP9_91.0_YEAR
+2,30801,...,Manufacturing and information,Thousands of chained 2012 dollars,CAGDP9,90.0,CAGDP9_90.0_YEAR
+3,84316,...,Transportation and utilities,Thousands of chained 2012 dollars,CAGDP9,89.0,CAGDP9_89.0_YEAR
+4,17029,"42, 44-45",Trade,Thousands of chained 2012 dollars,CAGDP9,88.0,CAGDP9_88.0_YEAR
+5,94650,"11, 21",Natural resources and mining,Thousands of chained 2012 dollars,CAGDP9,87.0,CAGDP9_87.0_YEAR
+6,34775,...,Government and government enterprises,Thousands of chained 2012 dollars,CAGDP9,83.0,CAGDP9_83.0_YEAR
+7,83190,81,  Other services (except government and government enterprises),Thousands of chained 2012 dollars,CAGDP9,82.0,CAGDP9_82.0_YEAR
+8,7029,72,   Accommodation and food services,Thousands of chained 2012 dollars,CAGDP9,79.0,CAGDP9_79.0_YEAR
+9,4818,71,"   Arts, entertainment, and recreation",Thousands of chained 2012 dollars,CAGDP9,76.0,CAGDP9_76.0_YEAR
+10,55511,"71, 72","  Arts, entertainment, recreation, accommodation, and food services",Thousands of chained 2012 dollars,CAGDP9,75.0,CAGDP9_75.0_YEAR
+11,82608,62,   Health care and social assistance,Thousands of chained 2012 dollars,CAGDP9,70.0,CAGDP9_70.0_YEAR
+12,12125,61,   Educational services,Thousands of chained 2012 dollars,CAGDP9,69.0,CAGDP9_69.0_YEAR
+13,81484,"61, 62","  Educational services, health care, and social assistance",Thousands of chained 2012 dollars,CAGDP9,68.0,CAGDP9_68.0_YEAR
+14,75975,56,   Administrative and support and waste management and remediation services,Thousands of chained 2012 dollars,CAGDP9,65.0,CAGDP9_65.0_YEAR
+15,97156,55,   Management of companies and enterprises,Thousands of chained 2012 dollars,CAGDP9,64.0,CAGDP9_64.0_YEAR
+16,48569,54,"   Professional, scientific, and technical services",Thousands of chained 2012 dollars,CAGDP9,60.0,CAGDP9_60.0_YEAR
+17,75959,21,"  Mining, quarrying, and oil and gas extraction",Thousands of chained 2012 dollars,CAGDP9,6.0,CAGDP9_6.0_YEAR
+18,11780,"54, 55, 56",  Professional and business services,Thousands of chained 2012 dollars,CAGDP9,59.0,CAGDP9_59.0_YEAR
+19,60467,53,   Real estate and rental and leasing,Thousands of chained 2012 dollars,CAGDP9,56.0,CAGDP9_56.0_YEAR
+20,68660,52,   Finance and insurance,Thousands of chained 2012 dollars,CAGDP9,51.0,CAGDP9_51.0_YEAR
+21,90079,"52, 53","  Finance, insurance, real estate, rental, and leasing",Thousands of chained 2012 dollars,CAGDP9,50.0,CAGDP9_50.0_YEAR
+22,37106,51,  Information,Thousands of chained 2012 dollars,CAGDP9,45.0,CAGDP9_45.0_YEAR
+23,27007,48-49,  Transportation and warehousing,Thousands of chained 2012 dollars,CAGDP9,36.0,CAGDP9_36.0_YEAR
+24,24014,44-45,  Retail trade,Thousands of chained 2012 dollars,CAGDP9,35.0,CAGDP9_35.0_YEAR
+25,51791,42,  Wholesale trade,Thousands of chained 2012 dollars,CAGDP9,34.0,CAGDP9_34.0_YEAR
+26,17988,11,"  Agriculture, forestry, fishing and hunting",Thousands of chained 2012 dollars,CAGDP9,3.0,CAGDP9_3.0_YEAR
+27,55394,"311-316,322-326",   Nondurable goods manufacturing,Thousands of chained 2012 dollars,CAGDP9,25.0,CAGDP9_25.0_YEAR
+28,71605,..., Private industries,Thousands of chained 2012 dollars,CAGDP9,2.0,CAGDP9_2.0_YEAR
+29,78717,"321,327-339",   Durable goods manufacturing,Thousands of chained 2012 dollars,CAGDP9,13.0,CAGDP9_13.0_YEAR
+30,26152,31-33,  Manufacturing,Thousands of chained 2012 dollars,CAGDP9,12.0,CAGDP9_12.0_YEAR
+31,91261,23,  Construction,Thousands of chained 2012 dollars,CAGDP9,11.0,CAGDP9_11.0_YEAR
+32,99590,22,  Utilities,Thousands of chained 2012 dollars,CAGDP9,10.0,CAGDP9_10.0_YEAR
+33,101830,...,All industry total,Thousands of chained 2012 dollars,CAGDP9,1.0,CAGDP9_1.0_YEAR
+34,55249,...,Private services-providing industries 3/,Quantity index,CAGDP8,92.0,CAGDP8_92.0_YEAR
+35,60518,...,Private goods-producing industries 2/,Quantity index,CAGDP8,91.0,CAGDP8_91.0_YEAR
+36,71737,...,Manufacturing and information,Quantity index,CAGDP8,90.0,CAGDP8_90.0_YEAR
+37,49738,...,Transportation and utilities,Quantity index,CAGDP8,89.0,CAGDP8_89.0_YEAR
+38,267,"42, 44-45",Trade,Quantity index,CAGDP8,88.0,CAGDP8_88.0_YEAR
+39,70714,"11, 21",Natural resources and mining,Quantity index,CAGDP8,87.0,CAGDP8_87.0_YEAR
+40,46743,...,Government and government enterprises,Quantity index,CAGDP8,83.0,CAGDP8_83.0_YEAR
+41,39126,81,  Other services (except government and government enterprises),Quantity index,CAGDP8,82.0,CAGDP8_82.0_YEAR
+42,31339,72,   Accommodation and food services,Quantity index,CAGDP8,79.0,CAGDP8_79.0_YEAR
+43,91722,71,"   Arts, entertainment, and recreation",Quantity index,CAGDP8,76.0,CAGDP8_76.0_YEAR
+44,55783,"71, 72","  Arts, entertainment, recreation, accommodation, and food services",Quantity index,CAGDP8,75.0,CAGDP8_75.0_YEAR
+45,53606,62,   Health care and social assistance,Quantity index,CAGDP8,70.0,CAGDP8_70.0_YEAR
+46,41671,61,   Educational services,Quantity index,CAGDP8,69.0,CAGDP8_69.0_YEAR
+47,65266,"61, 62","  Educational services, health care, and social assistance",Quantity index,CAGDP8,68.0,CAGDP8_68.0_YEAR
+48,22323,56,   Administrative and support and waste management and remediation services,Quantity index,CAGDP8,65.0,CAGDP8_65.0_YEAR
+49,9674,55,   Management of companies and enterprises,Quantity index,CAGDP8,64.0,CAGDP8_64.0_YEAR
+50,82807,54,"   Professional, scientific, and technical services",Quantity index,CAGDP8,60.0,CAGDP8_60.0_YEAR
+51,39817,21,"  Mining, quarrying, and oil and gas extraction",Quantity index,CAGDP8,6.0,CAGDP8_6.0_YEAR
+52,80494,"54, 55, 56",  Professional and business services,Quantity index,CAGDP8,59.0,CAGDP8_59.0_YEAR
+53,37347,53,   Real estate and rental and leasing,Quantity index,CAGDP8,56.0,CAGDP8_56.0_YEAR
+54,41392,52,   Finance and insurance,Quantity index,CAGDP8,51.0,CAGDP8_51.0_YEAR
+55,5487,"52, 53","  Finance, insurance, real estate, rental, and leasing",Quantity index,CAGDP8,50.0,CAGDP8_50.0_YEAR
+56,64714,51,  Information,Quantity index,CAGDP8,45.0,CAGDP8_45.0_YEAR
+57,28503,48-49,  Transportation and warehousing,Quantity index,CAGDP8,36.0,CAGDP8_36.0_YEAR
+58,2118,44-45,  Retail trade,Quantity index,CAGDP8,35.0,CAGDP8_35.0_YEAR
+59,45331,42,  Wholesale trade,Quantity index,CAGDP8,34.0,CAGDP8_34.0_YEAR
+60,83676,11,"  Agriculture, forestry, fishing and hunting",Quantity index,CAGDP8,3.0,CAGDP8_3.0_YEAR
+61,59202,"311-316,322-326",   Nondurable goods manufacturing,Quantity index,CAGDP8,25.0,CAGDP8_25.0_YEAR
+62,46003,..., Private industries,Quantity index,CAGDP8,2.0,CAGDP8_2.0_YEAR
+63,100919,"321,327-339",   Durable goods manufacturing,Quantity index,CAGDP8,13.0,CAGDP8_13.0_YEAR
+64,76166,31-33,  Manufacturing,Quantity index,CAGDP8,12.0,CAGDP8_12.0_YEAR
+65,60491,23,  Construction,Quantity index,CAGDP8,11.0,CAGDP8_11.0_YEAR
+66,6702,22,  Utilities,Quantity index,CAGDP8,10.0,CAGDP8_10.0_YEAR
+67,43724,...,All industry total,Quantity index,CAGDP8,1.0,CAGDP8_1.0_YEAR
+68,107609,...,Private services-providing industries 3/,Thousands of dollars,CAGDP2,92.0,CAGDP2_92.0_YEAR
+69,63272,...,Private goods-producing industries 2/,Thousands of dollars,CAGDP2,91.0,CAGDP2_91.0_YEAR
+70,67861,...,Manufacturing and information,Thousands of dollars,CAGDP2,90.0,CAGDP2_90.0_YEAR
+71,65140,...,Transportation and utilities,Thousands of dollars,CAGDP2,89.0,CAGDP2_89.0_YEAR
+72,76223,"42, 44-45",Trade,Thousands of dollars,CAGDP2,88.0,CAGDP2_88.0_YEAR
+73,91284,"11, 21",Natural resources and mining,Thousands of dollars,CAGDP2,87.0,CAGDP2_87.0_YEAR
+74,56773,...,Government and government enterprises,Thousands of dollars,CAGDP2,83.0,CAGDP2_83.0_YEAR
+75,84482,81,  Other services (except government and government enterprises),Thousands of dollars,CAGDP2,82.0,CAGDP2_82.0_YEAR
+76,2847,72,   Accommodation and food services,Thousands of dollars,CAGDP2,79.0,CAGDP2_79.0_YEAR
+77,74178,71,"   Arts, entertainment, and recreation",Thousands of dollars,CAGDP2,76.0,CAGDP2_76.0_YEAR
+78,105525,"71, 72","  Arts, entertainment, recreation, accommodation, and food services",Thousands of dollars,CAGDP2,75.0,CAGDP2_75.0_YEAR
+79,67784,62,   Health care and social assistance,Thousands of dollars,CAGDP2,70.0,CAGDP2_70.0_YEAR
+80,57345,61,   Educational services,Thousands of dollars,CAGDP2,69.0,CAGDP2_69.0_YEAR
+81,6208,"61, 62","  Educational services, health care, and social assistance",Thousands of dollars,CAGDP2,68.0,CAGDP2_68.0_YEAR
+82,88725,56,   Administrative and support and waste management and remediation services,Thousands of dollars,CAGDP2,65.0,CAGDP2_65.0_YEAR
+83,26776,55,   Management of companies and enterprises,Thousands of dollars,CAGDP2,64.0,CAGDP2_64.0_YEAR
+84,53125,54,"   Professional, scientific, and technical services",Thousands of dollars,CAGDP2,60.0,CAGDP2_60.0_YEAR
+85,11529,21,"  Mining, quarrying, and oil and gas extraction",Thousands of dollars,CAGDP2,6.0,CAGDP2_6.0_YEAR
+86,48228,"54, 55, 56",  Professional and business services,Thousands of dollars,CAGDP2,59.0,CAGDP2_59.0_YEAR
+87,31975,53,   Real estate and rental and leasing,Thousands of dollars,CAGDP2,56.0,CAGDP2_56.0_YEAR
+88,59446,52,   Finance and insurance,Thousands of dollars,CAGDP2,51.0,CAGDP2_51.0_YEAR
+89,34965,"52, 53","  Finance, insurance, real estate, rental, and leasing",Thousands of dollars,CAGDP2,50.0,CAGDP2_50.0_YEAR
+90,34692,51,  Information,Thousands of dollars,CAGDP2,45.0,CAGDP2_45.0_YEAR
+91,4295,48-49,  Transportation and warehousing,Thousands of dollars,CAGDP2,36.0,CAGDP2_36.0_YEAR
+92,27074,44-45,  Retail trade,Thousands of dollars,CAGDP2,35.0,CAGDP2_35.0_YEAR
+93,587,42,  Wholesale trade,Thousands of dollars,CAGDP2,34.0,CAGDP2_34.0_YEAR
+94,86124,11,"  Agriculture, forestry, fishing and hunting",Thousands of dollars,CAGDP2,3.0,CAGDP2_3.0_YEAR
+95,61106,"311-316,322-326",   Nondurable goods manufacturing,Thousands of dollars,CAGDP2,25.0,CAGDP2_25.0_YEAR
+96,48417,..., Private industries,Thousands of dollars,CAGDP2,2.0,CAGDP2_2.0_YEAR
+97,53183,"321,327-339",   Durable goods manufacturing,Thousands of dollars,CAGDP2,13.0,CAGDP2_13.0_YEAR
+98,66238,31-33,  Manufacturing,Thousands of dollars,CAGDP2,12.0,CAGDP2_12.0_YEAR
+99,59403,23,  Construction,Thousands of dollars,CAGDP2,11.0,CAGDP2_11.0_YEAR
+100,26286,22,  Utilities,Thousands of dollars,CAGDP2,10.0,CAGDP2_10.0_YEAR
+101,49776,...,All industry total,Thousands of dollars,CAGDP2,1.0,CAGDP2_1.0_YEAR
+102,4145,...,Current-dollar GDP (thousands of current dollars),Thousands of dollars,CAGDP1,3.0,CAGDP1_3.0_YEAR
+103,1660,...,Chain-type quantity indexes for real GDP,Quantity index,CAGDP1,2.0,CAGDP1_2.0_YEAR
+104,0,...,Real GDP (thousands of chained 2012 dollars),Thousands of chained 2012 dollars,CAGDP1,1.0,CAGDP1_1.0_YEAR
+105,37501,...,Private services-providing industries 3/,Percentage points,CAGDP11,92.0,CAGDP11_92.0_YEAR
+106,2514,...,Private goods-producing industries 2/,Percentage points,CAGDP11,91.0,CAGDP11_91.0_YEAR
+107,9381,...,Manufacturing and information,Percentage points,CAGDP11,90.0,CAGDP11_90.0_YEAR
+108,40592,...,Transportation and utilities,Percentage points,CAGDP11,89.0,CAGDP11_89.0_YEAR
+109,15975,"42, 44-45",Trade,Percentage points,CAGDP11,88.0,CAGDP11_88.0_YEAR
+110,35592,"11, 21",Natural resources and mining,Percentage points,CAGDP11,87.0,CAGDP11_87.0_YEAR
+111,33143,...,Government and government enterprises,Percentage points,CAGDP11,83.0,CAGDP11_83.0_YEAR
+112,83768,81,  Other services (except government and government enterprises),Percentage points,CAGDP11,82.0,CAGDP11_82.0_YEAR
+113,49189,72,   Accommodation and food services,Percentage points,CAGDP11,79.0,CAGDP11_79.0_YEAR
+114,13964,71,"   Arts, entertainment, and recreation",Percentage points,CAGDP11,76.0,CAGDP11_76.0_YEAR
+115,61087,"71, 72","  Arts, entertainment, recreation, accommodation, and food services",Percentage points,CAGDP11,75.0,CAGDP11_75.0_YEAR
+116,41876,62,   Health care and social assistance,Percentage points,CAGDP11,70.0,CAGDP11_70.0_YEAR
+117,45921,61,   Educational services,Percentage points,CAGDP11,69.0,CAGDP11_69.0_YEAR
+118,55746,"61, 62","  Educational services, health care, and social assistance",Percentage points,CAGDP11,68.0,CAGDP11_68.0_YEAR
+119,54895,56,   Administrative and support and waste management and remediation services,Percentage points,CAGDP11,65.0,CAGDP11_65.0_YEAR
+120,3554,55,   Management of companies and enterprises,Percentage points,CAGDP11,64.0,CAGDP11_64.0_YEAR
+121,72335,54,"   Professional, scientific, and technical services",Percentage points,CAGDP11,60.0,CAGDP11_60.0_YEAR
+122,99045,21,"  Mining, quarrying, and oil and gas extraction",Percentage points,CAGDP11,6.0,CAGDP11_6.0_YEAR
+123,96100,"54, 55, 56",  Professional and business services,Percentage points,CAGDP11,59.0,CAGDP11_59.0_YEAR
+124,38775,53,   Real estate and rental and leasing,Percentage points,CAGDP11,56.0,CAGDP11_56.0_YEAR
+125,99974,52,   Finance and insurance,Percentage points,CAGDP11,51.0,CAGDP11_51.0_YEAR
+126,96131,"52, 53","  Finance, insurance, real estate, rental, and leasing",Percentage points,CAGDP11,50.0,CAGDP11_50.0_YEAR
+127,25308,51,  Information,Percentage points,CAGDP11,45.0,CAGDP11_45.0_YEAR
+128,87085,48-49,  Transportation and warehousing,Percentage points,CAGDP11,36.0,CAGDP11_36.0_YEAR
+129,41626,44-45,  Retail trade,Percentage points,CAGDP11,35.0,CAGDP11_35.0_YEAR
+130,86097,42,  Wholesale trade,Percentage points,CAGDP11,34.0,CAGDP11_34.0_YEAR
+131,61304,11,"  Agriculture, forestry, fishing and hunting",Percentage points,CAGDP11,3.0,CAGDP11_3.0_YEAR
+132,94494,"311-316,322-326",   Nondurable goods manufacturing,Percentage points,CAGDP11,25.0,CAGDP11_25.0_YEAR
+133,102137,..., Private industries,Percentage points,CAGDP11,2.0,CAGDP11_2.0_YEAR
+134,44513,"321,327-339",   Durable goods manufacturing,Percentage points,CAGDP11,13.0,CAGDP11_13.0_YEAR
+135,96124,31-33,  Manufacturing,Percentage points,CAGDP11,12.0,CAGDP11_12.0_YEAR
+136,91227,23,  Construction,Percentage points,CAGDP11,11.0,CAGDP11_11.0_YEAR
+137,97244,22,  Utilities,Percentage points,CAGDP11,10.0,CAGDP11_10.0_YEAR
+138,8194,...,All industry total (percent change),Percent change,CAGDP11,1.0,CAGDP11_1.0_YEAR
+139,9348,,,,,,
+0,20903,..., Nonfarm proprietors' income,Thousands of dollars,CAINC4,72.0,CAINC4_72.0_YEAR
+1,72445,..., Farm proprietors' income,Thousands of dollars,CAINC4,71.0,CAINC4_71.0_YEAR
+2,62582,..., Proprietors employment,Number of jobs,CAINC4,7040.0,CAINC4_7040.0_YEAR
+3,70723,..., Wage and salary employment,Number of jobs,CAINC4,7020.0,CAINC4_7020.0_YEAR
+4,55726,...,Total employment,Number of jobs,CAINC4,7010.0,CAINC4_7010.0_YEAR
+5,31044,...,Proprietors' income 9/,Thousands of dollars,CAINC4,70.0,CAINC4_70.0_YEAR
+6,14414,..., Employer contributions for government social insurance,Thousands of dollars,CAINC4,62.0,CAINC4_62.0_YEAR
+7,24993,..., Employer contributions for employee pension and insurance funds 8/,Thousands of dollars,CAINC4,61.0,CAINC4_61.0_YEAR
+8,73131,...,Supplements to wages and salaries,Thousands of dollars,CAINC4,60.0,CAINC4_60.0_YEAR
+9,23910,...,Wages and salaries,Thousands of dollars,CAINC4,50.0,CAINC4_50.0_YEAR
+10,30188,...,Plus: Personal current transfer receipts,Thousands of dollars,CAINC4,47.0,CAINC4_47.0_YEAR
+11,1506,...,"Plus: Dividends, interest, and rent 7/",Thousands of dollars,CAINC4,46.0,CAINC4_46.0_YEAR
+12,59465,...,Equals: Net earnings by place of residence,Thousands of dollars,CAINC4,45.0,CAINC4_45.0_YEAR
+13,44215,...,Plus: Adjustment for residence 6/,Thousands of dollars,CAINC4,42.0,CAINC4_42.0_YEAR
+14,52701,..., Employer contributions for government social insurance,Thousands of dollars,CAINC4,38.0,CAINC4_38.0_YEAR
+15,53666,..., Employee and self-employed contributions for government social insurance,Thousands of dollars,CAINC4,37.0,CAINC4_37.0_YEAR
+16,10425,...,Less: Contributions for government social insurance 5/,Thousands of dollars,CAINC4,36.0,CAINC4_36.0_YEAR
+17,65762,...,Earnings by place of work,Thousands of dollars,CAINC4,35.0,CAINC4_35.0_YEAR
+18,20980,...,Per capita personal income (dollars) 4/,Dollars,CAINC4,30.0,CAINC4_30.0_YEAR
+19,68451,...,Population (persons) 3/,Number of persons,CAINC4,20.0,CAINC4_20.0_YEAR
+20,26130,..., Farm income 2/,Thousands of dollars,CAINC4,12.0,CAINC4_12.0_YEAR
+21,71784,..., Nonfarm personal income 1/,Thousands of dollars,CAINC4,11.0,CAINC4_11.0_YEAR
+22,65113,...,Personal income (thousands of dollars),Thousands of dollars,CAINC4,10.0,CAINC4_10.0_YEAR
+23,29642,...," Dividends, interest, and rent 2/",Thousands of dollars,CAINC30,90.0,CAINC30_90.0_YEAR
+24,90680,...,  Retirement and other,Thousands of dollars,CAINC30,80.0,CAINC30_80.0_YEAR
+25,6421,...,  Unemployment insurance compensation,Thousands of dollars,CAINC30,70.0,CAINC30_70.0_YEAR
+26,12186,...,  Income maintenance benefits 1/,Thousands of dollars,CAINC30,60.0,CAINC30_60.0_YEAR
+27,38814,..., Personal current transfer receipts,Thousands of dollars,CAINC30,50.0,CAINC30_50.0_YEAR
+28,14881,..., Net earnings by place of residence,Thousands of dollars,CAINC30,45.0,CAINC30_45.0_YEAR
+29,36982,..., Average nonfarm proprietors' income,Dollars,CAINC30,310.0,CAINC30_310.0_YEAR
+30,16428,..., Average wages and salaries,Dollars,CAINC30,300.0,CAINC30_300.0_YEAR
+31,94702,...,Average earnings per job (dollars),Dollars,CAINC30,290.0,CAINC30_290.0_YEAR
+32,61624,...,  Nonfarm proprietors employment,Number of jobs,CAINC30,280.0,CAINC30_280.0_YEAR
+33,59081,...,  Farm proprietors employment 6/,Number of jobs,CAINC30,270.0,CAINC30_270.0_YEAR
+34,32420,..., Proprietors employment,Number of jobs,CAINC30,260.0,CAINC30_260.0_YEAR
+35,20267,..., Wage and salary employment,Number of jobs,CAINC30,250.0,CAINC30_250.0_YEAR
+36,40974,...,Total employment (number of jobs),Number of jobs,CAINC30,240.0,CAINC30_240.0_YEAR
+37,90666,...,   Nonfarm proprietors' income,Thousands of dollars,CAINC30,230.0,CAINC30_230.0_YEAR
+38,70236,...,   Farm proprietors' income,Thousands of dollars,CAINC30,220.0,CAINC30_220.0_YEAR
+39,51542,...,  Proprietors' income,Thousands of dollars,CAINC30,210.0,CAINC30_210.0_YEAR
+40,22308,...,   Employer contributions for government social insurance,Thousands of dollars,CAINC30,202.0,CAINC30_202.0_YEAR
+41,86446,...,   Employer contributions for employee pension and insurance funds 5/,Thousands of dollars,CAINC30,201.0,CAINC30_201.0_YEAR
+42,26522,...,  Supplements to wages and salaries,Thousands of dollars,CAINC30,200.0,CAINC30_200.0_YEAR
+43,77516,...,  Wages and salaries,Thousands of dollars,CAINC30,190.0,CAINC30_190.0_YEAR
+44,19018,..., Earnings by place of work,Thousands of dollars,CAINC30,180.0,CAINC30_180.0_YEAR
+45,81668,...," Per capita dividends, interest, and rent 4/",Dollars,CAINC30,170.0,CAINC30_170.0_YEAR
+46,91587,...,  Per capita retirement and other 4/,Dollars,CAINC30,160.0,CAINC30_160.0_YEAR
+47,72738,...,  Per capita unemployment insurance compensation 4/,Dollars,CAINC30,150.0,CAINC30_150.0_YEAR
+48,40497,...,  Per capita income maintenance benefits 4/,Dollars,CAINC30,140.0,CAINC30_140.0_YEAR
+49,11232,..., Per capita personal current transfer receipts 4/,Dollars,CAINC30,130.0,CAINC30_130.0_YEAR
+50,19167,..., Per capita net earnings 4/,Dollars,CAINC30,120.0,CAINC30_120.0_YEAR
+51,56614,..., Per capita personal income 4/,Dollars,CAINC30,110.0,CAINC30_110.0_YEAR
+52,55807,..., Population (persons) 3/,Number of persons,CAINC30,100.0,CAINC30_100.0_YEAR
+53,65317,...,Personal income (thousands of dollars),Thousands of dollars,CAINC30,10.0,CAINC30_10.0_YEAR
+54,2045,...,Per capita personal income (dollars) 2/,Dollars,CAINC1,3.0,CAINC1_3.0_YEAR
+55,1492,...,Population (persons) 1/,Number of persons,CAINC1,2.0,CAINC1_2.0_YEAR
+56,447,...,Personal income (thousands of dollars),Thousands of dollars,CAINC1,1.0,CAINC1_1.0_YEAR
+57,9594,,,,,,

@@ -52,7 +52,7 @@ d2 = 'US Census American Community Survey 2014-2018 Zip Code 5-year Average' # I
 ## Preprocess First Dataset
 df_d1 = pd.read_csv('fracture-proof/version_2/_data/FDOH_5Y2018_ZCTA.csv') # Import first dataset saved as csv in _data folder
 df_d1 = df_d1.filter(['K00_K99_R1000', 'ZCTA']) # Drop or filter columns to keep only feature values and idenitifer
-df_d1 = df_d1[df_d1["POPULATION"] > 100] # Susbet numeric column by condition
+df_d1 = df_d1[df_d1["POPULATION"] > 500] # Susbet numeric column by condition
 df_d1.info() # Get class, memory, and column info: names, data types, obs
 
 ### Preprocess Second Data
@@ -67,7 +67,7 @@ df_full = df_full.dropna(subset = ['K00_K99_R1000']) # Drop all outcome rows wit
 df_full.info() # Get class, memory, and column info: names, data types, obs.
 
 ### Create outcome table
-df_XY =  df_XY.rename(columns = {'ZCTA': 'ID'}) # Apply standard name to identifier used for joining datasets
+df_XY =  df_full.rename(columns = {'ZCTA': 'ID'}) # Apply standard name to identifier used for joining datasets
 df_XY = df_XY.rename(columns = {'K00_K99_R1000': 'quant'}) # Apply standard name to identifier used for joining datasets
 df_Y = df_XY.filter(['quant', 'ID']) # Create Outcome table
 df_Y = df_Y.set_index('ID') # Set identifier as index

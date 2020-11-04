@@ -1,0 +1,1802 @@
+Code,Label
+AHRF0,# <19 no HlthIns <=138% Poverty
+AHRF1,# <19 no HlthIns <=200% Poverty
+AHRF2,# <19 no HlthIns <=400% Poverty
+AHRF3,# <19 w/HlthIns <=138% Poverty
+AHRF4,# <19 w/HlthIns <=200% Poverty
+AHRF5,# <19 w/HlthIns <=400% Poverty
+AHRF6,# <65 no HlthIns <=138% Poverty
+AHRF7,# <65 no HlthIns <=200% Poverty
+AHRF8,# <65 no HlthIns <=400% Poverty
+AHRF9,# <65 w/Hlth Ins <=138% Poverty
+AHRF10,# <65 w/Hlth Ins <=200% Poverty
+AHRF11,# <65 w/Hlth Ins <=400% Poverty
+AHRF12,# Active Dentists 35-44 Non-Fed
+AHRF13,# Active Dentists 45-54 Non-Fed
+AHRF14,# Active Dentists 55-64 Non-Fed
+AHRF15,# Active Dentists 65 + Non-Fed
+AHRF16,# Active Dentists < 35 Non-Fed
+AHRF17,# Active Dentists Age Unknown Non-Fed
+AHRF18,# Acute Long-Term Care LT Hosps
+AHRF19,# Acute Long-Term Care ST Hosps
+AHRF20,# Airborne Infection Isol Rooms ST Non-Gen + Long Term Hosps
+AHRF21,# Airborne Infection Isol Rooms Short Term General Hospitals
+AHRF22,# Ambulatory Surgery Centers
+AHRF23,# Children's Gen Med/Srg ST Hsp
+AHRF24,# Children's Psych LT Hosps
+AHRF25,# Children's Psych ST Hosps
+AHRF26,# Chronic Disease LT Hosps
+AHRF27,# Community Health Centers Grantees Only
+AHRF28,# Community Mental Health Ctrs
+AHRF29,# Critical Access Hospitals
+AHRF30,# Critical Access ST Gen Hosps
+AHRF31,# Days Air Quality is Measured
+AHRF32,# Designted Txc Site Undr Cntrl
+AHRF33,# Eligible for Medicare
+AHRF34,"# FTE All Oth Personnel,VA Hosp Incl NH; Res,Train,LPN/LVNandOth"
+AHRF35,# FTE L.P.N.s and L.V.N.s Incl Nurs Homes; ST Gen Hosps
+AHRF36,# FTE L.P.N.s and L.V.N.s Incl Nurs Homes; STNG/LT Hosps
+AHRF37,# FTE Medical and Dental Residnts Incl Nurs Homes; ST Gen Hosps
+AHRF38,# FTE Medical and Dental Residnts Incl Nurs Homes; STNG/LT Hosps
+AHRF39,# FTE Other Personnel Incl Nurs Homes; ST Gen Hosps
+AHRF40,# FTE Other Personnel Incl Nurs Homes; STNG/LT Hosps
+AHRF41,# FTE Other Trainees Incl Nurs Homes; ST Gen Hosps
+AHRF42,# FTE Other Trainees Incl Nurs Homes; STNG/LT Hosps
+AHRF43,# FTE Physicians and Dentists Incl Nurs Homes; ST Gen Hosps
+AHRF44,# FTE Physicians and Dentists Incl Nurs Homes; STNG/LT Hosps
+AHRF45,# FTE Physicians and Dentists Incl Nurs Homes;Veterans Hosps
+AHRF46,# FTE R.N.s Incl Nurs Homes; ST Gen Hosps
+AHRF47,# FTE R.N.s Incl Nurs Homes; STNG/LT Hosps
+AHRF48,# FTE R.N.s Incl Nurs Homes;Veterans Hosps
+AHRF49,# FTE Tot Nurs Home Personnel ST Non-Gen + Long Term Hosps
+AHRF50,# FTE Tot Nurs Home Personnel Short Term General Hospitals
+AHRF51,# FTE Total Facility Personnel Incl Nurs Homes; ST Gen Hosps
+AHRF52,# FTE Total Facility Personnel Incl Nurs Homes; STNG/LT Hosps
+AHRF53,# FTE Total Hospital Personnel ST Non-Gen + Long Term Hosps
+AHRF54,# FTE Total Hospital Personnel Short Term General Hospitals
+AHRF55,# FTE Total Trainees Incl Nurs Homes; ST Gen Hosps
+AHRF56,# FTE Total Trainees Incl Nurs Homes; STNG/LT Hosps
+AHRF57,# Facilities Reporting Expenses ST Non-Gen + Long Term Hosps
+AHRF58,# Facilities Reporting Expenses Short Term General Hospitals
+AHRF59,# Facilities Reporting Expenses Veterans Hospitals
+AHRF60,# Facs Reporting Payroll Expens ST Non-Gen + Long Term Hosps
+AHRF61,# Facs Reporting Payroll Expens Short Term General Hospitals
+AHRF62,# Fed Qualified Health Centers
+AHRF63,# Gen Medical/Surgical LT Hosps
+AHRF64,# Home Health Agencies
+AHRF65,# Hosp Participating in Network
+AHRF66,# Hosp W/APRN/Physician Assist Short Term General Hospitals
+AHRF67,# Hosp W/Ablat of Barrets Esoph Short Term General Hospitals
+AHRF68,# Hosp W/Acute Long-Term Care Short Term General Hospitals
+AHRF69,# Hosp W/Adult Cardiac Surgery Short Term General Hospitals
+AHRF70,# Hosp W/Adult Cardiology Serv Short Term General Hospitals
+AHRF71,# Hosp W/Adult Day Care Program Short Term General Hospitals
+AHRF72,# Hosp W/Adult Diagnostic Cath Short Term General Hospitals
+AHRF73,# Hosp W/Airborne Inf Isol Room Short Term General Hospitals
+AHRF74,# Hosp W/Alc/Chem Dep Prt Hosplzn Short Term General Hospitals
+AHRF75,# Hosp W/Alc/Chem Depdnt OP Ser Short Term General Hospitals
+AHRF76,# Hosp W/Alc/Chem Depdnt Ped Sv Short Term General Hospitals
+AHRF77,# Hosp W/Alc/Drug Abuse IP Care Short Term General Hospitals
+AHRF78,# Hosp W/Alzheimer Center Short Term General Hospitals
+AHRF79,# Hosp W/Ambulance Services Short Term General Hospitals
+AHRF80,# Hosp W/Ambulatory Surgery Ctr Short Term General Hospitals
+AHRF81,# Hosp W/Anesth Svc APRN/PAs Short Term General Hospitals
+AHRF82,# Hosp W/Arthritis Treatmt Cntr Short Term General Hospitals
+AHRF83,# Hosp W/Assisted Living Short Term General Hospitals
+AHRF84,# Hosp W/Assistv Technology Ctr Short Term General Hospitals
+AHRF85,# Hosp W/Auxiliary Services Short Term General Hospitals
+AHRF86,# Hosp W/Bariart/Wgt Cntrl Serv Short Term General Hospitals
+AHRF87,# Hosp W/Blood Donor Center Short Term General Hospitals
+AHRF88,# Hosp W/Breast Cancer Scrn/Mam Short Term General Hospitals
+AHRF89,# Hosp W/Burn Care Short Term General Hospitals
+AHRF90,# Hosp W/C.T. Scanner Short Term General Hospitals
+AHRF91,# Hosp W/CARF Accreditation ST Non-Gen + Long Term Hosps
+AHRF92,# Hosp W/CARF Accreditation Short Term General Hospitals
+AHRF93,# Hosp W/Cardiac Intensive Care Short Term General Hospitals
+AHRF94,# Hosp W/Cardiac Rehabilitation Short Term General Hospitals
+AHRF95,# Hosp W/Case Management ST Non-Gen + Long Term Hosps
+AHRF96,# Hosp W/Case Management Short Term General Hospitals
+AHRF97,# Hosp W/Certified Trauma Cntr Short Term General Hospitals
+AHRF98,# Hosp W/Chapl/Pastor Care Serv Short Term General Hospitals
+AHRF99,# Hosp W/Chemotherapy Short Term General Hospitals
+AHRF100,# Hosp W/Child Wellness Program Short Term General Hospitals
+AHRF101,# Hosp W/Chiropractic Services Short Term General Hospitals
+AHRF102,# Hosp W/Community Health Educ Short Term General Hospitals
+AHRF103,# Hosp W/Community Outreach Short Term General Hospitals
+AHRF104,# Hosp W/Computer Asst Orth Srg Short Term General Hospitals
+AHRF105,# Hosp W/Crisis Prevention Short Term General Hospitals
+AHRF106,# Hosp W/DNV Accreditation ST Gen Hsp;Det Norske Veritas
+AHRF107,# Hosp W/DNV Accreditation STNG/LT Hsp;Det Norske Veritas
+AHRF108,# Hosp W/Dental Services Short Term General Hospitals
+AHRF109,# Hosp W/Diag Radioisotope Fac Short Term General Hospitals
+AHRF110,# Hosp W/ERCP Short Term General Hospitals
+AHRF111,# Hosp W/Electrodiagnostic Serv Short Term General Hospitals
+AHRF112,# Hosp W/Emergency Department Short Term General Hospitals
+AHRF113,# Hosp W/Enabling Services Short Term General Hospitals
+AHRF114,# Hosp W/Endoscopic Ultrasound Short Term General Hospitals
+AHRF115,# Hosp W/Esoph Impedance Study Short Term General Hospitals
+AHRF116,# Hosp W/Extracorporeal Shock Short Term General Hospitals
+AHRF117,# Hosp W/Fertility Clinic Short Term General Hospitals
+AHRF118,# Hosp W/Fitness Center Short Term General Hospitals
+AHRF119,# Hosp W/Freestandng Outpat Ctr Short Term General Hospitals
+AHRF120,"# Hosp W/Gen Med/Surg Care, Ped Short Term General Hospitals"
+AHRF121,"# Hosp W/Gen Med/Surg Cr, Adult Short Term General Hospitals"
+AHRF122,# Hosp W/Geriatric Services ST Non-Gen + Long Term Hosps
+AHRF123,# Hosp W/Geriatric Services Short Term General Hospitals
+AHRF124,# Hosp W/HIV-AIDS Services Short Term General Hospitals
+AHRF125,# Hosp W/Health Fair Short Term General Hospitals
+AHRF126,# Hosp W/Health Research Short Term General Hospitals
+AHRF127,# Hosp W/Health Screenings Short Term General Hospitals
+AHRF128,# Hosp W/Heart Transplant Short Term General Hospitals
+AHRF129,# Hosp W/Hemodialysis Short Term General Hospitals
+AHRF130,# Hosp W/Home Health Services Short Term General Hospitals
+AHRF131,# Hosp W/Hospice Short Term General Hospitals
+AHRF132,# Hosp W/IP Palliative Cre Unit Short Term General Hospitals
+AHRF133,# Hosp W/Image-guided Rad Ther Short Term General Hospitals
+AHRF134,# Hosp W/Immunization Program Short Term General Hospitals
+AHRF135,# Hosp W/Indigent Care Clinic Short Term General Hospitals
+AHRF136,# Hosp W/Intermediate Nurs Care Short Term General Hospitals
+AHRF137,# Hosp W/Intraoperative MRI Short Term General Hospitals
+AHRF138,# Hosp W/JCAHO Accreditation ST Non-Gen + Long Term Hosps
+AHRF139,# Hosp W/JCAHO Accreditation Short Term General Hospitals
+AHRF140,# Hosp W/Kidney Transplant Short Term General Hospitals
+AHRF141,# Hosp W/Ling/Translation Serv ST Non-Gen + Long Term Hosps
+AHRF142,# Hosp W/Ling/Translation Serv Short Term General Hospitals
+AHRF143,# Hosp W/Liver Transplant Short Term General Hospitals
+AHRF144,# Hosp W/Lung Transplant Short Term General Hospitals
+AHRF145,# Hosp W/Mag Resonance Imaging ST Non-Gen + Long Term Hosps
+AHRF146,# Hosp W/Mag Resonance Imaging Short Term General Hospitals
+AHRF147,# Hosp W/Magnetoencephalography Short Term General Hospitals
+AHRF148,# Hosp W/Meals On Wheels Short Term General Hospitals
+AHRF149,# Hosp W/Medical School Affiln ST Non-Gen + Long Term Hosps
+AHRF150,# Hosp W/Medical School Affiln Short Term General Hospitals
+AHRF151,# Hosp W/Medical School Affiln Veterans Hospitals
+AHRF152,# Hosp W/Medical/Surg Intens Cr Short Term General Hospitals
+AHRF153,# Hosp W/Medicare Certification ST Non-Gen + Long Term Hosps
+AHRF154,# Hosp W/Medicare Certification Short Term General Hospitals
+AHRF155,# Hosp W/Mobile Health Services Short Term General Hospitals
+AHRF156,# Hosp W/Neonatal Intens Care Short Term General Hospitals
+AHRF157,# Hosp W/Neonatal Intermed Care Short Term General Hospitals
+AHRF158,# Hosp W/Neurological Services Short Term General Hospitals
+AHRF159,# Hosp W/Nutrition Programs ST Non-Gen + Long Term Hosps
+AHRF160,# Hosp W/Nutrition Programs Short Term General Hospitals
+AHRF161,# Hosp W/Obstetric Care Short Term General Hospitals
+AHRF162,# Hosp W/Occupational Hlth Serv ST Non-Gen + Long Term Hosps
+AHRF163,# Hosp W/Occupational Hlth Serv Short Term General Hospitals
+AHRF164,# Hosp W/Oncology Services Short Term General Hospitals
+AHRF165,# Hosp W/Optical Colonoscopy Short Term General Hospitals
+AHRF166,# Hosp W/Orthopedic Services Short Term General Hospitals
+AHRF167,# Hosp W/Oth Transplant Service Short Term General Hospitals
+AHRF168,# Hosp W/Other Care Short Term General Hospitals
+AHRF169,# Hosp W/Other Intensive Care Short Term General Hospitals
+AHRF170,# Hosp W/Other Long-Term Care Short Term General Hospitals
+AHRF171,# Hosp W/Other Special Care Short Term General Hospitals
+AHRF172,# Hosp W/Outpatient Surgery Short Term General Hospitals
+AHRF173,# Hosp W/Pain Management Pgm Short Term General Hospitals
+AHRF174,# Hosp W/Palliative Care Pgm Short Term General Hospitals
+AHRF175,# Hosp W/Patient Ctrl Analgesia Short Term General Hospitals
+AHRF176,# Hosp W/Patient Education Cntr Short Term General Hospitals
+AHRF177,# Hosp W/Patient Repr Services ST Non-Gen + Long Term Hosps
+AHRF178,# Hosp W/Patient Repr Services Short Term General Hospitals
+AHRF179,# Hosp W/Ped Cardiac Electrophy Short Term General Hospitals
+AHRF180,# Hosp W/Ped Cardiac Surgery Short Term General Hospitals
+AHRF181,# Hosp W/Ped Diagnostic Cath Short Term General Hospitals
+AHRF182,# Hosp W/Pediatric Emerg Depart Short Term General Hospitals
+AHRF183,# Hosp W/Pediatric Intens Care Short Term General Hospitals
+AHRF184,# Hosp W/Physical Rehab Care Short Term General Hospitals
+AHRF185,# Hosp W/Physical Rehab OP Serv ST Non-Gen + Long Term Hosps
+AHRF186,# Hosp W/Physical Rehab OP Serv Short Term General Hospitals
+AHRF187,# Hosp W/Positron Emiss Tom/CT Short Term General Hospitals
+AHRF188,# Hosp W/Positron Emission Tom Short Term General Hospitals
+AHRF189,# Hosp W/Primary Care APRN/PAs Short Term General Hospitals
+AHRF190,# Hosp W/Primary Care Dept Short Term General Hospitals
+AHRF191,# Hosp W/Prosth and Orthotic Serv Short Term General Hospitals
+AHRF192,# Hosp W/Proton Therapy Short Term General Hospitals
+AHRF193,# Hosp W/Psych Consl/Liaisn Ser ST Non-Gen + Long Term Hosps
+AHRF194,# Hosp W/Psych Consl/Liaisn Ser Short Term General Hospitals
+AHRF195,# Hosp W/Psych Educational Serv Short Term General Hospitals
+AHRF196,# Hosp W/Psych Emergency Serv Short Term General Hospitals
+AHRF197,# Hosp W/Psych Geriatric Serv Short Term General Hospitals
+AHRF198,# Hosp W/Psych Intensive OP Serv Short Term General Hospitals
+AHRF199,# Hosp W/Psych Outpatient Serv Short Term General Hospitals
+AHRF200,# Hosp W/Psych Part Hosp Ped Serv Short Term General Hospitals
+AHRF201,# Hosp W/Psych Pediatric Serv Short Term General Hospitals
+AHRF202,# Hosp W/Psych Prt Hosp Adult Serv Short Term General Hospitals
+AHRF203,# Hosp W/Psych Resdntl Adult Trmt Short Term General Hospitals
+AHRF204,# Hosp W/Psych Resdntl Ped Trmt Short Term General Hospitals
+AHRF205,# Hosp W/Psychiatric Care Short Term General Hospitals
+AHRF206,# Hosp W/Residency Training ST Non-Gen + Long Term Hosps
+AHRF207,# Hosp W/Residency Training Short Term General Hospitals
+AHRF208,# Hosp W/Retirement Housing Short Term General Hospitals
+AHRF209,# Hosp W/Robot-Asst Walk Therap Short Term General Hospitals
+AHRF210,# Hosp W/Robotic Surgery Short Term General Hospitals
+AHRF211,# Hosp W/Rural Health Clinic Short Term General Hospitals
+AHRF212,# Hosp W/Shaped Beam Rad System Short Term General Hospitals
+AHRF213,# Hosp W/Simulated Rehab Enviro Short Term General Hospitals
+AHRF214,# Hosp W/Skilled Nursing Care Short Term General Hospitals
+AHRF215,# Hosp W/Sleep Center Short Term General Hospitals
+AHRF216,# Hosp W/Social Work Services ST Non-Gen + Long Term Hosps
+AHRF217,# Hosp W/Social Work Services Short Term General Hospitals
+AHRF218,# Hosp W/Sports Medicine Short Term General Hospitals
+AHRF219,# Hosp W/Stereotactic Radiosurg Short Term General Hospitals
+AHRF220,# Hosp W/Support Groups ST Non-Gen + Long Term Hosps
+AHRF221,# Hosp W/Support Groups Short Term General Hospitals
+AHRF222,# Hosp W/Swing Bed Services Short Term General Hospitals
+AHRF223,# Hosp W/Teen Outreach Services Short Term General Hospitals
+AHRF224,# Hosp W/Telehealth Consl/Off Visit Short Term General Hospitals
+AHRF225,# Hosp W/Telehealth Monitor Chron Care Short Term General Hospitals
+AHRF226,# Hosp W/Telehealth Monitor Post Discharge Short Term General Hospitals
+AHRF227,# Hosp W/Telehealth Psyc/Addict Trmt Short Term General Hospitals
+AHRF228,# Hosp W/Telehealth Stroke Care Short Term General Hospitals
+AHRF229,# Hosp W/Telehealth eICU Short Term General Hospitals
+AHRF230,# Hosp W/Tissue Transplant Short Term General Hospitals
+AHRF231,# Hosp W/Tobacco Treatment Serv Short Term General Hospitals
+AHRF232,# Hosp W/Transport to Hlth Serv Short Term General Hospitals
+AHRF233,# Hosp W/Ultrasound Short Term General Hospitals
+AHRF234,# Hosp W/Urgent Care Center Short Term General Hospitals
+AHRF235,# Hosp W/Virtual Colonoscopy Short Term General Hospitals
+AHRF236,# Hosp W/Volunteer Serv Dept Short Term General Hospitals
+AHRF237,# Hosp W/Women's Hlth Cntr/Serv Short Term General Hospitals
+AHRF238,# Hosp W/Wound Mngmnt Services Short Term General Hospitals
+AHRF239,# Hosp w/Hospitalists Care ST Non-Gen + Long Term Hosps
+AHRF240,# Hosp w/Hospitalists Care Short Term General Hospitals
+AHRF241,# Hospices
+AHRF242,# Hsp Participtn in Phys Arrang Short Term General Hospitals
+AHRF243,# Hsp W/ACS Cancer Pgm Approved ST Gen;Amer College of Surgeon
+AHRF244,# Hsp W/ACS Cancer Pgm Approved STNG/LT;AmerCollege of Surgeon
+AHRF245,# Hsp W/Amer Osteo Assoc Accred ST Non-Gen + Long Term Hosps
+AHRF246,# Hsp W/Amer Osteo Assoc Accred Short Term General Hospitals
+AHRF247,# Hsp W/Amer Osteo Assoc Intern ST Non-Gen + Long Term Hosps
+AHRF248,# Hsp W/Amer Osteo Assoc Intern Short Term General Hospitals
+AHRF249,# Hsp W/Amer Osteo Assoc Residn ST Non-Gen + Long Term Hosps
+AHRF250,# Hsp W/Amer Osteo Assoc Residn Short Term General Hospitals
+AHRF251,# Hsp W/Birth Rm/LDR Rm/LDRP Rm Short Term General Hospitals
+AHRF252,# Hsp W/Enroll(Insur)Assist Pgm Short Term General Hospitals
+AHRF253,# Hsp W/Full-field Digit Mammog Short Term General Hospitals
+AHRF254,# Hsp W/Ped Cardiology Services Short Term General Hospitals
+AHRF255,# Hsp W/Singl Photon Emis Tomog Short Term General Hospitals
+AHRF256,# Intellectual Disablty LT Hsps
+AHRF257,# Long Term Hospitals
+AHRF258,# Medicare Advantage Enrollees
+AHRF259,# Medicare Presc Drug Plan Enr
+AHRF260,# Member Council Teaching Hosp ST Non-Gen + Long Term Hosps
+AHRF261,# Member Council Teaching Hosp Short Term Community
+AHRF262,# Member Council Teaching Hosp Short Term General Hospitals
+AHRF263,# Member Council Teaching Hosp Veterans Hospitals
+AHRF264,# NHSC Dental Sites w/Providers
+AHRF265,# NHSC FTE Dental Providers
+AHRF266,# NHSC FTE Mental Hlth Provider
+AHRF267,# NHSC FTE Prim Care Providers
+AHRF268,# NHSC FTE Providers
+AHRF269,# NHSC Mentl Hlth Site w/Provdr Sites with Providers
+AHRF270,# NHSC Prim Care Sites w/Provdr Sites with Providers
+AHRF271,# NHSC Sites with Providers
+AHRF272,# NHSC Total Active Sites
+AHRF273,# Nursing Facilities
+AHRF274,# Operating Rooms ST Non-Gen + Long Term Hosps
+AHRF275,# Operating Rooms Short Term General Hospitals
+AHRF276,# Patients Seen in VA Facility
+AHRF277,# Psychiatric LT Hosps
+AHRF278,# Psychiatric Short Term Hosps
+AHRF279,# Rehabilitation LT Hosps
+AHRF280,# Rehabilitation ST Hosps
+AHRF281,# Rural Health Clinics
+AHRF282,# Rural Referral Centers
+AHRF283,"# ST Gen Hosp, 006-049 Beds"
+AHRF284,"# ST Gen Hosp, 050-099 Beds"
+AHRF285,"# ST Gen Hosp, 100-199 Beds"
+AHRF286,"# ST Gen Hosp, 200-299 Beds"
+AHRF287,"# ST Gen Hosp, 300+ Beds"
+AHRF288,"# STNG/LT Hosps,006-049 Beds"
+AHRF289,"# STNG/LT Hosps,050-099 Beds"
+AHRF290,"# STNG/LT Hosps,100-199 Beds"
+AHRF291,"# STNG/LT Hosps,200-299 Beds"
+AHRF292,"# STNG/LT Hosps,300+ Beds"
+AHRF293,# Short Term Community Hosps
+AHRF294,# Short Term General Hosps
+AHRF295,# Short Term Non-General Hosps
+AHRF296,# Skilled Nursing Facilities
+AHRF297,# Sole Community Providers
+AHRF298,"# Surgical Operations, Inpatnt ST Non-Gen + Long Term Hosps"
+AHRF299,"# Surgical Operations, Inpatnt Short Term General Hospitals"
+AHRF300,"# Surgical Operations, Outpatnt ST Non-Gen + Long Term Hosps"
+AHRF301,"# Surgical Operations, Outpatnt Short Term General Hospitals"
+AHRF302,"# Surgical Operations, Total ST Non-Gen + Long Term Hosps"
+AHRF303,"# Surgical Operations, Total Short Term General Hospitals"
+AHRF304,"# Surgical Operations, Total Veterans Hospitals"
+AHRF305,# Tot Fac Medicaid Inpat Dchrg ST Non-Gen + Long Term Hosps
+AHRF306,# Tot Fac Medicaid Inpat Dchrg Short Term General Hospitals
+AHRF307,# Tot Fac Medicare Inpat Dchrg ST Non-Gen + Long Term Hosps
+AHRF308,# Tot Fac Medicare Inpat Dchrg Short Term General Hospitals
+AHRF309,"# Veteran Hosp, 006-049 Beds"
+AHRF310,"# Veteran Hosp, 050-099 Beds"
+AHRF311,"# Veteran Hosp, 100-199 Beds"
+AHRF312,"# Veteran Hosp, 200-299 Beds"
+AHRF313,"# Veteran Hosp, 300+ Beds"
+AHRF314,# Veterans' Hospitals
+AHRF315,#18-64 no HlthIns <=138% Povrty
+AHRF316,#18-64 no HlthIns <=200% Povrty
+AHRF317,#18-64 no HlthIns <=400% Povrty
+AHRF318,#18-64 w/Hlth Ins <=200% Povrty
+AHRF319,#18-64 w/HlthIns <=138% Poverty
+AHRF320,#18-64 w/HlthIns <=400% Poverty
+AHRF321,#Days Measured Air Quality Good
+AHRF322,#Dsgntd Txc Site Not Undr Cntrl
+AHRF323,#Dsgntd Txc Site w/Insuff Data
+AHRF324,#Hosp W/Genetic Test/Counseling Short Term General Hospitals
+AHRF325,#Hsp W/Adlt Intervntnl Card Cth Short Term General Hospitals
+AHRF326,#Hsp W/Adult Cardiac Electrophy Short Term General Hospitals
+AHRF327,#Hsp W/Bone Marrow Transplt Ser Short Term General Hospitals
+AHRF328,#Hsp W/Complmnt/Altern Med Serv Short Term General Hospitals
+AHRF329,#Hsp W/Electrn Beam Comp Tomogr Short Term General Hospitals
+AHRF330,#Hsp W/Hsp-Bsd Outpat Cr Ctr/Sv Short Term General Hospitals
+AHRF331,#Hsp W/Intens-Modulatd Rad Ther Short Term General Hospitals
+AHRF332,#Hsp W/Multislce Sp Com Tom 64+ Short Term General Hospitals
+AHRF333,#Hsp W/Multislce Sp Com Tom <64 Short Term General Hospitals
+AHRF334,#Hsp W/Ped Intervntnl Card Cath Short Term General Hospitals
+AHRF335,#Hsp W/Violence Prev Pgm-Comm Short Term General Hospitals
+AHRF336,#Hsp W/Violence Prev Pgm-Wrkplc Short Term General Hospitals
+AHRF337,% 18-64 no HlthIns <=138% Povrty
+AHRF338,% 18-64 no HlthIns <=200% Povrty
+AHRF339,% 18-64 no HlthIns <=400% Povrty
+AHRF340,% 18-64 without Health Ins
+AHRF341,% 40-64 without Health Ins
+AHRF342,% <19 no HlthIns <=138% Poverty
+AHRF343,% <19 no HlthIns <=200% Poverty
+AHRF344,% <19 no HlthIns <=400% Poverty
+AHRF345,% <19 without Health Insurance
+AHRF346,% <65 no HlthIns <=138% Poverty
+AHRF347,% <65 no HlthIns <=200% Poverty
+AHRF348,% <65 no HlthIns <=400% Poverty
+AHRF349,% <65 without Health Insurance
+AHRF350,% Females <65 without Hlth Ins
+AHRF351,% Fmles 18-64 without Hlth Ins
+AHRF352,% Fmles 40-64 without Hlth Ins
+AHRF353,% Good Air Quality Days
+AHRF354,% Males 18-64 without Hlth Ins
+AHRF355,% Males 40-64 without Hlth Ins
+AHRF356,% Males <65 without Health Ins
+AHRF357,% Medcr Benef Elig for Medcaid Fee for Service
+AHRF358,% Medcre Advantage Penetration Enrollees/Eligibles
+AHRF359,% Medcre Benef Using IP Service FFS;1 or More Covrd Stay
+AHRF360,% Medcre Presc Drug Plan Penetr Enrollees/Eligibles
+AHRF361,% Medicare FFS Benef Female Fee for Service
+AHRF362,% Medicare FFS Benef Male Fee for Service
+AHRF363,3-Yr AIDS Deaths-16
+AHRF364,3-Yr AIDS Deaths-17
+AHRF365,3-Yr Births - Preterm-16
+AHRF366,3-Yr Births - Preterm-17
+AHRF367,3-Yr Births to Teens < 18 Yrs-16
+AHRF368,3-Yr Births to Teens < 18 Yrs-17
+AHRF369,3-Yr Births to Unmarried Mother-16
+AHRF370,3-Yr Births to Unmarried Mother-17
+AHRF371,3-Yr Black Births-16
+AHRF372,3-Yr Black Births-17
+AHRF373,3-Yr Black Female Births-16
+AHRF374,3-Yr Black Female Births-17
+AHRF375,3-Yr Black Female Deaths-16
+AHRF376,3-Yr Black Female Deaths-17
+AHRF377,3-Yr Black Fmle Infant Deaths-16
+AHRF378,3-Yr Black Fmle Infant Deaths-17
+AHRF379,3-Yr Black Male Births-16
+AHRF380,3-Yr Black Male Births-17
+AHRF381,3-Yr Black Male Deaths-16
+AHRF382,3-Yr Black Male Deaths-17
+AHRF383,3-Yr Black Male Infant Deaths-16
+AHRF384,3-Yr Black Male Infant Deaths-17
+AHRF385,3-Yr Blk Low Birth Weight Birth-16
+AHRF386,3-Yr Blk Low Birth Weight Birth-17
+AHRF387,3-Yr Cerebrovascular Disease-16
+AHRF388,3-Yr Cerebrovascular Disease-17
+AHRF389,3-Yr Chrnic Liver DisandCirrhosis-16
+AHRF390,3-Yr Chrnic Liver DisandCirrhosis-17
+AHRF391,3-Yr Chronic Lower Resp Dis-16
+AHRF392,3-Yr Chronic Lower Resp Dis-17
+AHRF393,3-Yr Deaths From Other Causes-16
+AHRF394,3-Yr Deaths From Other Causes-17
+AHRF395,3-Yr Diabetes-16
+AHRF396,3-Yr Diabetes-17
+AHRF397,3-Yr Hispanic Births-16
+AHRF398,3-Yr Hispanic Births-17
+AHRF399,3-Yr Hispanic Female Births-16
+AHRF400,3-Yr Hispanic Female Births-17
+AHRF401,3-Yr Hispanic Female Deaths-16
+AHRF402,3-Yr Hispanic Female Deaths-17
+AHRF403,3-Yr Hispanic Fmle Infant Death-16
+AHRF404,3-Yr Hispanic Fmle Infant Death-17
+AHRF405,3-Yr Hispanic Male Births-16
+AHRF406,3-Yr Hispanic Male Births-17
+AHRF407,3-Yr Hispanic Male Deaths-16
+AHRF408,3-Yr Hispanic Male Deaths-17
+AHRF409,3-Yr Hispanic Male Infant Death-16
+AHRF410,3-Yr Hispanic Male Infant Death-17
+AHRF411,3-Yr HomicidesandLegal Interventn-16
+AHRF412,3-Yr HomicidesandLegal Interventn-17
+AHRF413,3-Yr Infectious and Para. Disease-16
+AHRF414,3-Yr Infectious and Para. Disease-17
+AHRF415,3-Yr Influenza and Pneumonia-16
+AHRF416,3-Yr Influenza and Pneumonia-17
+AHRF417,3-Yr Ischemic Heart Disease-16
+AHRF418,3-Yr Ischemic Heart Disease-17
+AHRF419,3-Yr Malignant Neoplasms-16
+AHRF420,3-Yr Malignant Neoplasms-17
+AHRF421,3-Yr Mortality Age 1-4 Years-16
+AHRF422,3-Yr Mortality Age 1-4 Years-17
+AHRF423,3-Yr Mortality Age 15-24 Years-16
+AHRF424,3-Yr Mortality Age 15-24 Years-17
+AHRF425,3-Yr Mortality Age 25-34 Years-16
+AHRF426,3-Yr Mortality Age 25-34 Years-17
+AHRF427,3-Yr Mortality Age 35-44 Years-16
+AHRF428,3-Yr Mortality Age 35-44 Years-17
+AHRF429,3-Yr Mortality Age 45-54 Years-16
+AHRF430,3-Yr Mortality Age 45-54 Years-17
+AHRF431,3-Yr Mortality Age 5-14 Years-16
+AHRF432,3-Yr Mortality Age 5-14 Years-17
+AHRF433,3-Yr Mortality Age 55-64 Years-16
+AHRF434,3-Yr Mortality Age 55-64 Years-17
+AHRF435,3-Yr Mortality Age 65-74 Years-16
+AHRF436,3-Yr Mortality Age 65-74 Years-17
+AHRF437,3-Yr Mortality Age 75-84 Years-16
+AHRF438,3-Yr Mortality Age 75-84 Years-17
+AHRF439,3-Yr Mortality Age 85+ Years-16
+AHRF440,3-Yr Mortality Age 85+ Years-17
+AHRF441,3-Yr Mortality Age < 1 Year-16
+AHRF442,3-Yr Mortality Age < 1 Year-17
+AHRF443,3-Yr Motor Vehicle Accidents-16
+AHRF444,3-Yr Motor Vehicle Accidents-17
+AHRF445,3-Yr Oth Low Birth Weight Birth-16
+AHRF446,3-Yr Oth Low Birth Weight Birth-17
+AHRF447,3-Yr Other Births-16
+AHRF448,3-Yr Other Births-17
+AHRF449,3-Yr Other Cardiovas Disease-16
+AHRF450,3-Yr Other Cardiovas Disease-17
+AHRF451,3-Yr Other External Causes-16
+AHRF452,3-Yr Other External Causes-17
+AHRF453,3-Yr Other Female Births-16
+AHRF454,3-Yr Other Female Births-17
+AHRF455,3-Yr Other Female Deaths-16
+AHRF456,3-Yr Other Female Deaths-17
+AHRF457,3-Yr Other Fmle Infant Deaths-16
+AHRF458,3-Yr Other Fmle Infant Deaths-17
+AHRF459,3-Yr Other Male Births-16
+AHRF460,3-Yr Other Male Births-17
+AHRF461,3-Yr Other Male Deaths-16
+AHRF462,3-Yr Other Male Deaths-17
+AHRF463,3-Yr Other Male Infant Deaths-16
+AHRF464,3-Yr Other Male Infant Deaths-17
+AHRF465,3-Yr Suicides-16
+AHRF466,3-Yr Suicides-17
+AHRF467,3-Yr Tot Low Birth Weight Birth-16
+AHRF468,3-Yr Tot Low Birth Weight Birth-17
+AHRF469,3-Yr Total Births-16
+AHRF470,3-Yr Total Births-17
+AHRF471,3-Yr Total Deaths-16
+AHRF472,3-Yr Total Deaths-17
+AHRF473,3-Yr Very Low Birth Wt Births-16
+AHRF474,3-Yr Very Low Birth Wt Births-17
+AHRF475,3-Yr White Births-16
+AHRF476,3-Yr White Births-17
+AHRF477,3-Yr White Female Births-16
+AHRF478,3-Yr White Female Births-17
+AHRF479,3-Yr White Female Deaths-16
+AHRF480,3-Yr White Female Deaths-17
+AHRF481,3-Yr White Fmle Infant Deaths-16
+AHRF482,3-Yr White Fmle Infant Deaths-17
+AHRF483,3-Yr White Male Births-16
+AHRF484,3-Yr White Male Births-17
+AHRF485,3-Yr White Male Deaths-16
+AHRF486,3-Yr White Male Deaths-17
+AHRF487,3-Yr White Male Infant Deaths-16
+AHRF488,3-Yr White Male Infant Deaths-17
+AHRF489,3-Yr Wht Low Birth Weight Birth-16
+AHRF490,3-Yr Wht Low Birth Weight Birth-17
+AHRF491,Actual Per Capita Medicare Cost Fee for Service
+AHRF492,"Acute LT Care, Beds Set Up Short Term General Hospitals"
+AHRF493,Adv Pract Nurse Midwives w/NPI
+AHRF494,Adv Practice Regist Nurse w/NPI
+AHRF495,"Adv Prct Regist Nurs,Fmle w/NPI"
+AHRF496,"Adv Prct Regist Nurs,Male w/NPI"
+AHRF497,"AdvPractNurs Midwve,Fmle w/NPI"
+AHRF498,"AdvPractNurs Midwve,Male w/NPI"
+AHRF499,"Advanced Practice Reg Nurses,FT ST Non-Gen + Long Term Hosps"
+AHRF500,"Advanced Practice Reg Nurses,FT Short Term General Hospitals"
+AHRF501,"Advanced Practice Reg Nurses,PT ST Non-Gen + Long Term Hosps"
+AHRF502,"Advanced Practice Reg Nurses,PT Short Term General Hospitals"
+AHRF503,"Aerospace Med, Administration Non-Fed"
+AHRF504,"Aerospace Med, Other Non-Fed"
+AHRF505,"Aerospace Med, PC, Hosp FT Stf Non-Fed"
+AHRF506,"Aerospace Med, PC, Hosp Resdnt Non-Fed"
+AHRF507,"Aerospace Med, PC, Office Based Non-Fed"
+AHRF508,"Aerospace Med, Research Non-Fed"
+AHRF509,"Aerospace Med, Teaching Non-Fed"
+AHRF510,"Aerospace Med, Total Non-Fed"
+AHRF511,"Aerospace Med, Total Patn Care Non-Fed"
+AHRF512,"Aerospace Medicine, 35-44 Non-Fed"
+AHRF513,"Aerospace Medicine, 45-54 Non-Fed"
+AHRF514,"Aerospace Medicine, 55-64 Non-Fed"
+AHRF515,"Aerospace Medicine, 65-74 Non-Fed"
+AHRF516,"Aerospace Medicine, 75 + Non-Fed"
+AHRF517,"Aerospace Medicine, < 35 Non-Fed"
+AHRF518,"Alchl/Chem Depend Cr,Bed Set Up Short Term General Hospitals"
+AHRF519,"All Other Personnel, Full-Time Incl Nurs Homes; ST Gen Hosps"
+AHRF520,"All Other Personnel, Full-Time Incl Nurs Homes; STNG/LT Hosps"
+AHRF521,"All Other Personnel, Part-Time Incl Nurs Homes; ST Gen Hosps"
+AHRF522,"All Other Personnel, Part-Time Incl Nurs Homes; STNG/LT Hosps"
+AHRF523,"All Other Personnel, Vacancies ST Non-Gen + Long Term Hosps"
+AHRF524,"All Other Personnel, Vacancies Short Term General Hospitals"
+AHRF525,"Allergy and Immunlgy,Administration Non-Fed"
+AHRF526,"Allergy and Immunlgy,PC,Hosp FT Stf Non-Fed"
+AHRF527,"Allergy and Immunology, 35-44 Non-Fed"
+AHRF528,"Allergy and Immunology, 45-54 Non-Fed"
+AHRF529,"Allergy and Immunology, 55-64 Non-Fed"
+AHRF530,"Allergy and Immunology, 65-74 Non-Fed"
+AHRF531,"Allergy and Immunology, 75 + Non-Fed"
+AHRF532,"Allergy and Immunology, < 35 Non-Fed"
+AHRF533,"Allergy and Immunology, Other Non-Fed"
+AHRF534,"Allergy and Immunology, Research Non-Fed"
+AHRF535,"Allergy and Immunology, Teaching Non-Fed"
+AHRF536,"Allergy and Immunology, Total Non-Fed"
+AHRF537,"Allergy and Immunology,Hosp Resdnt Non-Fed"
+AHRF538,"Allergy and Immunology,PC,Off Based Non-Fed"
+AHRF539,"Allergy and Immunology,Tot Patn Cr Non-Fed"
+AHRF540,"Anesthesiolgy, Administration Non-Fed"
+AHRF541,"Anesthesiolgy, Other Non-Fed"
+AHRF542,"Anesthesiolgy, PC, Hosp FT Stf Non-Fed"
+AHRF543,"Anesthesiolgy, PC, Hosp Resdnt Non-Fed"
+AHRF544,"Anesthesiolgy, PC, Office Based Non-Fed"
+AHRF545,"Anesthesiolgy, Research Non-Fed"
+AHRF546,"Anesthesiolgy, Teaching Non-Fed"
+AHRF547,"Anesthesiolgy, Total Non-Fed"
+AHRF548,"Anesthesiolgy, Total Patn Care Non-Fed"
+AHRF549,"Anesthesiology, 35-44 Non-Fed"
+AHRF550,"Anesthesiology, 45-54 Non-Fed"
+AHRF551,"Anesthesiology, 55-64 Non-Fed"
+AHRF552,"Anesthesiology, 65-74 Non-Fed"
+AHRF553,"Anesthesiology, 75 + Non-Fed"
+AHRF554,"Anesthesiology, < 35 Non-Fed"
+AHRF555,Bassinets Set Up and Staffed ST Non-Gen + Long Term Hosps
+AHRF556,Bassinets Set Up and Staffed Short Term General Hospitals
+AHRF557,"Burn Care, Beds Set Up Short Term General Hospitals"
+AHRF558,"Cardiac Intens Cr, Beds Set Up Short Term General Hospitals"
+AHRF559,"Cardiovas Dis, Administration Non-Fed"
+AHRF560,"Cardiovas Dis, Other Non-Fed"
+AHRF561,"Cardiovas Dis, PC, Hosp FT Stf Non-Fed"
+AHRF562,"Cardiovas Dis, PC, Hosp Resdnt Non-Fed"
+AHRF563,"Cardiovas Dis, PC, Office Based Non-Fed"
+AHRF564,"Cardiovas Dis, Research Non-Fed"
+AHRF565,"Cardiovas Dis, Teaching Non-Fed"
+AHRF566,"Cardiovas Dis, Total Non-Fed"
+AHRF567,"Cardiovas Dis, Total Patn Care Non-Fed"
+AHRF568,"Cardiovascular Diseases, 35-44 Non-Fed"
+AHRF569,"Cardiovascular Diseases, 45-54 Non-Fed"
+AHRF570,"Cardiovascular Diseases, 55-64 Non-Fed"
+AHRF571,"Cardiovascular Diseases, 65-74 Non-Fed"
+AHRF572,"Cardiovascular Diseases, 75 + Non-Fed"
+AHRF573,"Cardiovascular Diseases, < 35 Non-Fed"
+AHRF574,Cert Regist Nurs Anesthet w/NPI
+AHRF575,"CertRegistNursAnesth,Fmle w/NPI"
+AHRF576,"CertRegistNursAnesth,Male w/NPI"
+AHRF577,"Child Psych, Administration Non-Fed"
+AHRF578,"Child Psych, Other Non-Fed"
+AHRF579,"Child Psych, PC, Hosp FT Staff Non-Fed"
+AHRF580,"Child Psych, PC, Hosp Residents Non-Fed"
+AHRF581,"Child Psych, PC, Office Based Non-Fed"
+AHRF582,"Child Psych, Research Non-Fed"
+AHRF583,"Child Psych, Teaching Non-Fed"
+AHRF584,"Child Psych, Total Non-Fed"
+AHRF585,"Child Psych, Total Patn Care Non-Fed"
+AHRF586,"Child Psychiatry, 35-44 Non-Fed"
+AHRF587,"Child Psychiatry, 45-54 Non-Fed"
+AHRF588,"Child Psychiatry, 55-64 Non-Fed"
+AHRF589,"Child Psychiatry, 65-74 Non-Fed"
+AHRF590,"Child Psychiatry, 75 + Non-Fed"
+AHRF591,"Child Psychiatry, < 35 Non-Fed"
+AHRF592,Chiropractors w/NPI
+AHRF593,"Chiropractors, Female w/NPI"
+AHRF594,"Chiropractors, Male w/NPI"
+AHRF595,"Civilian Labor Force, 16+"
+AHRF596,"Clin Nurs Specialist,Fmle w/NPI"
+AHRF597,"Clin Nurs Specialist,Male w/NPI"
+AHRF598,Clinical Nurse Specialist w/NPI
+AHRF599,"Colon and Rectal Surgery, 35-44 Non-Fed"
+AHRF600,"Colon and Rectal Surgery, 45-54 Non-Fed"
+AHRF601,"Colon and Rectal Surgery, 55-64 Non-Fed"
+AHRF602,"Colon and Rectal Surgery, 65-74 Non-Fed"
+AHRF603,"Colon and Rectal Surgery, 75 + Non-Fed"
+AHRF604,"Colon and Rectal Surgery, < 35 Non-Fed"
+AHRF605,"Colon/Rectal Srg, Administrat Non-Fed"
+AHRF606,"Colon/Rectal Srg, Other Non-Fed"
+AHRF607,"Colon/Rectal Srg, PC, Hosp Res Non-Fed"
+AHRF608,"Colon/Rectal Srg, PC, Off Based Non-Fed"
+AHRF609,"Colon/Rectal Srg, PC,Hsp FT Stf Non-Fed"
+AHRF610,"Colon/Rectal Srg, Research Non-Fed"
+AHRF611,"Colon/Rectal Srg, Teaching Non-Fed"
+AHRF612,"Colon/Rectal Srg, Total Non-Fed"
+AHRF613,"Colon/Rectal Srg, Total Ptn Cr Non-Fed"
+AHRF614,"D.O.'s, PC, Off Based Non-Fed"
+AHRF615,"D.O.'s, Total Oth Prof Activity Non-Fed"
+AHRF616,"D.O.'s, Total PC, Hosp FT Staff Non-Fed"
+AHRF617,"D.O.'s, Total PC, Hosp Resident Non-Fed"
+AHRF618,"D.O.'s, Total Ptn Care Non-Fed"
+AHRF619,"DO's Inactive, Total Non-Fed"
+AHRF620,"DO's Not Classified, Total Non-Fed"
+AHRF621,"DO's, Anesthesiolgy, Tot Ptn Cr Non-Fed"
+AHRF622,"DO's, Anesthesiolgy, Total Non-Fed"
+AHRF623,"DO's, Emergency Med, Tot Ptn Cr Non-Fed"
+AHRF624,"DO's, Emergency Med, Total Non-Fed"
+AHRF625,"DO's, Fam Med Gen, Tot Ptn Cr Non-Fed"
+AHRF626,"DO's, Fam Med Gen, Total Non-Fed"
+AHRF627,"DO's, Fam Med Subsp,Tot Ptn Cr Non-Fed"
+AHRF628,"DO's, Fam Med Subspec, Total Non-Fed"
+AHRF629,"DO's, Gen Pract, Total Non-Fed"
+AHRF630,"DO's, Gen Pract, Total Ptn Care Non-Fed"
+AHRF631,"DO's, Genrl Surg, Tot Ptnt Care Non-Fed"
+AHRF632,"DO's, Genrl Surg, Total Non-Fed"
+AHRF633,"DO's, Gnrl Int Med, Tot Ptn Cr Non-Fed"
+AHRF634,"DO's, Gnrl Int Med, Total Non-Fed"
+AHRF635,"DO's, Inactive, 35-44 Non-Fed"
+AHRF636,"DO's, Inactive, 45-54 Non-Fed"
+AHRF637,"DO's, Inactive, 55-64 Non-Fed"
+AHRF638,"DO's, Inactive, 65-74 Non-Fed"
+AHRF639,"DO's, Inactive, 75 + Non-Fed"
+AHRF640,"DO's, Inactive, < 35 Non-Fed"
+AHRF641,"DO's, Inactive, Female Non-Fed"
+AHRF642,"DO's, Inactive, Male Non-Fed"
+AHRF643,"DO's, Int Med Subspecs, Total Non-Fed"
+AHRF644,"DO's, IntMed Subspcs,Tot Ptn Cr Non-Fed"
+AHRF645,"DO's, Ob-Gyn Subspcs,Tot Ptn Cr Non-Fed"
+AHRF646,"DO's, Ob-Gyn Subspecs, Total Non-Fed"
+AHRF647,"DO's, Ob-Gyn, Gen, Tot Patn Cr Non-Fed"
+AHRF648,"DO's, Ob-Gyn, General, Total Non-Fed"
+AHRF649,"DO's, Orthopedic Srg,Tot Ptn Cr Non-Fed"
+AHRF650,"DO's, Orthopedic Surg, Total Non-Fed"
+AHRF651,"DO's, Other Specs, Tot Patnt Cr Non-Fed"
+AHRF652,"DO's, Other Specs, Total Non-Fed"
+AHRF653,"DO's, Ped Subspecs, Tot Patn Cr Non-Fed"
+AHRF654,"DO's, Ped Subspecs, Total Non-Fed"
+AHRF655,"DO's, Pediatrics, General, Tot Non-Fed"
+AHRF656,"DO's, Pediatrics,Gen,Tot Ptn Cr Non-Fed"
+AHRF657,"DO's, Phys Med/Rehab, Total Non-Fed"
+AHRF658,"DO's, Phys Med/Rehab,Tot Ptn Cr Non-Fed"
+AHRF659,"DO's, Psychiatry, Tot Patnt Cr Non-Fed"
+AHRF660,"DO's, Psychiatry, Total Non-Fed"
+AHRF661,"DO's,Primary Care, Hsp Resident Non-Fed"
+AHRF662,"DO's,Primary Care, Patient Care Non-Fed"
+AHRF663,"DO's,Tot Ptn Care, US Graduates Non-Fed"
+AHRF664,"DO's,Tot Ptn Care,Tot Graduates Non-Fed"
+AHRF665,Days w/8-hr Avg Ozone ovr NAAQS Maximum 8-hour Average Ozone
+AHRF666,"Dent, Gender Unknown,Priv Pract Non-Fed"
+AHRF667,"Dent, Priv Pract,Tot GPs and Ped Non-Fed"
+AHRF668,"Dent, Priv Pract,Tot Other Spec Non-Fed"
+AHRF669,"Dent, Total Female, Priv Pract Non-Fed"
+AHRF670,"Dent, Total Male, Priv Pract Non-Fed"
+AHRF671,"Dent,Armed Forces and Oth Fed Srv Fed"
+AHRF672,"Dent,Staff, Fac and Staf,Hlth Org Non-Fed"
+AHRF673,Dentists w/NPI
+AHRF674,"Dentists, Dental School Faculty Non-Fed"
+AHRF675,"Dentists, Grad Student/Resident Non-Fed"
+AHRF676,"Dentists, Male w/NPI"
+AHRF677,"Dentists, No Longer in Practice Non-Fed"
+AHRF678,"Dentists, Occup Type Unknown Non-Fed"
+AHRF679,"Dentists, Other Occupation Non-Fed"
+AHRF680,"Dentists, Seeking Employment Non-Fed"
+AHRF681,"Dentists, State or Local Govt Non-Fed"
+AHRF682,"Dentists, Total Priv Practice Non-Fed"
+AHRF683,"Dentists, Total Prof Active Non-Fed and Fed"
+AHRF684,"Dentists, Total, Priv Pract, FT Non-Fed"
+AHRF685,"Dentists, Total, Priv Pract, PT Non-Fed"
+AHRF686,"Dentists,Female w/NPI"
+AHRF687,"Dentists,PT Faculty/PT Practice Non-Fed"
+AHRF688,"Dermatology, 35-44 Non-Fed"
+AHRF689,"Dermatology, 45-54 Non-Fed"
+AHRF690,"Dermatology, 55-64 Non-Fed"
+AHRF691,"Dermatology, 65-74 Non-Fed"
+AHRF692,"Dermatology, 75 + Non-Fed"
+AHRF693,"Dermatology, < 35 Non-Fed"
+AHRF694,"Dermatology, Administration Non-Fed"
+AHRF695,"Dermatology, Other Non-Fed"
+AHRF696,"Dermatology, PC, Hosp FT Staff Non-Fed"
+AHRF697,"Dermatology, PC, Hosp Resident Non-Fed"
+AHRF698,"Dermatology, PC, Office Based Non-Fed"
+AHRF699,"Dermatology, Research Non-Fed"
+AHRF700,"Dermatology, Teaching Non-Fed"
+AHRF701,"Dermatology, Total Non-Fed"
+AHRF702,"Dermatology, Total Patnt Care Non-Fed"
+AHRF703,"Diag Radiolgy, Administration Non-Fed"
+AHRF704,"Diag Radiolgy, Other Non-Fed"
+AHRF705,"Diag Radiolgy, PC, Hosp FT Stf Non-Fed"
+AHRF706,"Diag Radiolgy, PC, Hosp Resdnt Non-Fed"
+AHRF707,"Diag Radiolgy, PC, Office Based Non-Fed"
+AHRF708,"Diag Radiolgy, Research Non-Fed"
+AHRF709,"Diag Radiolgy, Teaching Non-Fed"
+AHRF710,"Diag Radiolgy, Total Non-Fed"
+AHRF711,"Diag Radiolgy, Total Patn Care Non-Fed"
+AHRF712,"Diagnostic Radiology, 35-44 Non-Fed"
+AHRF713,"Diagnostic Radiology, 45-54 Non-Fed"
+AHRF714,"Diagnostic Radiology, 55-64 Non-Fed"
+AHRF715,"Diagnostic Radiology, 65-74 Non-Fed"
+AHRF716,"Diagnostic Radiology, 75 + Non-Fed"
+AHRF717,"Diagnostic Radiology, < 35 Non-Fed"
+AHRF718,Dist Hosp By 00 - 04 Services ST Non-Gen + Long Term Hosps
+AHRF719,Dist Hosp By 00 - 04 Services Short Term General Hospitals
+AHRF720,Dist Hosp By 00 - 39% Util Rate Short Term General Hospitals
+AHRF721,Dist Hosp By 05 - 14 Services ST Non-Gen + Long Term Hosps
+AHRF722,Dist Hosp By 05 - 14 Services Short Term General Hospitals
+AHRF723,Dist Hosp By 15 - 24 Services ST Non-Gen + Long Term Hosps
+AHRF724,Dist Hosp By 15 - 24 Services Short Term General Hospitals
+AHRF725,Dist Hosp By 25+ Services ST Non-Gen + Long Term Hosps
+AHRF726,Dist Hosp By 25+ Services Short Term General Hospitals
+AHRF727,Dist Hosp By 40 - 59% Util Rate Short Term General Hospitals
+AHRF728,Dist Hosp By 60 - 79% Util Rate Short Term General Hospitals
+AHRF729,Dist Hosp By 80+% Util Rate Short Term General Hospitals
+AHRF730,"ED Visits per 1K Medicare Benef Fee for Service, Emerg Dept"
+AHRF731,Economic-Dependnt Typology Code
+AHRF732,Emergency Department Visits ST Non-Gen + Long Term Hosps
+AHRF733,Emergency Department Visits Short Term General Hospitals
+AHRF734,"Emergency Med, Administration Non-Fed"
+AHRF735,"Emergency Med, Other Non-Fed"
+AHRF736,"Emergency Med, PC, Hosp FT Stf Non-Fed"
+AHRF737,"Emergency Med, PC, Hosp Resdnt Non-Fed"
+AHRF738,"Emergency Med, PC, Office Based Non-Fed"
+AHRF739,"Emergency Med, Research Non-Fed"
+AHRF740,"Emergency Med, Teaching Non-Fed"
+AHRF741,"Emergency Med, Total Non-Fed"
+AHRF742,"Emergency Med, Total Patn Care Non-Fed"
+AHRF743,"Emergency Medicine, 35-44 Non-Fed"
+AHRF744,"Emergency Medicine, 45-54 Non-Fed"
+AHRF745,"Emergency Medicine, 55-64 Non-Fed"
+AHRF746,"Emergency Medicine, 65-74 Non-Fed"
+AHRF747,"Emergency Medicine, 75 + Non-Fed"
+AHRF748,"Emergency Medicine, < 35 Non-Fed"
+AHRF749,Farming-Dependent Typology Code
+AHRF750,Fed/St Govt-Depdnt Typolgy Code Federal/State Government
+AHRF751,Females 18-64 Yrs
+AHRF752,Females 18-64 with Health Ins
+AHRF753,Females 18-64 without Hlth Ins
+AHRF754,Females 40-64 Yrs
+AHRF755,Females 40-64 with Health Ins
+AHRF756,Females 40-64 without Hlth Ins
+AHRF757,Females <65 Yrs
+AHRF758,Females <65 with Health Ins
+AHRF759,Females <65 without Health Ins
+AHRF760,Food Stamp/SNAP Recipients
+AHRF761,"Forensic Path, Administration Non-Fed"
+AHRF762,"Forensic Path, Other Non-Fed"
+AHRF763,"Forensic Path, PC, Hosp FT Stf Non-Fed"
+AHRF764,"Forensic Path, PC, Hosp Resdnt Non-Fed"
+AHRF765,"Forensic Path, PC, Office Based Non-Fed"
+AHRF766,"Forensic Path, Research Non-Fed"
+AHRF767,"Forensic Path, Teaching Non-Fed"
+AHRF768,"Forensic Path, Total Non-Fed"
+AHRF769,"Forensic Path, Total Patn Care Non-Fed"
+AHRF770,"Forensic Pathology, 35-44 Non-Fed"
+AHRF771,"Forensic Pathology, 45-54 Non-Fed"
+AHRF772,"Forensic Pathology, 55-64 Non-Fed"
+AHRF773,"Forensic Pathology, 65-74 Non-Fed"
+AHRF774,"Forensic Pathology, 75 + Non-Fed"
+AHRF775,"Forensic Pathology, < 35 Non-Fed"
+AHRF776,"Gastroenterology, 35-44 Non-Fed"
+AHRF777,"Gastroenterology, 45-54 Non-Fed"
+AHRF778,"Gastroenterology, 55-64 Non-Fed"
+AHRF779,"Gastroenterology, 65-74 Non-Fed"
+AHRF780,"Gastroenterology, 75 + Non-Fed"
+AHRF781,"Gastroenterology, < 35 Non-Fed"
+AHRF782,"Gastroenterology, Administrat Non-Fed"
+AHRF783,"Gastroenterology, Other Non-Fed"
+AHRF784,"Gastroenterology, PC, Hosp Res Non-Fed"
+AHRF785,"Gastroenterology, PC, Off Based Non-Fed"
+AHRF786,"Gastroenterology, PC,Hsp FT Stf Non-Fed"
+AHRF787,"Gastroenterology, Research Non-Fed"
+AHRF788,"Gastroenterology, Teaching Non-Fed"
+AHRF789,"Gastroenterology, Total Non-Fed"
+AHRF790,"Gastroenterology, Total Ptn Cr Non-Fed"
+AHRF791,"Gen Int Med, PC, Hosp FT Staff Fed"
+AHRF792,"Gen Int Med, PC, Hosp Residents Fed"
+AHRF793,"Gen Internal Med, Oth Prof Act Fed"
+AHRF794,"Gen Med/Surg, Adult, Bed Set Up Short Term General Hospitals"
+AHRF795,"Gen Med/Surg, Ped, Beds Set Up Short Term General Hospitals"
+AHRF796,"Gen Prev Med, Administration Non-Fed"
+AHRF797,"Gen Prev Med, Other Non-Fed"
+AHRF798,"Gen Prev Med, PC, Hosp FT Staff Non-Fed"
+AHRF799,"Gen Prev Med, PC, Hosp Resident Non-Fed"
+AHRF800,"Gen Prev Med, PC, Office Based Non-Fed"
+AHRF801,"Gen Prev Med, Research Non-Fed"
+AHRF802,"Gen Prev Med, Teaching Non-Fed"
+AHRF803,"Gen Prev Med, Total Non-Fed"
+AHRF804,"Gen Prev Med, Total Patnt Care Non-Fed"
+AHRF805,"General Int Med, Other Non-Fed"
+AHRF806,"General Int Med, Research Non-Fed"
+AHRF807,"General Int Med, Teaching Non-Fed"
+AHRF808,"General Int Med,Administration Non-Fed"
+AHRF809,"General Internal Med, 35-44 Non-Fed"
+AHRF810,"General Internal Med, 45-54 Non-Fed"
+AHRF811,"General Internal Med, 55-64 Non-Fed"
+AHRF812,"General Internal Med, 65-74 Non-Fed"
+AHRF813,"General Internal Med, 75 + Non-Fed"
+AHRF814,"General Internal Med, < 35 Non-Fed"
+AHRF815,"General Internal Med, Total Non-Fed"
+AHRF816,"General Preventive Med, 35-44 Non-Fed"
+AHRF817,"General Preventive Med, 45-54 Non-Fed"
+AHRF818,"General Preventive Med, 55-64 Non-Fed"
+AHRF819,"General Preventive Med, 65-74 Non-Fed"
+AHRF820,"General Preventive Med, 75 + Non-Fed"
+AHRF821,"General Preventive Med, < 35 Non-Fed"
+AHRF822,"General Surgery, 35-44 Non-Fed"
+AHRF823,"General Surgery, 45-54 Non-Fed"
+AHRF824,"General Surgery, 55-64 Non-Fed"
+AHRF825,"General Surgery, 65-74 Non-Fed"
+AHRF826,"General Surgery, 75 + Non-Fed"
+AHRF827,"General Surgery, < 35 Non-Fed"
+AHRF828,"Genrl Surg, Administration Non-Fed"
+AHRF829,"Genrl Surg, Other Non-Fed"
+AHRF830,"Genrl Surg, Other Prof Activity Fed"
+AHRF831,"Genrl Surg, PC, Hosp FT Staff Fed"
+AHRF832,"Genrl Surg, PC, Hosp FT Staff Non-Fed"
+AHRF833,"Genrl Surg, PC, Hosp Residents Fed"
+AHRF834,"Genrl Surg, PC, Hosp Residents Non-Fed"
+AHRF835,"Genrl Surg, PC, Office Based Non-Fed"
+AHRF836,"Genrl Surg, Research Non-Fed"
+AHRF837,"Genrl Surg, Teaching Non-Fed"
+AHRF838,"Genrl Surg, Total Non-Fed"
+AHRF839,"Genrl Surg, Total Patient Care Non-Fed"
+AHRF840,"Gnrl Int Med, PC, Hosp FT Staff Non-Fed"
+AHRF841,"Gnrl Int Med, PC, Hosp Resident Non-Fed"
+AHRF842,"Gnrl Int Med, PC, Office Based Non-Fed"
+AHRF843,"Gnrl Int Med, Total Patn Care Non-Fed"
+AHRF844,"HPSA Code - Dentists  05/17 1=Whole, 2=Part County"
+AHRF845,"HPSA Code - Dentists  05/18 1=Whole, 2=Part County"
+AHRF846,"HPSA Code - Dentists 05/16 1=Whole, 2=Part County"
+AHRF847,"HPSA Code - Dentists 06/15 1=Whole, 2=Part County"
+AHRF848,"HPSA Code - Mental Health 05/16 1=Whole, 2=Part County"
+AHRF849,"HPSA Code - Mental Health 05/17 1=Whole, 2=Part County"
+AHRF850,"HPSA Code - Mental Health 05/18 1=Whole, 2=Part County"
+AHRF851,"HPSA Code - Mental Health 06/15 1=Whole, 2=Part County"
+AHRF852,"HPSA Code - Primary Care 05/16 1=Whole, 2=Part County"
+AHRF853,"HPSA Code - Primary Care 05/17 1=Whole, 2=Part County"
+AHRF854,"HPSA Code - Primary Care 05/18 1=Whole, 2=Part County"
+AHRF855,"HPSA Code - Primary Care 06/15 1=Whole, 2=Part County"
+AHRF856,High Poverty Typology Code
+AHRF857,Hlth Ins Marketplace Enrollees
+AHRF858,Hospital Admissions
+AHRF859,Hospital Beds
+AHRF860,Housing Units Estimates
+AHRF861,IP Act Cost as % of Tot Act Cst Fee for Service
+AHRF862,IP Per Capita Actual Medcr Cost Fee for Service
+AHRF863,IP Per User Actual Medcare Cost Fee for Service
+AHRF864,Inpatient Actual Medicare Costs Fee for Service
+AHRF865,Inpatient Days Incl Nurs Home;Total Hosp
+AHRF866,Inpatient Days in ST Gen Hosp
+AHRF867,Inpatient Days in VA Hosps
+AHRF868,Inptn Day in LT Chronic Disease
+AHRF869,Inptn Day in LT Intel Disablity
+AHRF870,Inptn Days in LT Acute LT Care
+AHRF871,Inptn Days in LT Chldrn's Psych
+AHRF872,Inptn Days in LT Gen Med/Surg
+AHRF873,Inptn Days in LT Psychiatric
+AHRF874,Inptn Days in LT Rehabilitation
+AHRF875,Inptn Days in ST Acute LT Care
+AHRF876,Inptn Days in ST Chldrn's Gen
+AHRF877,Inptn Days in ST Chldrn's Psych
+AHRF878,Inptn Days in ST Psychiatric
+AHRF879,Inptn Days in ST Rehabilitation
+AHRF880,Inptn Days in STNG/LT Hosp
+AHRF881,Inptn Days in Short Term Comm
+AHRF882,"Int Med Subspecs, Administrat Non-Fed"
+AHRF883,"Int Med Subspecs, Other Non-Fed"
+AHRF884,"Int Med Subspecs, PC, Hosp Res Non-Fed"
+AHRF885,"Int Med Subspecs, PC, Off Based Non-Fed"
+AHRF886,"Int Med Subspecs, Research Non-Fed"
+AHRF887,"Int Med Subspecs, Teaching Non-Fed"
+AHRF888,"Int Med Subspecs, Tot Patn Care Non-Fed"
+AHRF889,"Int Med Subspecs, Total Non-Fed"
+AHRF890,"Int Med Subspecs,PC,Hosp FT Stf Non-Fed"
+AHRF891,"Intermediate Care, Beds Set Up Short Term General Hospitals"
+AHRF892,"Internal Med Subspecs, 35-44 Non-Fed"
+AHRF893,"Internal Med Subspecs, 45-54 Non-Fed"
+AHRF894,"Internal Med Subspecs, 55-64 Non-Fed"
+AHRF895,"Internal Med Subspecs, 65-74 Non-Fed"
+AHRF896,"Internal Med Subspecs, 75 + Non-Fed"
+AHRF897,"Internal Med Subspecs, < 35 Non-Fed"
+AHRF898,"LPN/LVNs, Full-Time Incl Nurs Homes; ST Gen Hosps"
+AHRF899,"LPN/LVNs, Full-Time Incl Nurs Homes; STNG/LT Hosps"
+AHRF900,"LPN/LVNs, Part-Time Incl Nurs Homes; ST Gen Hosps"
+AHRF901,"LPN/LVNs, Part-Time Incl Nurs Homes; STNG/LT Hosps"
+AHRF902,"LPN/LVNs, Vacancies ST Non-Gen + Long Term Hosps"
+AHRF903,"LPN/LVNs, Vacancies Short Term General Hospitals"
+AHRF904,"Laboratory Technician,Vacancies ST Non-Gen + Long Term Hosps"
+AHRF905,"Laboratory Technician,Vacancies Short Term General Hospitals"
+AHRF906,"Laboratory Technicians, FT Incl Nurs Homes; ST Gen Hosps"
+AHRF907,"Laboratory Technicians, FT Incl Nurs Homes; STNG/LT Hosps"
+AHRF908,"Laboratory Technicians, PT Incl Nurs Homes; ST Gen Hosps"
+AHRF909,"Laboratory Technicians, PT Incl Nurs Homes; STNG/LT Hosps"
+AHRF910,"Licensed Beds, Long Term Hosp Incl Nurs Homes"
+AHRF911,"Licensed Beds, Short Term Hosp Incl Nurs Homes"
+AHRF912,"Licensed Beds, Total Hospital Incl Nurs Home"
+AHRF913,"Licensed Beds,Short Non-Gen Hsp Incl Nurs Homes"
+AHRF914,"Licensed Nurs Home Beds, LT"
+AHRF915,"Licensed Nurs Home Beds, STGEN"
+AHRF916,"Licensed Nurs Home Beds, STNG"
+AHRF917,Licensed Nursing Home Beds Total Hospitals
+AHRF918,Long Term Hosp Beds
+AHRF919,Low Education Typology Code
+AHRF920,Low Employment Typology Code
+AHRF921,"M.D.'s, PC, Off Based Non-Fed"
+AHRF922,"M.D.'s, Tot PC, Hosp Residents Fed"
+AHRF923,"M.D.'s, Total Administration Non-Fed"
+AHRF924,"M.D.'s, Total Oth Prof Activity Fed"
+AHRF925,"M.D.'s, Total Oth Prof Activity Non-Fed"
+AHRF926,"M.D.'s, Total Other Non-Fed"
+AHRF927,"M.D.'s, Total PC, Hosp FT Staff Fed"
+AHRF928,"M.D.'s, Total PC, Hosp FT Staff Non-Fed"
+AHRF929,"M.D.'s, Total PC, Hosp Resident Non-Fed"
+AHRF930,"M.D.'s, Total Ptn Care Non-Fed"
+AHRF931,"M.D.'s, Total Research Non-Fed"
+AHRF932,"M.D.'s, Total Teaching Non-Fed"
+AHRF933,"M.D.'s, Total, Inactive Fed"
+AHRF934,"MD's Inactive, Total Non-Fed"
+AHRF935,"MD's Not Classified, Total Non-Fed"
+AHRF936,"MD's, Fam Med Gen, Tot Ptn Cr Non-Fed"
+AHRF937,"MD's, Fam Med Gen, Total Non-Fed"
+AHRF938,"MD's, Fam Med Gen,Administratn Non-Fed"
+AHRF939,"MD's, Fam Med Gen,Hsp FT Staff Non-Fed"
+AHRF940,"MD's, Fam Med Gen,Other Non-Fed"
+AHRF941,"MD's, Fam Med Gen,PC,Hsp Rsdnt Non-Fed"
+AHRF942,"MD's, Fam Med Gen,PC,Off Bsd Non-Fed"
+AHRF943,"MD's, Fam Med Gen,Research Non-Fed"
+AHRF944,"MD's, Fam Med Gen,Teaching Non-Fed"
+AHRF945,"MD's, Fam Med Subsp,Admin Non-Fed"
+AHRF946,"MD's, Fam Med Subsp,Hsp FT Stf Non-Fed"
+AHRF947,"MD's, Fam Med Subsp,Other Non-Fed"
+AHRF948,"MD's, Fam Med Subsp,PC,Hsp Res Non-Fed"
+AHRF949,"MD's, Fam Med Subsp,PC,Off Bsd Non-Fed"
+AHRF950,"MD's, Fam Med Subsp,Research Non-Fed"
+AHRF951,"MD's, Fam Med Subsp,Teaching Non-Fed"
+AHRF952,"MD's, Fam Med Subsp,Tot Ptn Cr Non-Fed"
+AHRF953,"MD's, Fam Med Subspec, Total Non-Fed"
+AHRF954,"MD's, Family Med Gen, 35-44 Non-Fed"
+AHRF955,"MD's, Family Med Gen, 45-54 Non-Fed"
+AHRF956,"MD's, Family Med Gen, 55-64 Non-Fed"
+AHRF957,"MD's, Family Med Gen, 65-74 Non-Fed"
+AHRF958,"MD's, Family Med Gen, 75 + Non-Fed"
+AHRF959,"MD's, Family Med Gen, < 35 Non-Fed"
+AHRF960,"MD's, Family Prac Subsp, 35-44 Non-Fed"
+AHRF961,"MD's, Family Prac Subsp, 45-54 Non-Fed"
+AHRF962,"MD's, Family Prac Subsp, 55-64 Non-Fed"
+AHRF963,"MD's, Family Prac Subsp, 65-74 Non-Fed"
+AHRF964,"MD's, Family Prac Subsp, 75 + Non-Fed"
+AHRF965,"MD's, Family Prac Subsp, < 35 Non-Fed"
+AHRF966,"MD's, Gen Pract, Administration Non-Fed"
+AHRF967,"MD's, Gen Pract, Other Non-Fed"
+AHRF968,"MD's, Gen Pract, PC, Hsp FT Stf Non-Fed"
+AHRF969,"MD's, Gen Pract, PC, Hsp Rsdnt Non-Fed"
+AHRF970,"MD's, Gen Pract, PC, Office Bsd Non-Fed"
+AHRF971,"MD's, Gen Pract, Research Non-Fed"
+AHRF972,"MD's, Gen Pract, Teaching Non-Fed"
+AHRF973,"MD's, Gen Pract, Total Non-Fed"
+AHRF974,"MD's, Gen Pract, Total Ptn Care Non-Fed"
+AHRF975,"MD's, General Pract, 35-44 Non-Fed"
+AHRF976,"MD's, General Pract, 45-54 Non-Fed"
+AHRF977,"MD's, General Pract, 55-64 Non-Fed"
+AHRF978,"MD's, General Pract, 65-74 Non-Fed"
+AHRF979,"MD's, General Pract, 75 + Non-Fed"
+AHRF980,"MD's, General Pract, < 35 Non-Fed"
+AHRF981,"MD's, Inactive, 35-44 Non-Fed"
+AHRF982,"MD's, Inactive, 45-54 Non-Fed"
+AHRF983,"MD's, Inactive, 55-64 Non-Fed"
+AHRF984,"MD's, Inactive, 65-74 Non-Fed"
+AHRF985,"MD's, Inactive, 75 + Non-Fed"
+AHRF986,"MD's, Inactive, < 35 Non-Fed"
+AHRF987,"MD's, Inactive, Female Non-Fed"
+AHRF988,"MD's, Inactive, Male Non-Fed"
+AHRF989,"MD's, Not Classified, 35-44 Non-Fed"
+AHRF990,"MD's, Not Classified, 45-54 Non-Fed"
+AHRF991,"MD's, Not Classified, 55-64 Non-Fed"
+AHRF992,"MD's, Not Classified, 65-74 Non-Fed"
+AHRF993,"MD's, Not Classified, 75 + Non-Fed"
+AHRF994,"MD's, Not Classified, < 35 Non-Fed"
+AHRF995,"MD's, Tot Gen Pract, Administ Non-Fed"
+AHRF996,"MD's, Tot Gen Pract, Other Non-Fed"
+AHRF997,"MD's, Tot Gen Pract, PC,Hsp Res Non-Fed"
+AHRF998,"MD's, Tot Gen Pract, PC,Off Bsd Non-Fed"
+AHRF999,"MD's, Tot Gen Pract, Research Non-Fed"
+AHRF1000,"MD's, Tot Gen Pract, Teaching Non-Fed"
+AHRF1001,"MD's, Tot Gen Pract,Tot Ptn Cr Non-Fed"
+AHRF1002,"MD's, Tot General Pract, 35-44 Non-Fed"
+AHRF1003,"MD's, Tot General Pract, 45-54 Non-Fed"
+AHRF1004,"MD's, Tot General Pract, 55-64 Non-Fed"
+AHRF1005,"MD's, Tot General Pract, 65-74 Non-Fed"
+AHRF1006,"MD's, Tot General Pract, 75 + Non-Fed"
+AHRF1007,"MD's, Tot General Pract, < 35 Non-Fed"
+AHRF1008,"MD's, Total Gen Pract, Total Non-Fed"
+AHRF1009,"MD's,Primary Care, Hsp Resident Non-Fed"
+AHRF1010,"MD's,Primary Care, Patient Care Non-Fed"
+AHRF1011,"MD's,Tot Gen Prac,Oth Prof Act Fed"
+AHRF1012,"MD's,Tot Gen Prac,PC,Hosp Res Fed"
+AHRF1013,"MD's,Tot Gen Prac,PC,Hsp FT Stf Fed"
+AHRF1014,"MD's,Tot Gen Prac,PC,Hsp FT Stf Non-Fed"
+AHRF1015,"MD's,Tot Ptn Care, IMG Grads Non-Fed"
+AHRF1016,"MD's,Tot Ptn Care, US Graduates Non-Fed"
+AHRF1017,"MD's,Tot Ptn Care,Canadian Grad Non-Fed"
+AHRF1018,"MD's,Tot Ptn Care,Tot Graduates Non-Fed"
+AHRF1019,"MDs, Tot Hosp-Based PC Non-Fed"
+AHRF1020,Males 18-64 Yrs
+AHRF1021,Males 18-64 with Health Ins
+AHRF1022,Males 18-64 without Health Ins
+AHRF1023,Males 40-64 Yrs
+AHRF1024,Males 40-64 with Health Ins
+AHRF1025,Males 40-64 without Health Ins
+AHRF1026,Males <65 Yrs
+AHRF1027,Males <65 with Health Insurance
+AHRF1028,Males <65 without Health Ins
+AHRF1029,Manufacturing-Dep Typology Code
+AHRF1030,Marketplace Enrollees 18-25
+AHRF1031,Marketplace Enrollees 26-34
+AHRF1032,Marketplace Enrollees 35-44
+AHRF1033,Marketplace Enrollees 45-54
+AHRF1034,Marketplace Enrollees 55-64
+AHRF1035,Marketplace Enrollees 65+
+AHRF1036,Marketplace Enrollees < 18
+AHRF1037,Marketplace Enrollees Unk Age
+AHRF1038,"Marketplace Enrollees,  No Financial Assistance Requested"
+AHRF1039,"Marketplace Enrollees,  Other Federal Poverty Level"
+AHRF1040,"Marketplace Enrollees, Active Enrl"
+AHRF1041,"Marketplace Enrollees, Auto Enrl"
+AHRF1042,"Marketplace Enrollees, Female"
+AHRF1043,"Marketplace Enrollees, HHld Inc 100% to 150% of FPL"
+AHRF1044,"Marketplace Enrollees, HHld Inc <100% of FPL"
+AHRF1045,"Marketplace Enrollees, HHld Inc >400% of FPL"
+AHRF1046,"Marketplace Enrollees, HHld Inc Unknown"
+AHRF1047,"Marketplace Enrollees, HHld Inc>150% to 200% of FPL"
+AHRF1048,"Marketplace Enrollees, HHld Inc>200% to 250% of FPL"
+AHRF1049,"Marketplace Enrollees, HHld Inc>250% to 300% of FPL"
+AHRF1050,"Marketplace Enrollees, HHld Inc>300% to 400% of FPL"
+AHRF1051,"Marketplace Enrollees, Male"
+AHRF1052,"Marketplace Enrollees, New Cons"
+AHRF1053,"Marketplace Enrollees, Other HHld Inc"
+AHRF1054,"Mdcre Enrllmnt, Agd and Dsbld Tot"
+AHRF1055,"Med Spec Tot, Administration Non-Fed"
+AHRF1056,"Med Spec Tot, Other Non-Fed"
+AHRF1057,"Med Spec Tot, PC, Hosp FT Staff Non-Fed"
+AHRF1058,"Med Spec Tot, PC, Hosp Resident Non-Fed"
+AHRF1059,"Med Spec Tot, PC, Office Based Non-Fed"
+AHRF1060,"Med Spec Tot, Research Non-Fed"
+AHRF1061,"Med Spec Tot, Teaching Non-Fed"
+AHRF1062,"Med Spec Tot, Total Non-Fed"
+AHRF1063,"Med Spec Tot, Total Patn Care Non-Fed"
+AHRF1064,"Med/Dental Res/Inter,Vacancies ST Non-Gen + Long Term Hosps"
+AHRF1065,"Med/Dental Res/Inter,Vacancies Short Term General Hospitals"
+AHRF1066,"Med/Surg Intens Cr, Beds Set Up Short Term General Hospitals"
+AHRF1067,Medcr Ben IP User w/Coverd Stay Fee for Service
+AHRF1068,Medcre Adv PtA and B Rates 0% Bonus
+AHRF1069,Medcre Adv PtA and B Rates 3 Star
+AHRF1070,Medcre Adv PtA and B Rates 3.5 Star
+AHRF1071,Medcre Adv PtA and B Rates 4 Star
+AHRF1072,Medcre Adv PtA and B Rates 4.5 Star
+AHRF1073,Medcre Adv PtA and B Rates 5 Star
+AHRF1074,Medcre Adv PtA and B Rates 5% Bonus
+AHRF1075,Medcre Benef Acute Hsp Readmiss Fee for Service
+AHRF1076,Medcre Benef Emer Dept Visits Fee for Service
+AHRF1077,Medcre Benef Hosp Readmiss Rate Fee for Service
+AHRF1078,MedcreAdv PtA and B Rate 3.5% Bonus
+AHRF1079,MedcreAdv PtA and B Rates<=2.5 Star
+AHRF1080,Median Household Income
+AHRF1081,"Medical Genetics, 35-44 Non-Fed"
+AHRF1082,"Medical Genetics, 45-54 Non-Fed"
+AHRF1083,"Medical Genetics, 55-64 Non-Fed"
+AHRF1084,"Medical Genetics, 65-74 Non-Fed"
+AHRF1085,"Medical Genetics, 75 + Non-Fed"
+AHRF1086,"Medical Genetics, < 35 Non-Fed"
+AHRF1087,"Medical Genetics, Other Non-Fed"
+AHRF1088,"Medical Genetics, Research Non-Fed"
+AHRF1089,"Medical Genetics, Teaching Non-Fed"
+AHRF1090,"Medical Genetics, Total Non-Fed"
+AHRF1091,"Medical Genetics,Administration Non-Fed"
+AHRF1092,"Medical Genetics,PC,Hosp FT Stf Non-Fed"
+AHRF1093,"Medical Genetics,PC,Hosp Resdnt Non-Fed"
+AHRF1094,"Medical Genetics,PC,Off Based Non-Fed"
+AHRF1095,"Medical Genetics,Tot Patnt Care Non-Fed"
+AHRF1096,"Medical Specs, Total, 35-44 Non-Fed"
+AHRF1097,"Medical Specs, Total, 45-54 Non-Fed"
+AHRF1098,"Medical Specs, Total, 55-64 Non-Fed"
+AHRF1099,"Medical Specs, Total, 65-74 Non-Fed"
+AHRF1100,"Medical Specs, Total, 75 + Non-Fed"
+AHRF1101,"Medical Specs, Total, < 35 Non-Fed"
+AHRF1102,"Medical/Dental Res/Interns, FT Incl Nurs Homes; ST Gen Hosps"
+AHRF1103,"Medical/Dental Res/Interns, FT Incl Nurs Homes; STNG/LT Hosps"
+AHRF1104,"Medical/Dental Res/Interns, PT Incl Nurs Homes; ST Gen Hosps"
+AHRF1105,"Medical/Dental Res/Interns, PT Incl Nurs Homes; STNG/LT Hosps"
+AHRF1106,"Medicare Enrollment, Aged Tot"
+AHRF1107,Medicare FFS Bene Avg HCC Score Fee for Service
+AHRF1108,Medicare FFS Benef Average Age Fee for Service
+AHRF1109,Medicare FFS Beneficiaries Fee for Service
+AHRF1110,"Medicre Enrollmnt, Disabled Tot"
+AHRF1111,Mining-Dependent Typology Code
+AHRF1112,"Neonat Intermed Cr, Beds Set Up Short Term General Hospitals"
+AHRF1113,"Neonatal Intens Cr, Beds Set Up Short Term General Hospitals"
+AHRF1114,"Neurolgcal Surg, Administration Non-Fed"
+AHRF1115,"Neurolgcal Surg, Other Non-Fed"
+AHRF1116,"Neurolgcal Surg, PC, Hosp Res Non-Fed"
+AHRF1117,"Neurolgcal Surg, PC, Hsp FT Stf Non-Fed"
+AHRF1118,"Neurolgcal Surg, PC, Office Bsd Non-Fed"
+AHRF1119,"Neurolgcal Surg, Research Non-Fed"
+AHRF1120,"Neurolgcal Surg, Teaching Non-Fed"
+AHRF1121,"Neurolgcal Surg, Total Non-Fed"
+AHRF1122,"Neurolgcal Surg, Total Ptn Care Non-Fed"
+AHRF1123,"Neurological Surgery, 35-44 Non-Fed"
+AHRF1124,"Neurological Surgery, 45-54 Non-Fed"
+AHRF1125,"Neurological Surgery, 55-64 Non-Fed"
+AHRF1126,"Neurological Surgery, 65-74 Non-Fed"
+AHRF1127,"Neurological Surgery, 75 + Non-Fed"
+AHRF1128,"Neurological Surgery, < 35 Non-Fed"
+AHRF1129,"Neurology, 35-44 Non-Fed"
+AHRF1130,"Neurology, 45-54 Non-Fed"
+AHRF1131,"Neurology, 55-64 Non-Fed"
+AHRF1132,"Neurology, 65-74 Non-Fed"
+AHRF1133,"Neurology, 75 + Non-Fed"
+AHRF1134,"Neurology, < 35 Non-Fed"
+AHRF1135,"Neurology, Administration Non-Fed"
+AHRF1136,"Neurology, Other Non-Fed"
+AHRF1137,"Neurology, PC, Hosp FT Staff Non-Fed"
+AHRF1138,"Neurology, PC, Hosp Residents Non-Fed"
+AHRF1139,"Neurology, PC, Office Based Non-Fed"
+AHRF1140,"Neurology, Research Non-Fed"
+AHRF1141,"Neurology, Teaching Non-Fed"
+AHRF1142,"Neurology, Total Non-Fed"
+AHRF1143,"Neurology, Total Patient Care Non-Fed"
+AHRF1144,Nonspecializd-Dep Typology Code
+AHRF1145,"Nuclear Med, Administration Non-Fed"
+AHRF1146,"Nuclear Med, Other Non-Fed"
+AHRF1147,"Nuclear Med, PC, Hosp FT Staff Non-Fed"
+AHRF1148,"Nuclear Med, PC, Hosp Residnts Non-Fed"
+AHRF1149,"Nuclear Med, PC, Office Based Non-Fed"
+AHRF1150,"Nuclear Med, Research Non-Fed"
+AHRF1151,"Nuclear Med, Teaching Non-Fed"
+AHRF1152,"Nuclear Med, Total Non-Fed"
+AHRF1153,"Nuclear Med, Total Patient Care Non-Fed"
+AHRF1154,"Nuclear Medicine, 35-44 Non-Fed"
+AHRF1155,"Nuclear Medicine, 45-54 Non-Fed"
+AHRF1156,"Nuclear Medicine, 55-64 Non-Fed"
+AHRF1157,"Nuclear Medicine, 65-74 Non-Fed"
+AHRF1158,"Nuclear Medicine, 75 + Non-Fed"
+AHRF1159,"Nuclear Medicine, < 35 Non-Fed"
+AHRF1160,"Number Employed, 16+"
+AHRF1161,"Number Unemployed, 16+"
+AHRF1162,"Nurs Assistive Pers, Vacancies ST Non-Gen + Long Term Hosps"
+AHRF1163,"Nurs Assistive Pers, Vacancies Short Term General Hospitals"
+AHRF1164,"Nurs Home Admissions, STNG/LT"
+AHRF1165,"Nurs Home Admissions, Tot Hosp"
+AHRF1166,"Nurs Home Admissions,STGEN Hosp"
+AHRF1167,Nurs Home Inpatient Days
+AHRF1168,"Nurs Home Inpatient Days, STGEN"
+AHRF1169,"Nurs Home Inptn Days, STNG/LT"
+AHRF1170,Nurse Practitioners w/NPI
+AHRF1171,"Nurse Practitioners, Fmle w/NPI"
+AHRF1172,"Nurse Practitioners, Male w/NPI"
+AHRF1173,"Nursing Assistive Personnel, FT Incl Nurs Homes; ST Gen Hosps"
+AHRF1174,"Nursing Assistive Personnel, FT Incl Nurs Homes; STNG/LT Hosps"
+AHRF1175,"Nursing Assistive Personnel, PT Incl Nurs Homes; ST Gen Hosps"
+AHRF1176,"Nursing Assistive Personnel, PT Incl Nurs Homes; STNG/LT Hosps"
+AHRF1177,Nursing Facilities Cert Beds
+AHRF1178,Nursing Facilities Total Beds
+AHRF1179,"Nursing Home Beds, ST Gen Hosp"
+AHRF1180,"Nursing Home Beds, STNG Hosp"
+AHRF1181,"Nursing Home Beds, Total Hosp"
+AHRF1182,"Nursing Home Beds,Long Term Hsp"
+AHRF1183,"Nursing Home Pers Tot,Vacancies ST Non-Gen + Long Term Hosps"
+AHRF1184,"Nursing Home Pers Tot,Vacancies Short Term General Hospitals"
+AHRF1185,"Nursing Home Personnel Tot, FT ST Non-Gen + Long Term Hosps"
+AHRF1186,"Nursing Home Personnel Tot, FT Short Term General Hospitals"
+AHRF1187,"Nursing Home Personnel Tot, PT ST Non-Gen + Long Term Hosps"
+AHRF1188,"Nursing Home Personnel Tot, PT Short Term General Hospitals"
+AHRF1189,"Ob-Gyn Subspecs, 35-44 Non-Fed"
+AHRF1190,"Ob-Gyn Subspecs, 45-54 Non-Fed"
+AHRF1191,"Ob-Gyn Subspecs, 55-64 Non-Fed"
+AHRF1192,"Ob-Gyn Subspecs, 65-74 Non-Fed"
+AHRF1193,"Ob-Gyn Subspecs, 75 + Non-Fed"
+AHRF1194,"Ob-Gyn Subspecs, < 35 Non-Fed"
+AHRF1195,"Ob-Gyn Subspecs, Administration Non-Fed"
+AHRF1196,"Ob-Gyn Subspecs, Oth Prof Act Fed"
+AHRF1197,"Ob-Gyn Subspecs, Other Non-Fed"
+AHRF1198,"Ob-Gyn Subspecs, Research Non-Fed"
+AHRF1199,"Ob-Gyn Subspecs, Teaching Non-Fed"
+AHRF1200,"Ob-Gyn Subspecs, Total Non-Fed"
+AHRF1201,"Ob-Gyn Subspecs,PC,Hosp FT Stf Fed"
+AHRF1202,"Ob-Gyn Subspecs,PC,Hosp FT Stf Non-Fed"
+AHRF1203,"Ob-Gyn Subspecs,PC,Hosp Resdnt Fed"
+AHRF1204,"Ob-Gyn Subspecs,PC,Hosp Residnt Non-Fed"
+AHRF1205,"Ob-Gyn Subspecs,PC,Off Based Non-Fed"
+AHRF1206,"Ob-Gyn Subspecs,Tot Patient Cr Non-Fed"
+AHRF1207,"Ob-Gyn, Gen, Oth Prof Activity Fed"
+AHRF1208,"Ob-Gyn, Gen, PC, Hosp FT Staff Fed"
+AHRF1209,"Ob-Gyn, Gen, PC, Hosp FT Staff Non-Fed"
+AHRF1210,"Ob-Gyn, Gen, PC, Hosp Residents Non-Fed"
+AHRF1211,"Ob-Gyn, Gen, PC, Office Based Non-Fed"
+AHRF1212,"Ob-Gyn, Gen, PC,Hosp Residents Fed"
+AHRF1213,"Ob-Gyn, Gen, Total Patient Care Non-Fed"
+AHRF1214,"Ob-Gyn, General, 35-44 Non-Fed"
+AHRF1215,"Ob-Gyn, General, 45-54 Non-Fed"
+AHRF1216,"Ob-Gyn, General, 55-64 Non-Fed"
+AHRF1217,"Ob-Gyn, General, 65-74 Non-Fed"
+AHRF1218,"Ob-Gyn, General, 75 + Non-Fed"
+AHRF1219,"Ob-Gyn, General, < 35 Non-Fed"
+AHRF1220,"Ob-Gyn, General, Administration Non-Fed"
+AHRF1221,"Ob-Gyn, General, Other Non-Fed"
+AHRF1222,"Ob-Gyn, General, Research Non-Fed"
+AHRF1223,"Ob-Gyn, General, Teaching Non-Fed"
+AHRF1224,"Ob-Gyn, General, Total Non-Fed"
+AHRF1225,"Obstetrics Care, Beds Set Up Short Term General Hospitals"
+AHRF1226,"Occupat Med, Administration Non-Fed"
+AHRF1227,"Occupat Med, Other Non-Fed"
+AHRF1228,"Occupat Med, PC, Hosp FT Staff Non-Fed"
+AHRF1229,"Occupat Med, PC, Hosp Residents Non-Fed"
+AHRF1230,"Occupat Med, PC, Office Based Non-Fed"
+AHRF1231,"Occupat Med, Research Non-Fed"
+AHRF1232,"Occupat Med, Teaching Non-Fed"
+AHRF1233,"Occupat Med, Total Non-Fed"
+AHRF1234,"Occupat Med, Total Patnt Care Non-Fed"
+AHRF1235,"Occupational Medicine, 35-44 Non-Fed"
+AHRF1236,"Occupational Medicine, 45-54 Non-Fed"
+AHRF1237,"Occupational Medicine, 55-64 Non-Fed"
+AHRF1238,"Occupational Medicine, 65-74 Non-Fed"
+AHRF1239,"Occupational Medicine, 75 + Non-Fed"
+AHRF1240,"Occupational Medicine, < 35 Non-Fed"
+AHRF1241,"Ophthalmolgy, Administration Non-Fed"
+AHRF1242,"Ophthalmolgy, Other Non-Fed"
+AHRF1243,"Ophthalmolgy, PC, Hosp FT Staff Non-Fed"
+AHRF1244,"Ophthalmolgy, PC, Hosp Resdnts Non-Fed"
+AHRF1245,"Ophthalmolgy, PC, Office Based Non-Fed"
+AHRF1246,"Ophthalmolgy, Research Non-Fed"
+AHRF1247,"Ophthalmolgy, Teaching Non-Fed"
+AHRF1248,"Ophthalmolgy, Total Non-Fed"
+AHRF1249,"Ophthalmolgy, Total Patn Care Non-Fed"
+AHRF1250,"Ophthalmology, 35-44 Non-Fed"
+AHRF1251,"Ophthalmology, 45-54 Non-Fed"
+AHRF1252,"Ophthalmology, 55-64 Non-Fed"
+AHRF1253,"Ophthalmology, 65-74 Non-Fed"
+AHRF1254,"Ophthalmology, 75 + Non-Fed"
+AHRF1255,"Ophthalmology, < 35 Non-Fed"
+AHRF1256,Optometrists w/NPI
+AHRF1257,"Optometrists, Female w/NPI"
+AHRF1258,"Optometrists, Male w/NPI"
+AHRF1259,"Orthopedic Surg, Administration Non-Fed"
+AHRF1260,"Orthopedic Surg, Other Non-Fed"
+AHRF1261,"Orthopedic Surg, PC, Hosp Res Non-Fed"
+AHRF1262,"Orthopedic Surg, PC, Hsp FT Stf Non-Fed"
+AHRF1263,"Orthopedic Surg, PC, Off Based Non-Fed"
+AHRF1264,"Orthopedic Surg, Research Non-Fed"
+AHRF1265,"Orthopedic Surg, Teaching Non-Fed"
+AHRF1266,"Orthopedic Surg, Total Non-Fed"
+AHRF1267,"Orthopedic Surg, Total Ptn Care Non-Fed"
+AHRF1268,"Orthopedic Surgery, 35-44 Non-Fed"
+AHRF1269,"Orthopedic Surgery, 45-54 Non-Fed"
+AHRF1270,"Orthopedic Surgery, 55-64 Non-Fed"
+AHRF1271,"Orthopedic Surgery, 65-74 Non-Fed"
+AHRF1272,"Orthopedic Surgery, 75 + Non-Fed"
+AHRF1273,"Orthopedic Surgery, < 35 Non-Fed"
+AHRF1274,"Oth Oth Spec, PC, Hosp FT Staff Fed"
+AHRF1275,"Oth Oth Spec, PC, Hosp Resident Fed"
+AHRF1276,"Oth Special Care, Beds Set Up Short Term General Hospitals"
+AHRF1277,"Other Care, Beds Set Up Short Term General Hospitals"
+AHRF1278,"Other Intensive Cr, Bed Set Up Short Term General Hospitals"
+AHRF1279,"Other LT Care, Beds Set Up Short Term General Hospitals"
+AHRF1280,"Other Med, Other Prof Activity Fed"
+AHRF1281,"Other Med, PC, Hosp FT Staff Fed"
+AHRF1282,"Other Med, PC, Hosp Residents Fed"
+AHRF1283,"Other Other Spec, Oth Prof Act Fed"
+AHRF1284,"Other Spec, Tot, Administration Non-Fed"
+AHRF1285,"Other Spec, Tot, Other Non-Fed"
+AHRF1286,"Other Spec, Tot, PC, Hosp Res Non-Fed"
+AHRF1287,"Other Spec, Tot, PC, Hsp FT Stf Non-Fed"
+AHRF1288,"Other Spec, Tot, PC, Off Based Non-Fed"
+AHRF1289,"Other Spec, Tot, Research Non-Fed"
+AHRF1290,"Other Spec, Tot, Teaching Non-Fed"
+AHRF1291,"Other Spec, Tot, Total Non-Fed"
+AHRF1292,"Other Spec, Tot, Total Ptn Care Non-Fed"
+AHRF1293,"Other Specialty, 35-44 Non-Fed"
+AHRF1294,"Other Specialty, 45-54 Non-Fed"
+AHRF1295,"Other Specialty, 55-64 Non-Fed"
+AHRF1296,"Other Specialty, 65-74 Non-Fed"
+AHRF1297,"Other Specialty, 75 + Non-Fed"
+AHRF1298,"Other Specialty, < 35 Non-Fed"
+AHRF1299,"Other Specs, Administration Non-Fed"
+AHRF1300,"Other Specs, Other Non-Fed"
+AHRF1301,"Other Specs, PC, Hosp FT Staff Non-Fed"
+AHRF1302,"Other Specs, PC, Hosp Residents Non-Fed"
+AHRF1303,"Other Specs, PC, Office Based Non-Fed"
+AHRF1304,"Other Specs, Research Non-Fed"
+AHRF1305,"Other Specs, Teaching Non-Fed"
+AHRF1306,"Other Specs, Total Non-Fed"
+AHRF1307,"Other Specs, Total Patnt Care Non-Fed"
+AHRF1308,"Other Specs, Total, 35-44 Non-Fed"
+AHRF1309,"Other Specs, Total, 45-54 Non-Fed"
+AHRF1310,"Other Specs, Total, 55-64 Non-Fed"
+AHRF1311,"Other Specs, Total, 65-74 Non-Fed"
+AHRF1312,"Other Specs, Total, 75 + Non-Fed"
+AHRF1313,"Other Specs, Total, < 35 Non-Fed"
+AHRF1314,"Other Surg, Other Prof Activity Fed"
+AHRF1315,"Other Surg, PC, Hosp FT Staff Fed"
+AHRF1316,"Other Surg, PC, Hosp Residents Fed"
+AHRF1317,"Other Trainees, Full-Time See User Doc for Def;ST Gen Hs"
+AHRF1318,"Other Trainees, Full-Time See User Doc for Def;STNG/LT"
+AHRF1319,"Other Trainees, Part-Time See User Doc for Def;ST Gen Hs"
+AHRF1320,"Other Trainees, Part-Time See User Doc for Def;STNG/LT"
+AHRF1321,"Other Trainees, Vacancies ST Non-Gen + Long Term Hosps"
+AHRF1322,"Other Trainees, Vacancies Short Term General Hospitals"
+AHRF1323,"Otolaryngolgy, Administration Non-Fed"
+AHRF1324,"Otolaryngolgy, Other Non-Fed"
+AHRF1325,"Otolaryngolgy, PC, Hosp FT Stf Non-Fed"
+AHRF1326,"Otolaryngolgy, PC, Hosp Resdnt Non-Fed"
+AHRF1327,"Otolaryngolgy, PC, Office Based Non-Fed"
+AHRF1328,"Otolaryngolgy, Research Non-Fed"
+AHRF1329,"Otolaryngolgy, Teaching Non-Fed"
+AHRF1330,"Otolaryngolgy, Total Non-Fed"
+AHRF1331,"Otolaryngolgy, Total Ptn Care Non-Fed"
+AHRF1332,"Otolaryngology, 35-44 Non-Fed"
+AHRF1333,"Otolaryngology, 45-54 Non-Fed"
+AHRF1334,"Otolaryngology, 55-64 Non-Fed"
+AHRF1335,"Otolaryngology, 65-74 Non-Fed"
+AHRF1336,"Otolaryngology, 75 + Non-Fed"
+AHRF1337,"Otolaryngology, < 35 Non-Fed"
+AHRF1338,Outpat Visits in Long Term Hosp Emer Dept + Other OP Visits
+AHRF1339,Outpat Visits in ST Gen Hosp Emer Dept + Other OP Visits
+AHRF1340,Outpat Visits in ST Non-Gen Hsp Emer Dept + Other OP Visits
+AHRF1341,Outpatient Visits - Other ST Non-Gen + Long Term Hosps
+AHRF1342,Outpatient Visits - Other Short Term General Hospitals
+AHRF1343,Outpatient Visits in VA Hosp Emer Dept + Other OP Visits
+AHRF1344,"Path,Anat/Clinic,Administration Non-Fed"
+AHRF1345,"Path,Anat/Clinic,Other Non-Fed"
+AHRF1346,"Path,Anat/Clinic,PC,Hosp FT Stf Non-Fed"
+AHRF1347,"Path,Anat/Clinic,PC,Hosp Resdnt Non-Fed"
+AHRF1348,"Path,Anat/Clinic,PC,Off Based Non-Fed"
+AHRF1349,"Path,Anat/Clinic,Research Non-Fed"
+AHRF1350,"Path,Anat/Clinic,Teaching Non-Fed"
+AHRF1351,"Path,Anat/Clinic,Tot Patient Cr Non-Fed"
+AHRF1352,"Path,Anat/Clinic,Total Non-Fed"
+AHRF1353,"Pathology, Anat/Clinic, 35-44 Non-Fed"
+AHRF1354,"Pathology, Anat/Clinic, 45-54 Non-Fed"
+AHRF1355,"Pathology, Anat/Clinic, 55-64 Non-Fed"
+AHRF1356,"Pathology, Anat/Clinic, 65-74 Non-Fed"
+AHRF1357,"Pathology, Anat/Clinic, 75 + Non-Fed"
+AHRF1358,"Pathology, Anat/Clinic, < 35 Non-Fed"
+AHRF1359,Pct Related Chldrn 5-17 in Pov
+AHRF1360,"Ped Cardiolgy, Administration Non-Fed"
+AHRF1361,"Ped Cardiolgy, Other Non-Fed"
+AHRF1362,"Ped Cardiolgy, PC, Hosp FT Stf Non-Fed"
+AHRF1363,"Ped Cardiolgy, PC, Hosp Resdnt Non-Fed"
+AHRF1364,"Ped Cardiolgy, PC, Office Based Non-Fed"
+AHRF1365,"Ped Cardiolgy, Research Non-Fed"
+AHRF1366,"Ped Cardiolgy, Teaching Non-Fed"
+AHRF1367,"Ped Cardiolgy, Total Non-Fed"
+AHRF1368,"Ped Cardiolgy, Total Patn Care Non-Fed"
+AHRF1369,"Ped Subspecs, Administration Non-Fed"
+AHRF1370,"Ped Subspecs, Other Non-Fed"
+AHRF1371,"Ped Subspecs, PC, Hosp FT Staff Non-Fed"
+AHRF1372,"Ped Subspecs, PC, Hosp Resident Non-Fed"
+AHRF1373,"Ped Subspecs, PC, Office Based Non-Fed"
+AHRF1374,"Ped Subspecs, Research Non-Fed"
+AHRF1375,"Ped Subspecs, Teaching Non-Fed"
+AHRF1376,"Ped Subspecs, Total Non-Fed"
+AHRF1377,"Ped Subspecs, Total Patn Care Non-Fed"
+AHRF1378,"Pediatric Cardiology, 35-44 Non-Fed"
+AHRF1379,"Pediatric Cardiology, 45-54 Non-Fed"
+AHRF1380,"Pediatric Cardiology, 55-64 Non-Fed"
+AHRF1381,"Pediatric Cardiology, 65-74 Non-Fed"
+AHRF1382,"Pediatric Cardiology, 75 + Non-Fed"
+AHRF1383,"Pediatric Cardiology, < 35 Non-Fed"
+AHRF1384,"Pediatric Intens Cr, Bed Set Up Short Term General Hospitals"
+AHRF1385,"Pediatric Subspecs, 35-44 Non-Fed"
+AHRF1386,"Pediatric Subspecs, 45-54 Non-Fed"
+AHRF1387,"Pediatric Subspecs, 55-64 Non-Fed"
+AHRF1388,"Pediatric Subspecs, 65-74 Non-Fed"
+AHRF1389,"Pediatric Subspecs, 75 + Non-Fed"
+AHRF1390,"Pediatric Subspecs, < 35 Non-Fed"
+AHRF1391,"Pediatrics, Gen, Oth Prof Act Fed"
+AHRF1392,"Pediatrics, General, 35-44 Non-Fed"
+AHRF1393,"Pediatrics, General, 45-54 Non-Fed"
+AHRF1394,"Pediatrics, General, 55-64 Non-Fed"
+AHRF1395,"Pediatrics, General, 65-74 Non-Fed"
+AHRF1396,"Pediatrics, General, 75 + Non-Fed"
+AHRF1397,"Pediatrics, General, < 35 Non-Fed"
+AHRF1398,"Pediatrics, General, Total Non-Fed"
+AHRF1399,"Pediatrics,Gen, Administration Non-Fed"
+AHRF1400,"Pediatrics,Gen, Other Non-Fed"
+AHRF1401,"Pediatrics,Gen, Research Non-Fed"
+AHRF1402,"Pediatrics,Gen, Teaching Non-Fed"
+AHRF1403,"Pediatrics,Gen,PC, Office Based Non-Fed"
+AHRF1404,"Pediatrics,Gen,PC,Hosp FT Staff Fed"
+AHRF1405,"Pediatrics,Gen,PC,Hosp FT Staff Non-Fed"
+AHRF1406,"Pediatrics,Gen,PC,Hosp Resident Fed"
+AHRF1407,"Pediatrics,Gen,PC,Hosp Resident Non-Fed"
+AHRF1408,"Pediatrics,Gen,Tot Patient Care Non-Fed"
+AHRF1409,Per Capita Personal Income
+AHRF1410,Percent Persons Age 0-17 in Pov
+AHRF1411,Percent Persons in Poverty
+AHRF1412,Pers 18-64 with Health Ins
+AHRF1413,Pers 18-64 without Health Ins
+AHRF1414,Pers 40-64 with Health Ins
+AHRF1415,Pers 40-64 without Health Ins
+AHRF1416,Pers <19 with Health Insurance
+AHRF1417,Pers <19 without Health Ins
+AHRF1418,Pers <65 with Health Insurance
+AHRF1419,Pers <65 without Health Ins
+AHRF1420,Persistent Child Pov Typol Code Related Children
+AHRF1421,Persistent Povrty Typology Code
+AHRF1422,Personal Inc (by res) (1000's)
+AHRF1423,Persons 18-64 <=138% of Poverty
+AHRF1424,Persons 18-64 <=200% of Poverty
+AHRF1425,Persons 18-64 <=400% of Poverty
+AHRF1426,Persons 18-64 Yrs
+AHRF1427,Persons 40-64 Yrs
+AHRF1428,Persons <19 <= 138% of Poverty
+AHRF1429,Persons <19 <= 200% of Poverty
+AHRF1430,Persons <19 <= 400% of Poverty
+AHRF1431,Persons <19 Yrs
+AHRF1432,Persons <65 <= 138% of Poverty
+AHRF1433,Persons <65 <= 200% of Poverty
+AHRF1434,Persons <65 <= 400% of Poverty
+AHRF1435,Persons <65 Yrs
+AHRF1436,Persons Age 0-17 in Poverty
+AHRF1437,Persons in Poverty
+AHRF1438,"Pharmacists, Licensed, FT Incl Nurs Homes; ST Gen Hosps"
+AHRF1439,"Pharmacists, Licensed, FT Incl Nurs Homes; STNG/LT Hosps"
+AHRF1440,"Pharmacists, Licensed, PT Incl Nurs Homes; ST Gen Hosps"
+AHRF1441,"Pharmacists, Licensed, PT Incl Nurs Homes; STNG/LT Hosps"
+AHRF1442,"Pharmacists, Licensed,Vacancies ST Non-Gen + Long Term Hosps"
+AHRF1443,"Pharmacists, Licensed,Vacancies Short Term General Hospitals"
+AHRF1444,"Pharmacy Technicians, FT Incl Nurs Homes; ST Gen Hosps"
+AHRF1445,"Pharmacy Technicians, FT Incl Nurs Homes; STNG/LT Hosps"
+AHRF1446,"Pharmacy Technicians, PT Incl Nurs Homes; ST Gen Hosps"
+AHRF1447,"Pharmacy Technicians, PT Incl Nurs Homes; STNG/LT Hosps"
+AHRF1448,"Pharmacy Technicians, Vacancies ST Non-Gen + Long Term Hosps"
+AHRF1449,"Pharmacy Technicians, Vacancies Short Term General Hospitals"
+AHRF1450,"Phys Med/Rehab, Administration Non-Fed"
+AHRF1451,"Phys Med/Rehab, Other Non-Fed"
+AHRF1452,"Phys Med/Rehab, PC, Hosp FT Stf Non-Fed"
+AHRF1453,"Phys Med/Rehab, PC, Hosp Resdnt Non-Fed"
+AHRF1454,"Phys Med/Rehab, PC, Office Base Non-Fed"
+AHRF1455,"Phys Med/Rehab, Research Non-Fed"
+AHRF1456,"Phys Med/Rehab, Teaching Non-Fed"
+AHRF1457,"Phys Med/Rehab, Total Non-Fed"
+AHRF1458,"Phys Med/Rehab, Total Patnt Cr Non-Fed"
+AHRF1459,"Phys,Primary Care, Hsp Resident Non-Fed"
+AHRF1460,"Phys,Primary Care, Patient Care Non-Fed"
+AHRF1461,"Phys,Tot Ptn Care, IMG Grads Non-Fed"
+AHRF1462,"Phys,Tot Ptn Care, US Graduates Non-Fed"
+AHRF1463,"Phys,Tot Ptn Care,Canadian Grad Non-Fed"
+AHRF1464,"Phys,Tot Ptn Care,Tot Graduates Non-Fed"
+AHRF1465,"Physical Med and Rehab, 35-44 Non-Fed"
+AHRF1466,"Physical Med and Rehab, 45-54 Non-Fed"
+AHRF1467,"Physical Med and Rehab, 55-64 Non-Fed"
+AHRF1468,"Physical Med and Rehab, 65-74 Non-Fed"
+AHRF1469,"Physical Med and Rehab, 75 + Non-Fed"
+AHRF1470,"Physical Med and Rehab, < 35 Non-Fed"
+AHRF1471,"Physician Assist, Female w/NPI"
+AHRF1472,"Physician Assist, Male w/NPI"
+AHRF1473,Physician Assistants w/NPI
+AHRF1474,"Physician Assistants, FT ST Non-Gen + Long Term Hosps"
+AHRF1475,"Physician Assistants, FT Short Term General Hospitals"
+AHRF1476,"Physician Assistants, PT ST Non-Gen + Long Term Hosps"
+AHRF1477,"Physician Assistants, PT Short Term General Hospitals"
+AHRF1478,"Physicians and Dentists, FT Incl Nurs Homes; ST Gen Hosps"
+AHRF1479,"Physicians and Dentists, FT Incl Nurs Homes; STNG/LT Hosps"
+AHRF1480,"Physicians and Dentists, PT Incl Nurs Homes; ST Gen Hosps"
+AHRF1481,"Physicians and Dentists, PT Incl Nurs Homes; STNG/LT Hosps"
+AHRF1482,"Physicians and Dentists,Vacancies Incl Nurs Homes; ST Gen Hosps"
+AHRF1483,"Physicians and Dentists,Vacancies Incl Nurs Homes; STNG/LT Hosps"
+AHRF1484,"Plastic Surg, Administration Non-Fed"
+AHRF1485,"Plastic Surg, Other Non-Fed"
+AHRF1486,"Plastic Surg, PC, Hosp FT Staff Non-Fed"
+AHRF1487,"Plastic Surg, PC, Hosp Resident Non-Fed"
+AHRF1488,"Plastic Surg, PC, Office Based Non-Fed"
+AHRF1489,"Plastic Surg, Research Non-Fed"
+AHRF1490,"Plastic Surg, Teaching Non-Fed"
+AHRF1491,"Plastic Surg, Total Non-Fed"
+AHRF1492,"Plastic Surg, Total Patn Care Non-Fed"
+AHRF1493,"Plastic Surgery, 35-44 Non-Fed"
+AHRF1494,"Plastic Surgery, 45-54 Non-Fed"
+AHRF1495,"Plastic Surgery, 55-64 Non-Fed"
+AHRF1496,"Plastic Surgery, 65-74 Non-Fed"
+AHRF1497,"Plastic Surgery, 75 + Non-Fed"
+AHRF1498,"Plastic Surgery, < 35 Non-Fed"
+AHRF1499,Podiatrists w/NPI
+AHRF1500,"Podiatrists, Female w/NPI"
+AHRF1501,"Podiatrists, Male w/NPI"
+AHRF1502,Pop Am Ind/Alaska Native Female
+AHRF1503,Pop Am Ind/Alaska Native Male
+AHRF1504,Pop Asian Female
+AHRF1505,Pop Asian Male
+AHRF1506,Pop Bl/Afr Am Non-Hisp/Lat Fmle
+AHRF1507,Pop Bl/Afr Am Non-Hisp/Lat Male
+AHRF1508,Pop Bl/Afr Hispanic/Latino Fmle
+AHRF1509,Pop Bl/Afr Hispanic/Latino Male
+AHRF1510,Pop Black/African Amer Female
+AHRF1511,Pop Black/African Amer Male
+AHRF1512,Pop Estimate in Group Quarters
+AHRF1513,Pop Nat Hawi/Oth Pac Isl Female
+AHRF1514,Pop Nat Hawi/Oth Pac Isl Male
+AHRF1515,Pop Tot Hispanic/Latino Female
+AHRF1516,Pop Tot Hispanic/Latino Male
+AHRF1517,Pop Tot Non-Hisp/Latino Female
+AHRF1518,Pop Tot Non-Hisp/Latino Male
+AHRF1519,Pop Total Female
+AHRF1520,Pop Total Male
+AHRF1521,Pop Two or more Races Female
+AHRF1522,Pop Two or more Races Male
+AHRF1523,Pop White Female
+AHRF1524,Pop White Hispanic/Latino Femle
+AHRF1525,Pop White Hispanic/Latino Male
+AHRF1526,Pop White Male
+AHRF1527,Pop White Non-Hisp/Latino Femle
+AHRF1528,Pop White Non-Hisp/Latino Male
+AHRF1529,Population (Persons)
+AHRF1530,Population Estimate
+AHRF1531,Population Estimate 65+
+AHRF1532,Population Loss Typology Code
+AHRF1533,Preventable Hospital Stays Rate Medicare FFS Enrollees
+AHRF1534,"Psychiatric Care, Beds Set Up Short Term General Hospitals"
+AHRF1535,"Psychiatry, 35-44 Non-Fed"
+AHRF1536,"Psychiatry, 45-54 Non-Fed"
+AHRF1537,"Psychiatry, 55-64 Non-Fed"
+AHRF1538,"Psychiatry, 65-74 Non-Fed"
+AHRF1539,"Psychiatry, 75 + Non-Fed"
+AHRF1540,"Psychiatry, < 35 Non-Fed"
+AHRF1541,"Psychiatry, Administration Non-Fed"
+AHRF1542,"Psychiatry, Other Non-Fed"
+AHRF1543,"Psychiatry, Other Prof Activity Fed"
+AHRF1544,"Psychiatry, PC, Hosp FT Staff Fed"
+AHRF1545,"Psychiatry, PC, Hosp FT Staff Non-Fed"
+AHRF1546,"Psychiatry, PC, Hosp Residents Fed"
+AHRF1547,"Psychiatry, PC, Hosp Residents Non-Fed"
+AHRF1548,"Psychiatry, PC, Office Based Non-Fed"
+AHRF1549,"Psychiatry, Research Non-Fed"
+AHRF1550,"Psychiatry, Teaching Non-Fed"
+AHRF1551,"Psychiatry, Total Non-Fed"
+AHRF1552,"Psychiatry, Total Patient Care Non-Fed"
+AHRF1553,"Public Health, 35-44 Non-Fed"
+AHRF1554,"Public Health, 45-54 Non-Fed"
+AHRF1555,"Public Health, 55-64 Non-Fed"
+AHRF1556,"Public Health, 65-74 Non-Fed"
+AHRF1557,"Public Health, 75 + Non-Fed"
+AHRF1558,"Public Health, < 35 Non-Fed"
+AHRF1559,"Public Health, Administration Non-Fed"
+AHRF1560,"Public Health, Other Non-Fed"
+AHRF1561,"Public Health, PC, Hosp FT Stf Non-Fed"
+AHRF1562,"Public Health, PC, Hosp Residnt Non-Fed"
+AHRF1563,"Public Health, PC, Office Based Non-Fed"
+AHRF1564,"Public Health, Research Non-Fed"
+AHRF1565,"Public Health, Teaching Non-Fed"
+AHRF1566,"Public Health, Total Non-Fed"
+AHRF1567,"Public Health, Total Patnt Care Non-Fed"
+AHRF1568,"Pulmonary Dis, Administration Non-Fed"
+AHRF1569,"Pulmonary Dis, Other Non-Fed"
+AHRF1570,"Pulmonary Dis, PC, Hosp FT Stf Non-Fed"
+AHRF1571,"Pulmonary Dis, PC, Hosp Resdnt Non-Fed"
+AHRF1572,"Pulmonary Dis, PC, Office Based Non-Fed"
+AHRF1573,"Pulmonary Dis, Research Non-Fed"
+AHRF1574,"Pulmonary Dis, Teaching Non-Fed"
+AHRF1575,"Pulmonary Dis, Total Non-Fed"
+AHRF1576,"Pulmonary Dis, Total Patn Care Non-Fed"
+AHRF1577,"Pulmonary Diseases, 35-44 Non-Fed"
+AHRF1578,"Pulmonary Diseases, 45-54 Non-Fed"
+AHRF1579,"Pulmonary Diseases, 55-64 Non-Fed"
+AHRF1580,"Pulmonary Diseases, 65-74 Non-Fed"
+AHRF1581,"Pulmonary Diseases, 75 + Non-Fed"
+AHRF1582,"Pulmonary Diseases, < 35 Non-Fed"
+AHRF1583,"Rad Oncology, Administration Non-Fed"
+AHRF1584,"Rad Oncology, Other Non-Fed"
+AHRF1585,"Rad Oncology, PC, Hosp FT Staff Non-Fed"
+AHRF1586,"Rad Oncology, PC, Hosp Resident Non-Fed"
+AHRF1587,"Rad Oncology, PC, Office Based Non-Fed"
+AHRF1588,"Rad Oncology, Research Non-Fed"
+AHRF1589,"Rad Oncology, Teaching Non-Fed"
+AHRF1590,"Rad Oncology, Total Non-Fed"
+AHRF1591,"Rad Oncology, Total Patnt Care Non-Fed"
+AHRF1592,"Radiation Oncology, 35-44 Non-Fed"
+AHRF1593,"Radiation Oncology, 45-54 Non-Fed"
+AHRF1594,"Radiation Oncology, 55-64 Non-Fed"
+AHRF1595,"Radiation Oncology, 65-74 Non-Fed"
+AHRF1596,"Radiation Oncology, 75 + Non-Fed"
+AHRF1597,"Radiation Oncology, < 35 Non-Fed"
+AHRF1598,"Radiology Technicians, FT Incl Nurs Homes; ST Gen Hosps"
+AHRF1599,"Radiology Technicians, FT Incl Nurs Homes; STNG/LT Hosps"
+AHRF1600,"Radiology Technicians, PT Incl Nurs Homes; ST Gen Hosps"
+AHRF1601,"Radiology Technicians, PT Incl Nurs Homes; STNG/LT Hosps"
+AHRF1602,"Radiology Technicians,Vacancies ST Non-Gen + Long Term Hosps"
+AHRF1603,"Radiology Technicians,Vacancies Short Term General Hospitals"
+AHRF1604,"Radiology, 35-44 Non-Fed"
+AHRF1605,"Radiology, 45-54 Non-Fed"
+AHRF1606,"Radiology, 55-64 Non-Fed"
+AHRF1607,"Radiology, 65-74 Non-Fed"
+AHRF1608,"Radiology, 75 + Non-Fed"
+AHRF1609,"Radiology, < 35 Non-Fed"
+AHRF1610,"Radiology, Administration Non-Fed"
+AHRF1611,"Radiology, Other Non-Fed"
+AHRF1612,"Radiology, PC, Hosp FT Staff Non-Fed"
+AHRF1613,"Radiology, PC, Hosp Residents Non-Fed"
+AHRF1614,"Radiology, PC, Office Based Non-Fed"
+AHRF1615,"Radiology, Research Non-Fed"
+AHRF1616,"Radiology, Teaching Non-Fed"
+AHRF1617,"Radiology, Total Non-Fed"
+AHRF1618,"Radiology, Total Patient Care Non-Fed"
+AHRF1619,Recreation Typolpgy Code
+AHRF1620,"Registered Nurses, Full-Time Incl Nurs Homes; ST Gen Hosps"
+AHRF1621,"Registered Nurses, Full-Time Incl Nurs Homes; STNG/LT Hosps"
+AHRF1622,"Registered Nurses, Part-Time Incl Nurs Homes; ST Gen Hosps"
+AHRF1623,"Registered Nurses, Part-Time Incl Nurs Homes; STNG/LT Hosps"
+AHRF1624,"Registered Nurses, Vacancies ST Non-Gen + Long Term Hosps"
+AHRF1625,"Registered Nurses, Vacancies Short Term General Hospitals"
+AHRF1626,"Rehabilitation Care, Bed Set Up Short Term General Hospitals"
+AHRF1627,Relat Chldrn 5-17 in Fam in Pov
+AHRF1628,"Respiratory Therapist,Vacancies ST Non-Gen + Long Term Hosps"
+AHRF1629,"Respiratory Therapist,Vacancies Short Term General Hospitals"
+AHRF1630,"Respiratory Therapists, FT Incl Nurs Homes; ST Gen Hosps"
+AHRF1631,"Respiratory Therapists, FT Incl Nurs Homes; STNG/LT Hosps"
+AHRF1632,"Respiratory Therapists, PT Incl Nurs Homes; ST Gen Hosps"
+AHRF1633,"Respiratory Therapists, PT Incl Nurs Homes; STNG/LT Hosps"
+AHRF1634,Retirement Destnatn Typlgy Code
+AHRF1635,"STNG/LT, Hosp Admissions"
+AHRF1636,Short Term Community Hosp Admis
+AHRF1637,Short Term Community Hosp Beds
+AHRF1638,Short Term Gen Hosp Admissions
+AHRF1639,Short Term General Hosp Beds
+AHRF1640,Short Term Non-Gen Hosp Beds
+AHRF1641,"Skilled Nurs Care, Beds Set Up Short Term General Hospitals"
+AHRF1642,Skilled Nurs Fac Certified Beds
+AHRF1643,Skilled Nurs Fac Total Beds
+AHRF1644,"Stan,Risk-Adj Per Cap Medcr Cst Fee for Service"
+AHRF1645,Standardzd PerCapita Medcr Cost Fee for Service
+AHRF1646,"Surg Specs Tot, Administration Non-Fed"
+AHRF1647,"Surg Specs Tot, Other Non-Fed"
+AHRF1648,"Surg Specs Tot, PC, Hosp FT Stf Non-Fed"
+AHRF1649,"Surg Specs Tot, PC, Hosp Resdnt Non-Fed"
+AHRF1650,"Surg Specs Tot, PC, Office Bsd Non-Fed"
+AHRF1651,"Surg Specs Tot, Research Non-Fed"
+AHRF1652,"Surg Specs Tot, Teaching Non-Fed"
+AHRF1653,"Surg Specs Tot, Total Non-Fed"
+AHRF1654,"Surg Specs Tot, Total Patn Care Non-Fed"
+AHRF1655,"Surgical Specs, Total, 35-44 Non-Fed"
+AHRF1656,"Surgical Specs, Total, 45-54 Non-Fed"
+AHRF1657,"Surgical Specs, Total, 55-64 Non-Fed"
+AHRF1658,"Surgical Specs, Total, 65-74 Non-Fed"
+AHRF1659,"Surgical Specs, Total, 75 + Non-Fed"
+AHRF1660,"Surgical Specs, Total, < 35 Non-Fed"
+AHRF1661,"Thoracic Surg, Administration Non-Fed"
+AHRF1662,"Thoracic Surg, Other Non-Fed"
+AHRF1663,"Thoracic Surg, PC, Hosp FT Stf Non-Fed"
+AHRF1664,"Thoracic Surg, PC, Hosp Resdnt Non-Fed"
+AHRF1665,"Thoracic Surg, PC, Office Based Non-Fed"
+AHRF1666,"Thoracic Surg, Research Non-Fed"
+AHRF1667,"Thoracic Surg, Teaching Non-Fed"
+AHRF1668,"Thoracic Surg, Total Non-Fed"
+AHRF1669,"Thoracic Surg, Total Patn Care Non-Fed"
+AHRF1670,"Thoracic Surgery, 35-44 Non-Fed"
+AHRF1671,"Thoracic Surgery, 45-54 Non-Fed"
+AHRF1672,"Thoracic Surgery, 55-64 Non-Fed"
+AHRF1673,"Thoracic Surgery, 65-74 Non-Fed"
+AHRF1674,"Thoracic Surgery, 75 + Non-Fed"
+AHRF1675,"Thoracic Surgery, < 35 Non-Fed"
+AHRF1676,Tot Active D.O.s Non-Fed and Fed
+AHRF1677,Tot Active M.D.s Non-Fed and Fed
+AHRF1678,"Tot Facility Personnl,Vacancies Incl Nurs Homes; ST Gen Hosps"
+AHRF1679,"Tot Facility Personnl,Vacancies Incl Nurs Homes; STNG/LT Hosps"
+AHRF1680,"Tot Rep Payroll Expense(1000's) In Thousands, ST Gen Hosps"
+AHRF1681,"Tot Rep Payroll Expense(1000's) In Thousands, STNG/LT Hosps"
+AHRF1682,Tot Standardized Medicare Costs Fee for Service
+AHRF1683,Tot Standzed RskAdj Medcre Cost Fee for Service
+AHRF1684,Total Active D.O.s Federal
+AHRF1685,Total Active D.O.s Non-Federal
+AHRF1686,Total Active M.D.s Non-Federal
+AHRF1687,Total Actual Medicare Costs Fee for Service
+AHRF1688,Total Births In Hospitals
+AHRF1689,"Total Births July 1, 2013-June 30,"
+AHRF1690,"Total Births July 1,-June 30,"
+AHRF1691,"Total D.O.'s, 35-44 Non-Fed"
+AHRF1692,"Total D.O.'s, 45-54 Non-Fed"
+AHRF1693,"Total D.O.'s, 55-64 Non-Fed"
+AHRF1694,"Total D.O.'s, 65-74 Non-Fed"
+AHRF1695,"Total D.O.'s, 75 + Non-Fed"
+AHRF1696,"Total D.O.'s, < 35 Non-Fed"
+AHRF1697,"Total D.O.'s, Female Non-Fed"
+AHRF1698,"Total D.O.'s, Male Non-Fed"
+AHRF1699,"Total D.O.'s, Tot Non-Fed and Fed"
+AHRF1700,"Total D.O.'s, Total Federal"
+AHRF1701,"Total D.O.'s, Total Non-Fed"
+AHRF1702,"Total Deaths July 1, 2013-June 30,"
+AHRF1703,"Total Deaths July 1,-June 30,"
+AHRF1704,"Total Facility Personnel, FT Incl Nurs Homes; ST Gen Hosps"
+AHRF1705,"Total Facility Personnel, FT Incl Nurs Homes; STNG/LT Hosps"
+AHRF1706,"Total Facility Personnel, PT Incl Nurs Homes; ST Gen Hosps"
+AHRF1707,"Total Facility Personnel, PT Incl Nurs Homes; STNG/LT Hosps"
+AHRF1708,"Total Hosp Personnel, Full-Time ST Non-Gen + Long Term Hosps"
+AHRF1709,"Total Hosp Personnel, Full-Time Short Term General Hospitals"
+AHRF1710,"Total Hosp Personnel, Part-Time ST Non-Gen + Long Term Hosps"
+AHRF1711,"Total Hosp Personnel, Part-Time Short Term General Hospitals"
+AHRF1712,"Total Inpatient, Beds Set Up Short Term General Hospitals"
+AHRF1713,"Total M.D.'s, 35-44 Non-Fed"
+AHRF1714,"Total M.D.'s, 45-54 Non-Fed"
+AHRF1715,"Total M.D.'s, 55-64 Non-Fed"
+AHRF1716,"Total M.D.'s, 65-74 Non-Fed"
+AHRF1717,"Total M.D.'s, 75 + Non-Fed"
+AHRF1718,"Total M.D.'s, < 35 Non-Fed"
+AHRF1719,"Total M.D.'s, Female Non-Fed"
+AHRF1720,"Total M.D.'s, Male Non-Fed"
+AHRF1721,"Total M.D.'s, Tot Non-Fed and Fed"
+AHRF1722,"Total M.D.'s, Total Non-Fed"
+AHRF1723,Total Medicaid Inpatient Days ST Non-Gen + Long Term Hosps
+AHRF1724,Total Medicaid Inpatient Days Short Term General Hospitals
+AHRF1725,Total Medicare Inpatient Days ST Non-Gen + Long Term Hosps
+AHRF1726,Total Medicare Inpatient Days Short Term General Hospitals
+AHRF1727,Total Number Hospitals
+AHRF1728,"Total Rep Facility Exp (1000's) In Thousands, ST Gen Hosps"
+AHRF1729,"Total Rep Facility Exp (1000's) In Thousands, STNG/LT Hosps"
+AHRF1730,"Total Rep Facility Exp (1000's) In Thousands, Veterans Hosps"
+AHRF1731,"Transplant Surg, Administration Non-Fed"
+AHRF1732,"Transplant Surg, Other Non-Fed"
+AHRF1733,"Transplant Surg, PC, Office Bsd Non-Fed"
+AHRF1734,"Transplant Surg, PC,Hosp FT Stf Non-Fed"
+AHRF1735,"Transplant Surg, PC,Hosp Resdnt Non-Fed"
+AHRF1736,"Transplant Surg, Research Non-Fed"
+AHRF1737,"Transplant Surg, Teaching Non-Fed"
+AHRF1738,"Transplant Surg, Tot Patn Care Non-Fed"
+AHRF1739,"Transplant Surg, Total Non-Fed"
+AHRF1740,"Transplantation Surgery, 35-44 Non-Fed"
+AHRF1741,"Transplantation Surgery, 45-54 Non-Fed"
+AHRF1742,"Transplantation Surgery, 55-64 Non-Fed"
+AHRF1743,"Transplantation Surgery, 65-74 Non-Fed"
+AHRF1744,"Transplantation Surgery, 75 + Non-Fed"
+AHRF1745,"Transplantation Surgery, < 35 Non-Fed"
+AHRF1746,"Unemployment Rate, 16+"
+AHRF1747,"Unspecified, 35-44 Non-Fed"
+AHRF1748,"Unspecified, 45-54 Non-Fed"
+AHRF1749,"Unspecified, 55-64 Non-Fed"
+AHRF1750,"Unspecified, 65-74 Non-Fed"
+AHRF1751,"Unspecified, 75 + Non-Fed"
+AHRF1752,"Unspecified, < 35 Non-Fed"
+AHRF1753,"Unspecified, Administration Non-Fed"
+AHRF1754,"Unspecified, Other Non-Fed"
+AHRF1755,"Unspecified, PC, Hosp FT Staff Non-Fed"
+AHRF1756,"Unspecified, PC, Hosp Residents Non-Fed"
+AHRF1757,"Unspecified, PC, Office Based Non-Fed"
+AHRF1758,"Unspecified, Research Non-Fed"
+AHRF1759,"Unspecified, Teaching Non-Fed"
+AHRF1760,"Unspecified, Total Non-Fed"
+AHRF1761,"Unspecified, Total Patient Care Non-Fed"
+AHRF1762,"Urology, 35-44 Non-Fed"
+AHRF1763,"Urology, 45-54 Non-Fed"
+AHRF1764,"Urology, 55-64 Non-Fed"
+AHRF1765,"Urology, 65-74 Non-Fed"
+AHRF1766,"Urology, 75 + Non-Fed"
+AHRF1767,"Urology, < 35 Non-Fed"
+AHRF1768,"Urology, Administration Non-Fed"
+AHRF1769,"Urology, Other Non-Fed"
+AHRF1770,"Urology, PC, Hosp FT Staff Non-Fed"
+AHRF1771,"Urology, PC, Hosp Residents Non-Fed"
+AHRF1772,"Urology, PC, Office Based Non-Fed"
+AHRF1773,"Urology, Research Non-Fed"
+AHRF1774,"Urology, Teaching Non-Fed"
+AHRF1775,"Urology, Total Non-Fed"
+AHRF1776,"Urology, Total Patient Care Non-Fed"
+AHRF1777,VA Med Care Expenditure(1000's)
+AHRF1778,"Vascular Med, Administration Non-Fed"
+AHRF1779,"Vascular Med, Other Non-Fed"
+AHRF1780,"Vascular Med, PC, Hosp FT Stf Non-Fed"
+AHRF1781,"Vascular Med, PC, Hosp Resdnt Non-Fed"
+AHRF1782,"Vascular Med, PC, Office Based Non-Fed"
+AHRF1783,"Vascular Med, Research Non-Fed"
+AHRF1784,"Vascular Med, Teaching Non-Fed"
+AHRF1785,"Vascular Med, Total Non-Fed"
+AHRF1786,"Vascular Med, Total Patn Care Non-Fed"
+AHRF1787,"Vascular Medicine, 35-44 Non-Fed"
+AHRF1788,"Vascular Medicine, 45-54 Non-Fed"
+AHRF1789,"Vascular Medicine, 55-64 Non-Fed"
+AHRF1790,"Vascular Medicine, 65-74 Non-Fed"
+AHRF1791,"Vascular Medicine, 75 + Non-Fed"
+AHRF1792,"Vascular Medicine, < 35 Non-Fed"
+AHRF1793,Vet Disabilty Pension Recipient
+AHRF1794,Vet Disablty Compensation Recip
+AHRF1795,Vet Disbl Comp or Pension Recip
+AHRF1796,"Veteran Pop Estimate, Female"
+AHRF1797,"Veteran Pop Estimate, Male"
+AHRF1798,Veteran Population Estimate
+AHRF1799,Veterans' Hospital Admissions
+AHRF1800,Veterans' Hospital Beds

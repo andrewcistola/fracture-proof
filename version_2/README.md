@@ -29,9 +29,7 @@ The FP process uses these methods above in the following sequence:
 5. RFE with cross-validation is used to identify the final list of features in the cohort. 
 
 ## Mr. Fracture K Proof
-Scrips labeled `mrfkp_` add 3 extra steps to the `fp_` scrips for the purpose of creating an informative regression model. 
-
-### k-means clustering
+Scrips labeled `mrfkp_` add 2 extra steps to the `fp_` scrips for the purpose of creating an informative regression model. 
 
 ### Multiple regression modeling
 
@@ -40,7 +38,7 @@ The FP process uses these methods above in the following sequence:
 
 1. The Fracture proof steps are completed as described above
 2. PCA is used to identify components of subset data
-3. Components are input into k-means clustering to label variables intop groups
+3. Component loadings are used to identify best variables for model inclusion
 4. Random forest is used to identify variables of highest importance from each group
 5. Variables are placed into multiple regression model with selected confounding variables
 

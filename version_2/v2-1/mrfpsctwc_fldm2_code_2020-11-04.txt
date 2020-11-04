@@ -1,0 +1,101 @@
+####################
+
+Title: FractureProof v2.1 Mr. Fracture Proofs Woodcarving Code template
+Author: Andrew S. Cistola, MPH
+Filename: mrfpwc_temp_code.py
+Realtive Path: fracture-proof/version_2/v2-1/
+Working Directory: /home/drewc/GitHub/
+Time Run: 2020-11-04 12:43:12.965529
+
+####################
+
+Step 1: Raw Data Processing and Feature Engineering
+
+Florida Deaprtment of Health Vital Statistics 113 Leading Mortality Causes 2014-2018 Zip Code 5-year Average
+US Census American Community Survey 2014-2018 Zip Code 5-year Average
+
+Target labels: quant = Diabetes Related (K00-K99) Raw Mortality Rate per 1000k
+Target processing: None
+
+            quant
+count  924.000000
+mean     1.000011
+std      0.617704
+min      0.000000
+25%      0.590000
+50%      0.910000
+75%      1.300000
+max      5.160000
+
+Features labels: ACS Percent Estimates
+Feature processing: 75% nonNA, Median Imputed NA, Standard Scaled
+
+Rows, Columns: (924, 427)
+
+####################
+
+Step 2: Identify Predictors with Open Models
+
+Models: Principal Component Analysis, Random Forests, Recursive feature Elimination
+
+Values: Eigenvectors, Gini Impurity, Boolean
+Thresholds: Mean, Mean, Cross Validation
+
+       Feature     MaxEV      Gini   RFE
+0  DP05_0064PE  0.134273  0.003908  True
+1  DP02_0013PE  0.119639  0.012115  True
+2  DP02_0003PE  0.113855  0.029152  True
+3  DP03_0097PE  0.108660  0.002902  True
+4  DP02_0029PE  0.101914  0.015299  True
+5  DP05_0017PE  0.097738  0.003375  True
+6  DP02_0112PE  0.096180  0.002567  True
+
+[('DP05_0064PE', 'Race alone or in combination with one or more other races Total population White'), ('DP02_0013PE', 'HOUSEHOLDS BY TYPE Total households Households with one or more people under 18 years'), ('DP02_0003PE', 'HOUSEHOLDS BY TYPE Total households Family households (families) With own children of the householder under 18 years'), ('DP03_0097PE', 'HEALTH INSURANCE COVERAGE Civilian noninstitutionalized population With health insurance coverage With private health insurance'), ('DP02_0029PE', 'MARITAL STATUS Males 15 years and over Divorced'), ('DP05_0017PE', 'SEX AND AGE Total population 85 years and over'), ('DP02_0112PE', 'LANGUAGE SPOKEN AT HOME Population 5 years and over Language other than English')]
+
+####################
+
+Step 3: Create Informative Preidction Model
+
+Models: Multiple Linear Regression Model
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                  quant   R-squared (uncentered):                   0.842
+Model:                            OLS   Adj. R-squared (uncentered):              0.840
+Method:                 Least Squares   F-statistic:                              693.3
+Date:                Wed, 04 Nov 2020   Prob (F-statistic):                        0.00
+Time:                        12:51:28   Log-Likelihood:                         -608.75
+No. Observations:                 921   AIC:                                      1232.
+Df Residuals:                     914   BIC:                                      1265.
+Df Model:                           7                                                  
+Covariance Type:            nonrobust                                                  
+===============================================================================
+                  coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------
+DP05_0064PE     0.0108      0.001     10.536      0.000       0.009       0.013
+DP02_0013PE     0.0126      0.006      2.085      0.037       0.001       0.024
+DP02_0003PE    -0.0148      0.007     -2.108      0.035      -0.029      -0.001
+DP03_0097PE    -0.0072      0.001     -5.710      0.000      -0.010      -0.005
+DP02_0029PE     0.0492      0.003     14.160      0.000       0.042       0.056
+DP05_0017PE     0.0674      0.009      7.231      0.000       0.049       0.086
+DP02_0112PE    -0.0081      0.001     -9.928      0.000      -0.010      -0.007
+==============================================================================
+Omnibus:                      261.323   Durbin-Watson:                   2.019
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1883.875
+Skew:                           1.095   Prob(JB):                         0.00
+Kurtosis:                       9.655   Cond. No.                         68.3
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+('DP05_0064PE', 'Race alone or in combination with one or more other races Total population White'), 
+('DP02_0013PE', 'HOUSEHOLDS BY TYPE Total households Households with one or more people under 18 years'), 
+('DP02_0003PE', 'HOUSEHOLDS BY TYPE Total households Family households (families) With own children of the householder under 18 years'), 
+('DP03_0097PE', 'HEALTH INSURANCE COVERAGE Civilian noninstitutionalized population With health insurance coverage With private health insurance'), 
+('DP02_0029PE', 'MARITAL STATUS Males 15 years and over Divorced'), 
+('DP05_0017PE', 'SEX AND AGE Total population 85 years and over'), 
+('DP02_0112PE', 'LANGUAGE SPOKEN AT HOME Population 5 years and over Language other than English')
+
+####################
+
