@@ -29,6 +29,7 @@ from sklearn.feature_selection import RFECV # Recursive Feature elimination with
 from sklearn.svm import LinearSVC # Linear Support Vector Classification from sklearn
 from sklearn.linear_model import LinearRegression # Used for machine learning with quantitative outcome
 from sklearn.linear_model import LogisticRegression # Used for machine learning with quantitative outcome
+from sklearn.model_selection import train_test_split # train test split function for validation
 from sklearn.metrics import roc_curve # Reciever operator curve
 from sklearn.metrics import auc # Area under the curve 
 
@@ -504,75 +505,63 @@ text_file.close() # Close file
 s7 = 'Step 7: Predict Categorical targets with Artificial Neural Networks'
 m6 = 'Multi-Layer Perceptron with Stacked Convolutional Autoencoder'
 
-### Build Network with keras Sequential API for all features from all layers
-# Prep Inputs
-Y_train = df_Y_f.filter(["train"])
-Y_test = df_Y_f.filter(["test"])
+## Predict outcomes with all variables
+
+### Prep Inputs with Train/Test Split
+Y = df_Y_f.filter(["test"])
 X = df_X_f
-input = X.shape[1] # Save number of columns as length minus quant, test, train and round to nearest integer
-nodes = round(input / 2) # Number of input dimensions divided by two for nodes in each layer
-network = Sequential()
-# Dense Layers
-network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal', input_dim = input)) # First Hidden Layer
-network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal')) # Second Hidden Layer
-# Activation Layer
-network.add(Dense(1, activation = 'sigmoid', kernel_initializer = 'random_normal')) # Output Layer
-# Compile
-network.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy']) # Compile network with ADAM ("Adaptive moment estimation" or RMSProp + Momentum)
-# Fit
-final = network.fit(X, Y_train, batch_size = 10, epochs = 100) # Fitting the data to the train outcome
-# Predict
-Y_a = network.predict(X) # Predict values from testing model
-# AUC Score
-Y_pred = (Y_a > 0.5)
-Y_train = (Y_train > 0)
-Y_test = (Y_test > 0)
-fpr, tpr, threshold = roc_curve(Y_train, Y_pred) # Create ROC outputs, true positive rate and false positive rate
-a_train = auc(fpr, tpr) # Plot ROC and get AUC score
-fpr, tpr, threshold = roc_curve(Y_test, Y_pred) # Create ROC outputs, true positive rate and false positive rate
-a_test = auc(fpr, tpr) # Plot ROC and get AUC score
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.50)
 
 ### Build Network with keras Sequential API for selected features from all layers
-# Prep Inputs
-Y_train = df_Y_f.filter(["train"])
-Y_test = df_Y_f.filter(["test"])
-X = df_X_f[mrfractureproofswoodcarvings]
 input = X.shape[1] # Save number of columns as length minus quant, test, train and round to nearest integer
 nodes = round(input / 2) # Number of input dimensions divided by two for nodes in each layer
 network = Sequential()
-# Dense Layers
 network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal', input_dim = input)) # First Hidden Layer
 network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal')) # Second Hidden Layer
-# Activation Layer
 network.add(Dense(1, activation = 'sigmoid', kernel_initializer = 'random_normal')) # Output Layer
-# Compile
 network.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy']) # Compile network with ADAM ("Adaptive moment estimation" or RMSProp + Momentum)
-# Fit
-final = network.fit(X, Y_train, batch_size = 10, epochs = 100) # Fitting the data to the train outcome
-# Predict
-Y_s = network.predict(X) # Predict values from testing model
-# AUC Score
-Y_pred = (Y_s > 0.5)
+final = network.fit(X_train, Y_train, batch_size = 10, epochs = 100) # Fitting the data to the train outcome
+
+#### Predict Values and Complete ROC test
+Y = network.predict(X_test) # Predict values from testing model
+Y_pred = (Y > 0.5)
 Y_train = (Y_train > 0)
-Y_test = (Y_test > 0)
-fpr, tpr, threshold = roc_curve(Y_train, Y_pred) # Create ROC outputs, true positive rate and false positive rate
-s_train = auc(fpr, tpr) # Plot ROC and get AUC score
 fpr, tpr, threshold = roc_curve(Y_test, Y_pred) # Create ROC outputs, true positive rate and false positive rate
-s_test = auc(fpr, tpr) # Plot ROC and get AUC score
+auc_a = auc(fpr, tpr) # Plot ROC and get AUC score
+
+## Predict outcome with specific variables
+
+### Prep Inputs with Train/Test Split
+Y = df_Y_f.filter(["test"])
+X = df_X_f[mrfractureproofswoodcarvings]
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.50)
+
+### Build Network with keras Sequential API for selected features from all layers
+input = X.shape[1] # Save number of columns as length minus quant, test, train and round to nearest integer
+nodes = round(input / 2) # Number of input dimensions divided by two for nodes in each layer
+network = Sequential()
+network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal', input_dim = input)) # First Hidden Layer
+network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal')) # Second Hidden Layer
+network.add(Dense(1, activation = 'sigmoid', kernel_initializer = 'random_normal')) # Output Layer
+network.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy']) # Compile network with ADAM ("Adaptive moment estimation" or RMSProp + Momentum)
+final = network.fit(X_train, Y_train, batch_size = 10, epochs = 100) # Fitting the data to the train outcome
+
+#### Predict Values and Complete ROC test
+Y = network.predict(X_test) # Predict values from testing model
+Y_pred = (Y > 0.5)
+Y_train = (Y_train > 0)
+fpr, tpr, threshold = roc_curve(Y_test, Y_pred) # Create ROC outputs, true positive rate and false positive rate
+auc_s = auc(fpr, tpr) # Plot ROC and get AUC score
 
 ### Append to Text File
-text_file = open(path + day + "_results" + label + ".txt", "a") # Open text file and name with subproject, content, and result suffix
+text_file = open(path + name + "_" + day + ".txt", "a") # Open text file and name with subproject, content, and result suffix
 text_file.write(s7 + "\n\n") # Line of text with space after
 text_file.write(m6 + "\n") # Add two lines of blank text at end of every section text
-text_file.write("Layers = Dense, Dense, Activation" + "\n") # Add two lines of blank text at end of every section text
-text_file.write("Functions = ReLU, ReLU, Sigmoid" + "\n") # Add two lines of blank text at end of every section text
-text_file.write("Epochs = 100" + "\n") # Add two lines of blank text at end of every section text
-text_file.write("Targets = (train, test), (50th percentile, 75th percentile)" + "\n\n")
-text_file.write("AUC Scores (selected features, all layers)" + "\n") # Add two lines of blank text at end of every section text
-text_file.write("train = " + str(a_train) + "\n") # Add two lines of blank text at end of every section text
-text_file.write("test = " + str(a_test) + "\n\n") # Add two lines of blank text at end of every section text
-text_file.write("AUC Scores (all features, all layers)" + "\n") # Add two lines of blank text at end of every section text
-text_file.write("train = " + str(s_train) + "\n") # Add two lines of blank text at end of every section text
-text_file.write("test = " + str(s_test) + "\n\n") # Add two lines of blank text at end of every section text
+text_file.write("Layers: Dense, Dense, Activation" + "\n") # Add two lines of blank text at end of every section text
+text_file.write("Functions: ReLU, ReLU, Sigmoid" + "\n") # Add two lines of blank text at end of every section text
+text_file.write("Epochs: 100" + "\n") # Add two lines of blank text at end of every section text
+text_file.write("Targets: train, test random 50-50 split" + "\n\n")
+text_file.write("AUC Scores (all features, all layers) = " + str(auc_a) + "\n") # Add two lines of blank text at end of every section text
+text_file.write("AUC Scores (selected features, all layers) = " + str(auc_s) + "\n\n") # Add two lines of blank text at end of every section text
 text_file.write("####################" + "\n\n")
 text_file.close() # Close file

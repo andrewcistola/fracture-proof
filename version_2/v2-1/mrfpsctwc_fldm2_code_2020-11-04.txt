@@ -258,3 +258,16 @@ strong multicollinearity or other numerical problems.
 
 ####################
 
+Step 7: Predict Categorical targets with Artificial Neural Networks
+
+Multi-Layer Perceptron with Stacked Convolutional Autoencoder
+Layers: Dense, Dense, Activation
+Functions: ReLU, ReLU, Sigmoid
+Epochs: 100
+Targets: train, test random 50-50 split
+
+AUC Scores (all features, all layers) = 0.7345013477088949
+AUC Scores (selected features, all layers) = 0.7362758620689654
+
+####################
+
