@@ -239,7 +239,7 @@ text_file.write("####################" + "\n\n")
 text_file.close() # Close file
 
 ## Step 3: Geographic Weighted Regression
-step3 = "Step 3: Geographic Weighted Regression"
+s3 = "Step 3: Geographic Weighted Regression"
 m5 = "Multi-scale Geographic Weighted Regression"
 
 ### Geojoin Susbet Table with Polygons, get centroid with coordinates
@@ -292,7 +292,7 @@ df_gwr = pd.merge(gdf_gwr, df_FIPS, on = 'ID', how = 'left') # Join zip code geo
 df_gwr = df_gwr.dropna() # Drop all rows with NA values
 df_gwr = df_gwr.set_index('ID') # Set column as index
 df_gwr = df_gwr.drop(columns = ['coordinates', 'quant']) # Drop Unwanted Columns
-df_gwr = df_gwr.groupby(['ID_2'], as_index = False).mean() # Group data by columns and maximum value
+df_gwr = df_gwr.groupby(['ID_2'], as_index = False).max() # Group data by columns and maximum value
 df_gwr.info() # Get class, memory, and column info: names, data types, obs.
 
 ### Append to Text File
@@ -300,7 +300,8 @@ text_file = open(path + name + "_" + day + ".txt", "a") # Open text file and nam
 text_file.write(s3 + "\n\n") # Line of text with space after
 text_file.write("Models: " + m5 + "\n\n") # Add two lines of blank text at end of every section text
 text_file.write("Bandwidths: " + str(mgwr_bw) + "\n\n") # Add two lines of blank text at end of every section text
-text_file.write(str(mgwr_results.summary())  + "\n\n") # Add two lines of blank text at end of every section text
+text_file.write("Mean Coefficients by County " + "\n\n") # Add two lines of blank text at end of every section text
+text_file.write(str(df_gwr.describe()) + '\n\n') # Descriptive statistics for target
 text_file.write("####################" + "\n\n")
 text_file.close() # Close file
 
