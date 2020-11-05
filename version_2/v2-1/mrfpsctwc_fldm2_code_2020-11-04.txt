@@ -119,3 +119,142 @@ max      94.361538    45.966667    38.300000    75.860000    22.300000     5.154
 
 ####################
 
+Step 4: Raw Data Processing and Feature Engineering (2nd Geographic Layer)
+
+Health Resources and Servcies Administration Area Heath Resource File Populaton Rates by County 2014-2018 5-year Average
+Target labels: multi = selected varibles from step 2
+Target processing: None
+
+           multi
+count  67.000000
+mean    3.567164
+std     1.868591
+min     0.000000
+25%     2.000000
+50%     4.000000
+75%     5.000000
+max     6.000000
+
+Features labels: AHRF Population Rates
+Feature processing: 75% nonNA, Median Imputed NA, Standard Scaled
+
+Rows, Columns: (67, 1733)
+
+####################
+
+Step 5: Identify 2nd Layer Predictors
+
+Models: Multi-scale Geographic Weighted Regression
+
+Values: Coefficients
+Thresholds: Max Absolute Value
+
+              GWR   Feature
+0  (DP05_0064PE,)   AHRF847
+1  (DP02_0013PE,)  AHRF1644
+2  (DP02_0003PE,)   AHRF919
+3  (DP03_0097PE,)   AHRF749
+4  (DP02_0029PE,)   AHRF362
+5  (DP05_0017PE,)  AHRF1421
+6  (DP02_0112PE,)  AHRF1421
+
+Models: Principal Component Analysis
+
+Cumulative Variance: Threshold = 95%
+[0.27604099 0.4758148  0.64048766 0.78478679 0.91695758]
+
+Component Loadings
+                 0         1         2         3         4
+AHRF847        NaN  0.529729  0.697215       NaN       NaN
+AHRF1644  0.520755       NaN       NaN       NaN  0.710976
+AHRF919   0.803423       NaN       NaN       NaN       NaN
+AHRF749        NaN       NaN       NaN  0.670134       NaN
+AHRF362   0.653318       NaN       NaN       NaN       NaN
+AHRF1421       NaN  0.616855       NaN       NaN       NaN
+
+[('AHRF847', 'HPSA Code - Dentists 06/15 1=Whole, 2=Part County'), 
+('AHRF1644', 'Stan,Risk-Adj Per Cap Medcr Cst Fee for Service'), 
+('AHRF919', 'Low Education Typology Code'), 
+('AHRF749', 'Farming-Dependent Typology Code'), 
+('AHRF362', '% Medicare FFS Benef Male Fee for Service'), 
+('AHRF1421', 'Persistent Povrty Typology Code')]
+
+####################
+
+Step 3: Create Informative Preidction Model with both geographic layers
+
+Target labels: quant = Diabetes Related (K00-K99) Raw Mortality Rate per 1000k
+Target processing: None
+
+            quant        test       train
+count  924.000000  924.000000  924.000000
+mean     1.000011    0.200216    0.048701
+std      0.617704    0.400379    0.215359
+min      0.000000    0.000000    0.000000
+25%      0.590000    0.000000    0.000000
+50%      0.910000    0.000000    0.000000
+75%      1.300000    0.000000    0.000000
+max      5.160000    1.000000    1.000000
+
+Features labels: ACS Percent Estimates
+Feature processing: 75% nonNA, Median Imputed NA, Standard Scaled
+
+Rows, Columns: (924, 2201)
+
+Models: Multiple Linear Regression Model
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                  quant   R-squared (uncentered):                   0.862
+Model:                            OLS   Adj. R-squared (uncentered):              0.860
+Method:                 Least Squares   F-statistic:                              436.8
+Date:                Thu, 05 Nov 2020   Prob (F-statistic):                        0.00
+Time:                        12:38:07   Log-Likelihood:                         -544.56
+No. Observations:                 921   AIC:                                      1115.
+Df Residuals:                     908   BIC:                                      1178.
+Df Model:                          13                                                  
+Covariance Type:            nonrobust                                                  
+===============================================================================
+                  coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------
+DP05_0064PE     0.0068      0.001      6.427      0.000       0.005       0.009
+DP02_0013PE    -0.0180      0.006     -2.780      0.006      -0.031      -0.005
+DP02_0003PE     0.0091      0.007      1.290      0.197      -0.005       0.023
+DP03_0097PE    -0.0169      0.002    -10.870      0.000      -0.020      -0.014
+DP02_0029PE     0.0219      0.004      5.209      0.000       0.014       0.030
+DP05_0017PE     0.0429      0.009      4.636      0.000       0.025       0.061
+DP02_0112PE    -0.0093      0.001    -10.894      0.000      -0.011      -0.008
+AHRF847         0.0615      0.056      1.101      0.271      -0.048       0.171
+AHRF1644    -1.964e-05   2.83e-05     -0.693      0.488   -7.52e-05     3.6e-05
+AHRF919        -0.2316      0.068     -3.398      0.001      -0.365      -0.098
+AHRF749        -0.3438      0.264     -1.301      0.194      -0.863       0.175
+AHRF362         0.0384      0.007      5.592      0.000       0.025       0.052
+AHRF1421       -0.2723      0.090     -3.022      0.003      -0.449      -0.095
+==============================================================================
+Omnibus:                      330.230   Durbin-Watson:                   2.015
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             2858.531
+Skew:                           1.387   Prob(JB):                         0.00
+Kurtosis:                      11.173   Cond. No.                     1.98e+05
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.98e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+[('DP05_0064PE', 'Race alone or in combination with one or more other races Total population White'), 
+('DP02_0013PE', 'HOUSEHOLDS BY TYPE Total households Households with one or more people under 18 years'), 
+('DP02_0003PE', 'HOUSEHOLDS BY TYPE Total households Family households (families) With own children of the householder under 18 years'), 
+('DP03_0097PE', 'HEALTH INSURANCE COVERAGE Civilian noninstitutionalized population With health insurance coverage With private health insurance'), 
+('DP02_0029PE', 'MARITAL STATUS Males 15 years and over Divorced'), 
+('DP05_0017PE', 'SEX AND AGE Total population 85 years and over'), 
+('DP02_0112PE', 'LANGUAGE SPOKEN AT HOME Population 5 years and over Language other than English'), 
+('AHRF847', 'HPSA Code - Dentists 06/15 1=Whole, 2=Part County'), 
+('AHRF1644', 'Stan,Risk-Adj Per Cap Medcr Cst Fee for Service'), 
+('AHRF919', 'Low Education Typology Code'), 
+('AHRF749', 'Farming-Dependent Typology Code'), 
+('AHRF362', '% Medicare FFS Benef Male Fee for Service'), 
+('AHRF1421', 'Persistent Povrty Typology Code')]
+
+####################
+

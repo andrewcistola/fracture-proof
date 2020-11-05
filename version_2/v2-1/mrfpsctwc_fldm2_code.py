@@ -17,6 +17,7 @@ import pandas as pd # Widely used data manipulation library with R/Excel like ta
 import numpy as np # Widely used matrix library for numerical processes
 
 ### Import statistics libraries
+import scipy.stats as st # Statistics package best for t-test, ChiSq, correlation
 import statsmodels.api as sm # Statistics package best for regression models
 
 ### Import scikit-learn libraries
@@ -25,8 +26,11 @@ from sklearn.impute import SimpleImputer # Univariate imputation for missing dat
 from sklearn.decomposition import PCA # Principal compnents analysis from sklearn
 from sklearn.ensemble import RandomForestRegressor # Random Forest regression component
 from sklearn.feature_selection import RFECV # Recursive Feature elimination with cross validation
-from sklearn.linear_model import LinearRegression # Used for machine learning with quantitative outcome
 from sklearn.svm import LinearSVC # Linear Support Vector Classification from sklearn
+from sklearn.linear_model import LinearRegression # Used for machine learning with quantitative outcome
+from sklearn.linear_model import LogisticRegression # Used for machine learning with quantitative outcome
+from sklearn.metrics import roc_curve # Reciever operator curve
+from sklearn.metrics import auc # Area under the curve 
 
 ### Import keras libraries
 from keras.models import Sequential # Uses a simple method for building layers in MLPs
@@ -292,8 +296,19 @@ df_gwr = pd.merge(gdf_gwr, df_FIPS, on = 'ID', how = 'left') # Join zip code geo
 df_gwr = df_gwr.dropna() # Drop all rows with NA values
 df_gwr = df_gwr.set_index('ID') # Set column as index
 df_gwr = df_gwr.drop(columns = ['coordinates', 'quant']) # Drop Unwanted Columns
-df_gwr = df_gwr.groupby(['ID_2'], as_index = False).max() # Group data by columns and maximum value
-df_gwr.info() # Get class, memory, and column info: names, data types, obs.
+df_gwr = df_gwr.groupby(['ID_2'], as_index = False).mean() # Group data by columns and maximum value
+
+### Create Multi-level categories
+df_z = df_gwr.drop(columns = ['ID_2']) # Drop Unwanted Columns
+df_z = df_z.apply(st.zscore).abs()
+df_z['ID_2'] = df_gwr['ID_2'] #
+df_z = df_z.set_index('ID_2') # Set column as index
+cat = df_z.idxmax(axis = 1) # Get columns that have highest absolute value of z score
+l_cat = list(zip(df_z.index, cat)) # Create list of variables alongside RFE value 
+df_cat = pd.DataFrame(l_cat, columns = ['ID_2', 'multi']) # Create data frame of importances with variables and gini column names
+df_cat['multi'] = df_cat['multi'].astype('category')
+df_cat['multi'] = df_cat['multi'].cat.codes
+df_cat.info() # Get class, memory, and column info: names, data types, obs.
 
 ### Append to Text File
 text_file = open(path + name + "_" + day + ".txt", "a") # Open text file and name with subproject, content, and result suffix
@@ -307,50 +322,40 @@ text_file.close() # Close file
 
 # Step 4: Data Processing of 2nd Geographic Layer
 s4 = 'Step 4: Raw Data Processing and Feature Engineering (2nd Geographic Layer)' # Step 1 descriptive title
-d3 = "Beureau for Economic Analysis GDP Measures by County 2014-2018 5-year Average"
-d4 = "Health Resources and Servcies Administration Area Heath Resource File Populaton Rates by County 2014-2018 5-year Average"
+d3 = "Health Resources and Servcies Administration Area Heath Resource File Populaton Rates by County 2014-2018 5-year Average"
 
 ## Preprocess First Dataset
-df_d3 = pd.read_csv('fracture-proof/version_2/_data/.csv') # Import first dataset saved as csv in _data folder
-df_d3 = df_d3.filter([]) # Drop or filter columns to keep only feature values and idenitifer
+df_d3 = pd.read_csv('fracture-proof/version_2/_data/AHRF_5Y2018_FIPS.csv') # Import first dataset saved as csv in _data folder
+df_d3 = df_d3.rename(columns = {'FIPS': 'ID_2'}) # Apply standard name to identifier used for joining datasets
 df_d3.info() # Get class, memory, and column info: names, data types, obs
 
-### Preprocess Second Data
-df_d4 = pd.read_csv('fracture-proof/version_2/_data/.csv') # Import dataset saved as csv in _data folder
-df_d4 = df_d4.drop(columns = []) # Drop or filter columns to keep only feature values and idenitifer
-df_d4.info() # Get class, memory, and column info: names, data types, obs.
-
 ### Join Datasets by ID and define targets
-df_full_2 = pd.merge(df_d3, df_d4, on = 'FIPS', how = 'inner') # Join datasets to create table with predictors and outcome
-df_full_2 = df_full_2.dropna(subset = ['']) # Drop all outcome rows with NA values
-df_full_2.info() # Get class, memory, and column info: names, data types, obs.
+df_XY_2 = pd.merge(df_d3, df_cat, on = 'ID_2', how = 'inner') # Join datasets to create table with predictors and outcome
+df_XY_2.info() # Get class, memory, and column info: names, data types, obs.
 
 ### Create outcome table
-df_XY_2 = df_full_2.rename(columns = {'FIPS': 'ID_2'}) # Apply standard name to identifier used for joining datasets
-df_XY_2 = df_XY_2.rename(columns = {'': 'quant'}) # Apply standard name to identifier used for joining datasets
-df_Y_2 = df_XY_2.filter(['quant', 'ID_2']) # Create Outcome table
+df_Y_2 = df_XY_2.filter(['multi', 'ID_2']) # Create Outcome table
 df_Y_2 = df_Y_2.set_index('ID_2') # Set identifier as index
 df_Y_2.info() # Get class, memory, and column info: names, data types, obs.
 
 ### Create standard scaled predictor table
-df_X_2 = df_XY_2.drop(columns = ['quant', 'ID_2']) # Drop Unwanted Columns
+df_X_2 = df_XY_2.drop(columns = ['multi', 'ID_2']) # Drop Unwanted Columns
 df_X_2 = df_X_2.replace([np.inf, -np.inf], np.nan) # Replace infitite values with NA
 df_X_2 = df_X_2.dropna(axis = 1, thresh = 0.75*len(df_X_2)) # Drop features less than 75% non-NA count for all columns
 df_X_2 = pd.DataFrame(SimpleImputer(strategy = 'median').fit_transform(df_X_2), columns = df_X_2.columns) # Impute missing data
 df_X_2 = pd.DataFrame(StandardScaler().fit_transform(df_X_2.values), columns = df_X_2.columns) # Standard scale values by converting the normalized features into a tabular format with the help of DataFrame.
-df_X_2['ID'] = df_XY_2['ID'] # Save ID as column in predictor table
-df_X_2 = df_X_2.set_index('ID') # Set identifier as index
+df_X_2['ID_2'] = df_XY_2['ID_2'] # Save ID as column in predictor table
+df_X_2 = df_X_2.set_index('ID_2') # Set identifier as index
 df_X_2.info() # Get class, memory, and column info: names, data types, obs.
 
 ## Append to Text File
 text_file = open(path + name + '_' + day + '.txt', 'a') # Open text file and name with subproject, content, and result suffix
 text_file.write(s4 + '\n\n') # Step 1 descriptive title
 text_file.write(d3 + '\n') # First dataset descriptive title
-text_file.write(d4 + '\n\n') # Second dataset descriptive title
-text_file.write('Target labels: quant = ' + '\n') # Target labels
+text_file.write('Target labels: multi = selected varibles from step 2' + '\n') # Target labels
 text_file.write('Target processing: None' + '\n\n') # Target processing
 text_file.write(str(df_Y_2.describe())  + '\n\n') # Descriptive statistics for target
-text_file.write('Features labels: ACS Percent Estimates' + '\n') # Number of observations and variables
+text_file.write('Features labels: AHRF Population Rates' + '\n') # Number of observations and variables
 text_file.write('Feature processing: 75% nonNA, Median Imputed NA, Standard Scaled' + '\n\n') # Feature processing
 text_file.write('Rows, Columns: ' + str(df_X_2.shape) + '\n\n') # Number of observations and variables
 text_file.write('####################' + '\n\n')
@@ -362,14 +367,18 @@ m6 = "Support Vector Machines"
 
 ### Support Vector Machines
 vector = LinearSVC() 
-vector.fit(df_X_2, df_Y_2)
+vector.fit(df_X_2, df_Y_2['multi'])
 svm = vector.coef_
-l_svm = list(zip(df_X_2, svm)) # Create list of variables alongside importance scores 
-df_svm = pd.DataFrame(l_svm, columns = ["Feature", "Coefficient"]) # Create data frame of importances with variables and gini column names
-df_svm = df_svm[(df_svm["Coefficient"] > df_svm["Coefficient"].mean())] # Subset by Gini values higher than mean
-df_svm = df_svm.sort_values(by = ["Coefficients"], ascending = False) # Sort Columns by Value
-wood = df_svm["Feature"].tolist() # Save features from data frame
-df_svm.info() # Get class, memory, and column info: names, data types, obs.
+woodcarving.remove('Intercept') # Add outcome to regression dataset
+woodcarving.remove('quant') # Add outcome to regression dataset
+woodcarving.remove('coordinates') # Add outcome to regression dataset
+df_svm = pd.DataFrame(svm, columns = df_X_2.columns, index = [woodcarving]) # Create data frame of importances with variables and gini column names
+df_svm = df_svm.abs()
+svm_max = df_svm.idxmax(axis = 1) # Get columns that have highest absolute value of z score
+l_svm_max = list(zip(df_svm.index, svm_max)) # Create list of variables alongside RFE value 
+df_svm_max = pd.DataFrame(l_svm_max, columns = ['GWR', 'Feature']) # Create data frame of importances with variables and gini column names
+wood = df_svm_max['Feature'].unique() # Print Unique Values in Column
+df_svm_max.info() # Get class, memory, and column info: names, data types, obs.
 
 ### Principal Component Analysis
 degree = len(df_X_2[wood].columns) - 1  # Save number of features -1 to get degrees of freedom
@@ -382,19 +391,18 @@ comps = np.count_nonzero(cvr) - np.count_nonzero(cvr > 0.95) + 1 # Save number o
 
 ### Component Loadings
 load = pca.components_.T * np.sqrt(pca.explained_variance_) # Export component loadings
-df_load = pd.DataFrame(load, index = df_X[fractureproof].columns) # Create data frame of component loading
+df_load = pd.DataFrame(load, index = df_X_2[wood].columns) # Create data frame of component loading
 df_load = df_load.iloc[:, 0:comps] # Save columns by components above threshold
 df_load = df_load.abs() # get absolute value for column or data frame
 df_load = df_load[df_load > 0.5] # Subset by character
 df_load = df_load.dropna(thresh = 1) # Drop all rows without 1 non-NA value
 df_load = df_load.dropna(axis = 'columns', thresh = 1) # Drop all rows without 1 non-NA value
 woodcarving = df_load.index.to_list() # Save variables to list
+df_load.info() # Get class, memory, and column info: names, data types, obs.
 
 ### Add feature labels
-df_l3 = pd.read_csv('fracture-proof/version_2/_data/ACS_5Y2018_labels.csv') # Import dataset saved as csv in _data folder
-df_l4 = pd.read_csv('fracture-proof/version_2/_data/FDOH_5Y2018_labels.csv')
-df_label = pd.concat([df_l3, df_l4]) # Combine rows with same columns
-df_label = df_label.filter(["Feature", "Label"]) # Keep only selected columns
+df_l3 = pd.read_csv('fracture-proof/version_2/_data/AHRF_5Y2018_label.csv') # Import dataset saved as csv in _data folder
+df_label = df_l3.filter(["Feature", "Label"]) # Keep only selected columns
 df_label = df_label.set_index("Feature") # Set column as index
 df_label = df_label.transpose() # Switch rows and columns
 df_label = df_label[woodcarving] # Save chosen featres as list
@@ -408,11 +416,11 @@ text_file = open(path + name + "_" + day + ".txt", "a") # Open text file and nam
 text_file.write(s5 + "\n\n") # Line of text with space after
 text_file.write("Models: " + m5 + "\n\n") # Add two lines of blank text at end of every section text
 text_file.write("Values: Coefficients" + "\n") # Add two lines of blank text at end of every section text
-text_file.write("Thresholds: Mean" + "\n\n") # Add two lines of blank text at end of every section text
-text_file.write(str(df_svm)  + "\n\n") # Add two lines of blank text at end of every section text
+text_file.write("Thresholds: Max Absolute Value" + "\n\n") # Add two lines of blank text at end of every section text
+text_file.write(str(df_svm_max)  + "\n\n") # Add two lines of blank text at end of every section text
 text_file.write("Models: " + m1 + "\n\n") # Add two lines of blank text at end of every section text
 text_file.write("Cumulative Variance: Threshold = 95%" + "\n") # Add two lines of blank text at end of every section text
-text_file.write(str(a_cvr) + "\n\n") # Add two lines of blank text at end of every section text
+text_file.write(str(cvr) + "\n\n") # Add two lines of blank text at end of every section text
 text_file.write("Component Loadings" + "\n") # Add two lines of blank text at end of every section text
 text_file.write(str(df_load)  + "\n\n") # Add two lines of blank text at end of every section text
 text_file.write(str(l_label)  + "\n\n") # Add two lines of blank text at end of every section text
@@ -420,60 +428,72 @@ text_file.write("####################" + "\n\n")
 text_file.close() # Close file
 
 ## Step 6: Create Informative Prediction Model with both geographic layers
-s6 = 'Step 3: Create Informative Preidction Model with both geographic layers' # Step 1 descriptive title
+s6 = 'Step 6: Create Informative Preidction Model with both geographic layers' # Step 1 descriptive title
 
 ### Join Datasets by ID and define targets
-df_full_f = pd.merge(df_XY, df_XY_2, on = 'FIPS', how = 'right') # Join datasets to create table with predictors and outcome
-df_full_f = df_full_f.dropna(subset = ['quant']) # Drop all outcome rows with NA values
-df_full_f["train"] = np.where(df_full_f["quant"] > df_full_f["quant"].quintile(0.95), 1, 0) # Create categorical test target outcome based on conditions
-df_full_f["test"] = np.where(df_full_f["quant"] > df_full_f["quant"].quintile(0.80), 1, 0) # Create categorical test target outcome based on conditions
-df_full_f.info() # Get class, memory, and column info: names, data types, obs.
+df_XY_f = pd.merge(df_XY_2, df_FIPS, on = 'ID_2', how = 'left') # Join datasets to create table with predictors and outcome
+df_XY_f = pd.merge(df_XY, df_XY_f, on = 'ID', how = 'inner') # Join datasets to create table with predictors and outcome
+df_XY_f = df_XY_f.drop(columns = ['ID_2', 'multi']) # Drop Unwanted Columns
+df_XY_f = df_XY_f.dropna(subset = ['quant']) # Drop all outcome rows with NA values
+df_XY_f["train"] = np.where(df_XY_f["quant"] > df_XY_f["quant"].quantile(0.5), 1, 0) # Create categorical test target outcome based on conditions
+df_XY_f["test"] = np.where(df_XY_f["quant"] > df_XY_f["quant"].quantile(0.75), 1, 0) # Create categorical test target outcome based on conditions
+df_XY_f.info() # Get class, memory, and column info: names, data types, obs.
 
 ### Create outcome table
-df_XY_f = df_full_f.rename(columns = {'FIPS': 'ID'}) # Apply standard name to identifier used for joining datasets
-df_Y_f = df_XY_f.filter(['quant', 'ID']) # Create Outcome table
+df_Y_f = df_XY_f.filter(['quant', 'test', 'train', 'ID']) # Create Outcome table
 df_Y_f = df_Y_f.set_index('ID') # Set identifier as index
 df_Y_f.info() # Get class, memory, and column info: names, data types, obs.
 
 ### Create standard scaled predictor table
-df_X_2 = df_XY_2.drop(columns = ['quant', 'ID']) # Drop Unwanted Columns
-df_X_2 = df_X_2.replace([np.inf, -np.inf], np.nan) # Replace infitite values with NA
-df_X_2 = df_X_2.dropna(axis = 1, thresh = 0.75*len(df_X_2)) # Drop features less than 75% non-NA count for all columns
-df_X_2 = pd.DataFrame(SimpleImputer(strategy = 'median').fit_transform(df_X_2), columns = df_X_2.columns) # Impute missing data
-df_X_2 = pd.DataFrame(StandardScaler().fit_transform(df_X_2.values), columns = df_X_2.columns) # Standard scale values by converting the normalized features into a tabular format with the help of DataFrame.
-df_X_2['ID'] = df_XY_2['ID'] # Save ID as column in predictor table
-df_X_2 = df_X_2.set_index('ID') # Set identifier as index
-df_X_2.info() # Get class, memory, and column info: names, data types, obs.
+df_X_f = df_XY_f.drop(columns = ['quant', 'test', 'train', 'ID']) # Drop Unwanted Columns
+df_X_f = df_X_f.replace([np.inf, -np.inf], np.nan) # Replace infitite values with NA
+df_X_f = df_X_f.dropna(axis = 1, thresh = 0.75*len(df_X_f)) # Drop features less than 75% non-NA count for all columns
+df_X_f = pd.DataFrame(SimpleImputer(strategy = 'median').fit_transform(df_X_f), columns = df_X_f.columns) # Impute missing data
+df_X_f = pd.DataFrame(StandardScaler().fit_transform(df_X_f.values), columns = df_X_f.columns) # Standard scale values by converting the normalized features into a tabular format with the help of DataFrame.
+df_X_f['ID'] = df_XY_f['ID'] # Save ID as column in predictor table
+df_X_f = df_X_f.set_index('ID') # Set identifier as index
+df_X_f.info() # Get class, memory, and column info: names, data types, obs.
 
 ### Save second geographic layer features as list
 mrfractureproofswoodcarvings = df_XY_f[mrfractureproof].columns.to_list() #
-mrfractureproofswoodcarvings.append(mrfractureproof) #
+woodcarving = df_XY_f[woodcarving].columns.to_list() #
+for i in woodcarving: mrfractureproofswoodcarvings.append(i)
 mrfractureproofswoodcarvings.append("quant") #
+mrfractureproofswoodcarvings.append("train") #
+mrfractureproofswoodcarvings.append("test") #
 
 ### Create Multiple Regression Model
 df_mrfpwc = df_XY_f[mrfractureproofswoodcarvings]
 df_mrfpwc = df_mrfpwc.dropna()
-X = df_mrfpwc.drop(columns = ['quant'])
+X = df_mrfpwc.drop(columns = ['quant', 'train', 'test'])
 Y = df_mrfpwc['quant']
 mod = sm.OLS(Y, X) # Create linear model
 res = mod.fit() # Fit model to create result
 res.summary() # Print results of regression model
 
 ### Add feature labels
-df_label = pd.concat([df_l1, df_l2, df_l3, df_l4]) # Combine rows with same columns
-df_label = df_label.filter(["Feature", "Label"]) # Keep only selected columns
-df_label = df_label.set_index("Feature") # Set column as index
+df_label = pd.concat([df_l1, df_l2, df_l3]) # Combine rows with same columns
+df_label = df_label.filter(['Feature', 'Label']) # Keep only selected columns
+df_label = df_label.set_index('Feature') # Set column as index
 df_label = df_label.transpose() # Switch rows and columns
-mrfractureproofswoodcarvings.remove("quant") # Add outcome to regression dataset
+mrfractureproofswoodcarvings.remove('quant') # Add outcome to regression dataset
+mrfractureproofswoodcarvings.remove('train') # Add outcome to regression dataset
+mrfractureproofswoodcarvings.remove('test') # Add outcome to regression dataset
 df_label = df_label[mrfractureproofswoodcarvings] # Save chosen featres as list
 df_label = df_label.transpose() # Switch rows and columns
 df_label = df_label.reset_index() # Reset index
-l_label = list(zip(df_label["Feature"], df_label["Label"])) # Create list of variables alongside RFE value 
+l_label = list(zip(df_label['Feature'], df_label['Label'])) # Create list of variables alongside RFE value 
 df_label.info() # Get class, memory, and column info: names, data types, obs.
 
 ### Append to Text File
 text_file = open(path + name + "_" + day + ".txt", "a") # Open text file and name with subproject, content, and result suffix
 text_file.write(s6 + "\n\n") # Line of text with space after
+text_file.write('Target labels: quant = Diabetes Related (K00-K99) Raw Mortality Rate per 1000k' + '\n') # Target labels
+text_file.write('Target processing: None' + '\n\n') # Target processing
+text_file.write(str(df_Y_f.describe())  + '\n\n') # Descriptive statistics for target
+text_file.write('Features labels: ACS Percent Estimates' + '\n') # Number of observations and variables
+text_file.write('Feature processing: 75% nonNA, Median Imputed NA, Standard Scaled' + '\n\n') # Feature processing
+text_file.write('Rows, Columns: ' + str(df_X_f.shape) + '\n\n') # Number of observations and variables
 text_file.write("Models: " + m4 + "\n\n") # Add two lines of blank text at end of every section text
 text_file.write(str(res.summary())  + "\n\n") # Add two lines of blank text at end of every section text
 text_file.write(str(l_label)  + "\n\n") # Add two lines of blank text at end of every section text
@@ -486,9 +506,9 @@ m6 = 'Multi-Layer Perceptron with Stacked Convolutional Autoencoder'
 
 ### Build Network with keras Sequential API for all features from all layers
 # Prep Inputs
-Y_train = df_X_f.filter(["train"])
-Y_test = df_X_f.filter(["test"])
-X = df_X_f.drop(columns = ["quant", "train", "test"])
+Y_train = df_Y_f.filter(["train"])
+Y_test = df_Y_f.filter(["test"])
+X = df_X_f
 input = X.shape[1] # Save number of columns as length minus quant, test, train and round to nearest integer
 nodes = round(input / 2) # Number of input dimensions divided by two for nodes in each layer
 network = Sequential()
@@ -500,9 +520,9 @@ network.add(Dense(1, activation = 'sigmoid', kernel_initializer = 'random_normal
 # Compile
 network.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy']) # Compile network with ADAM ("Adaptive moment estimation" or RMSProp + Momentum)
 # Fit
-final = network.fit(X, Y_train, batch_size = 10, epochs = 200) # Fitting the data to the train outcome
+final = network.fit(X, Y_train, batch_size = 10, epochs = 100) # Fitting the data to the train outcome
 # Predict
-Y_f = network.predict(X) # Predict values from testing model
+Y_a = network.predict(X) # Predict values from testing model
 # AUC Score
 Y_pred = (Y_a > 0.5)
 Y_train = (Y_train > 0)
@@ -514,8 +534,8 @@ a_test = auc(fpr, tpr) # Plot ROC and get AUC score
 
 ### Build Network with keras Sequential API for selected features from all layers
 # Prep Inputs
-Y_train = df_X_f.filter(["train"])
-Y_test = df_X_f.filter(["test"])
+Y_train = df_Y_f.filter(["train"])
+Y_test = df_Y_f.filter(["test"])
 X = df_X_f[mrfractureproofswoodcarvings]
 input = X.shape[1] # Save number of columns as length minus quant, test, train and round to nearest integer
 nodes = round(input / 2) # Number of input dimensions divided by two for nodes in each layer
@@ -528,7 +548,7 @@ network.add(Dense(1, activation = 'sigmoid', kernel_initializer = 'random_normal
 # Compile
 network.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy']) # Compile network with ADAM ("Adaptive moment estimation" or RMSProp + Momentum)
 # Fit
-final = network.fit(X, Y_train, batch_size = 10, epochs = 200) # Fitting the data to the train outcome
+final = network.fit(X, Y_train, batch_size = 10, epochs = 100) # Fitting the data to the train outcome
 # Predict
 Y_s = network.predict(X) # Predict values from testing model
 # AUC Score
@@ -544,10 +564,10 @@ s_test = auc(fpr, tpr) # Plot ROC and get AUC score
 text_file = open(path + day + "_results" + label + ".txt", "a") # Open text file and name with subproject, content, and result suffix
 text_file.write(s7 + "\n\n") # Line of text with space after
 text_file.write(m6 + "\n") # Add two lines of blank text at end of every section text
-text_file.write("Layers = CVN, Dense, Dense, Activation" + "\n") # Add two lines of blank text at end of every section text
+text_file.write("Layers = Dense, Dense, Activation" + "\n") # Add two lines of blank text at end of every section text
 text_file.write("Functions = ReLU, ReLU, Sigmoid" + "\n") # Add two lines of blank text at end of every section text
-text_file.write("Epochs = 200" + "\n") # Add two lines of blank text at end of every section text
-text_file.write("Targets = (train, test), (95th percentile, 80th percentile)" + "\n\n")
+text_file.write("Epochs = 100" + "\n") # Add two lines of blank text at end of every section text
+text_file.write("Targets = (train, test), (50th percentile, 75th percentile)" + "\n\n")
 text_file.write("AUC Scores (selected features, all layers)" + "\n") # Add two lines of blank text at end of every section text
 text_file.write("train = " + str(a_train) + "\n") # Add two lines of blank text at end of every section text
 text_file.write("test = " + str(a_test) + "\n\n") # Add two lines of blank text at end of every section text
