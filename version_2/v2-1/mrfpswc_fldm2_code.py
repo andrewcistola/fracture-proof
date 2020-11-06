@@ -20,10 +20,6 @@ import numpy as np # Widely used matrix library for numerical processes
 import scipy.stats as st # Statistics package best for t-test, ChiSq, correlation
 import statsmodels.api as sm # Statistics package best for regression models
 
-### Import Visualization Libraries
-import matplotlib.pyplot as plt # Comprehensive graphing package in python
-import geopandas as gp # Simple mapping library for csv shape files with pandas like syntax for creating plots using matplotlib 
-
 ### Import scikit-learn libraries
 from sklearn.preprocessing import StandardScaler # Standard scaling for easier use of machine learning algorithms
 from sklearn.impute import SimpleImputer # Univariate imputation for missing data
@@ -41,12 +37,6 @@ from sklearn.metrics import auc # Area under the curve
 import libpysal as ps # Spatial data science modeling tools in python
 from mgwr.gwr import GWR, MGWR # Geographic weighted regression modeling tools
 from mgwr.sel_bw import Sel_BW # Bandwidth selection for GWR
-
-### Import keras libraries
-from keras.models import Sequential # Uses a simple method for building layers in MLPs
-from keras.models import Model # Uses a more complex method for building layers in deeper networks
-from keras.layers import Dense # Used for creating dense fully connected layers
-from keras.layers import Input # Used for designating input layers
 
 ### Set Directory
 os.chdir(directory) # Set wd to project repository
@@ -458,7 +448,7 @@ df_lmfpwc.info() # Get class, memory, and column info: names, data types, obs.
 
 ### Append step 7 results to corresponding text file
 text_file = open(path + name + "_" + day + ".txt", "a") # Open corresponding text file
-text_file.write(s7 + "\n\n") # Step description
+text_file.write(s7 + "\n\n") #Step description
 text_file.write(d1 + '\n') # Dataset description
 text_file.write(d2 + '\n') # Dataset description
 text_file.write(d3 + '\n\n') # Dataset description
@@ -470,18 +460,17 @@ text_file.write('Feature processing: 75% nonNA, Median Imputed NA, Standard Scal
 text_file.write('Rows, Columns: ' + str(df_XY_f.shape) + '\n\n') # Result description and result dataframe
 text_file.write("Models: " + m4 + "\n\n") # Model description
 text_file.write(str(res_f.summary())  + "\n\n") # Result summary
-text_file.write('Final List of selected 1st and 2nd layer features' + '\n') # Result description
 text_file.write(str(l_lmfpwc)  + "\n\n") # Result list
 text_file.write("####################" + "\n\n") # Add section break for end of step
 text_file.close() # Close file
 
-## Step 8: Predict Binary Outcome with Artificial Neural Networks
+## Step 8: Predict Categorical targets with Artificial Neural Networks
 s8 = 'Step 8: Predict Categorical targets with Artificial Neural Networks'
-m7 = 'Multi-Layer Perceptron'
+m6 = 'Multi-Layer Perceptron with Stacked Convolutional Autoencoder'
 
-### Create outcome table and define targets
+### Create outcome table
 df_Y_f = df_XY_f.filter(['quant', 'ID']) # Create Outcome table
-df_Y_f['binary'] = np.where(df_Y_f['quant'] > df_Y_f['quant'].quantile(0.5), 1, 0) # Create binary outcome based on conditions
+df_Y_f['binary'] = np.where(df_Y_f['quant'] > df_Y_f['quant'].quantile(0.5), 1, 0) # Create categorical test target outcome based on conditions
 df_Y_f = df_Y_f.set_index('ID') # Set identifier as index
 df_Y_f.info() # Get class, memory, and column info: names, data types, obs.
 
@@ -495,100 +484,66 @@ df_X_f['ID'] = df_XY_f['ID'] # Save ID as column in predictor table
 df_X_f = df_X_f.set_index('ID') # Set identifier as index
 df_X_f.info() # Get class, memory, and column info: names, data types, obs.
 
-### Save FractureProof and Woodcarving feature list
-mrfractureproof.remove('quant') # Remove outcome from 1st and 2nd layer regression feature list
-mrfractureproofscontemplativewoodcarvings = mrfractureproof + woodcarving # Combine 2nd layer slected features with first layer regression model features
 
-### Multi-Layered Perceptron with all predictors from all layers
-Y = df_Y_f.filter(['binary']) # Save binary outcome as MLP Input
-X = df_X_f # Save all predictors as MLP input
-X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.50) # Random 50/50 Train/Test Split
-input = X.shape[1] # Save number of columns as input dimension
+## Predict outcomes with all variables
+
+
+
+### Prep Inputs with Train/Test Split
+Y = df_Y_f.filter(["test"])
+X = df_X_f
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.50)
+
+### Build Network with keras Sequential API for selected features from all layers
+input = X.shape[1] # Save number of columns as length minus quant, test, train and round to nearest integer
 nodes = round(input / 2) # Number of input dimensions divided by two for nodes in each layer
-network = Sequential() # Build Network with keras Sequential API
-network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal', input_dim = input)) # First dense layer
-network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal')) # Second dense layer
-network.add(Dense(1, activation = 'sigmoid', kernel_initializer = 'random_normal')) # Output layer with binary activation
-network.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy']) # Compile network with Adaptive moment estimation, and follow loss and accuracy
-final = network.fit(X_train, Y_train, batch_size = 10, epochs = 100) # Fitting the data to the train outcome, with batch size and number of epochs
-Y_pred = network.predict(X_test) # Predict values from test data
-Y_pred = (Y_pred > 0.5) # Save predicted values close to 1 as boolean
-Y_test = (Y_test > 0.5) # Save test values close to 1 as boolean
+network = Sequential()
+network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal', input_dim = input)) # First Hidden Layer
+network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal')) # Second Hidden Layer
+network.add(Dense(1, activation = 'sigmoid', kernel_initializer = 'random_normal')) # Output Layer
+network.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy']) # Compile network with ADAM ("Adaptive moment estimation" or RMSProp + Momentum)
+final = network.fit(X_train, Y_train, batch_size = 10, epochs = 100) # Fitting the data to the train outcome
+
+#### Predict Values and Complete ROC test
+Y = network.predict(X_test) # Predict values from testing model
+Y_pred = (Y > 0.5)
+Y_train = (Y_train > 0)
 fpr, tpr, threshold = roc_curve(Y_test, Y_pred) # Create ROC outputs, true positive rate and false positive rate
 auc_a = auc(fpr, tpr) # Plot ROC and get AUC score
 
-### Multi-Layered Perceptron with Mr. Fracture Proof predictors
-Y = df_Y_f.filter(['binary']) # Save binary outcome as MLP Input
-X = df_X_f[mrfractureproof] # Save selected predictors from all layers predictors as MLP input
-X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.50) # Random 50/50 Train/Test Split
-input = X.shape[1] # Save number of columns as input dimension
-nodes = round(input / 2) # Number of input dimensions divided by two for nodes in each layer
-network = Sequential() # Build Network with keras Sequential API
-network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal', input_dim = input)) # First dense layer
-network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal')) # Second dense layer
-network.add(Dense(1, activation = 'sigmoid', kernel_initializer = 'random_normal')) # Output layer with binary activation
-network.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy']) # Compile network with Adaptive moment estimation, and follow loss and accuracy
-final = network.fit(X_train, Y_train, batch_size = 10, epochs = 100) # Fitting the data to the train outcome, with batch size and number of epochs
-Y_pred = network.predict(X_test) # Predict values from test data
-Y_pred = (Y_pred > 0.5) # Save predicted values close to 1 as boolean
-Y_test = (Y_test > 0.5) # Save test values close to 1 as boolean
-fpr, tpr, threshold = roc_curve(Y_test, Y_pred) # Create ROC outputs, true positive rate and false positive rate
-auc_mrfp = auc(fpr, tpr) # Plot ROC and get AUC score
+## Predict outcome with specific variables
 
-### Multi-Layered Perceptron with Woodcarving predictors
-Y = df_Y_f.filter(['binary']) # Save binary outcome as MLP Input
-X = df_X_f[woodcarving] # Save selected predictors from all layers predictors as MLP input
-X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.50) # Random 50/50 Train/Test Split
-input = X.shape[1] # Save number of columns as input dimension
-nodes = round(input / 2) # Number of input dimensions divided by two for nodes in each layer
-network = Sequential() # Build Network with keras Sequential API
-network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal', input_dim = input)) # First dense layer
-network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal')) # Second dense layer
-network.add(Dense(1, activation = 'sigmoid', kernel_initializer = 'random_normal')) # Output layer with binary activation
-network.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy']) # Compile network with Adaptive moment estimation, and follow loss and accuracy
-final = network.fit(X_train, Y_train, batch_size = 10, epochs = 100) # Fitting the data to the train outcome, with batch size and number of epochs
-Y_pred = network.predict(X_test) # Predict values from test data
-Y_pred = (Y_pred > 0.5) # Save predicted values close to 1 as boolean
-Y_test = (Y_test > 0.5) # Save test values close to 1 as boolean
-fpr, tpr, threshold = roc_curve(Y_test, Y_pred) # Create ROC outputs, true positive rate and false positive rate
-auc_wc = auc(fpr, tpr) # Plot ROC and get AUC score
+### Prep Inputs with Train/Test Split
+Y = df_Y_f.filter(["test"])
+X = df_X_f[mrfractureproofswoodcarvings]
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.50)
 
-### Multi-Layered Perceptron with Mr. Fracture Proof's Contemplative Woodcarving predictors
-Y = df_Y_f.filter(['binary']) # Save binary outcome as MLP Input
-X = df_X_f[mrfractureproofscontemplativewoodcarvings] # Save selected predictors from all layers predictors as MLP input
-X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.50) # Random 50/50 Train/Test Split
-input = X.shape[1] # Save number of columns as input dimension
+### Build Network with keras Sequential API for selected features from all layers
+input = X.shape[1] # Save number of columns as length minus quant, test, train and round to nearest integer
 nodes = round(input / 2) # Number of input dimensions divided by two for nodes in each layer
-network = Sequential() # Build Network with keras Sequential API
-network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal', input_dim = input)) # First dense layer
-network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal')) # Second dense layer
-network.add(Dense(1, activation = 'sigmoid', kernel_initializer = 'random_normal')) # Output layer with binary activation
-network.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy']) # Compile network with Adaptive moment estimation, and follow loss and accuracy
-final = network.fit(X_train, Y_train, batch_size = 10, epochs = 100) # Fitting the data to the train outcome, with batch size and number of epochs
-Y_pred = network.predict(X_test) # Predict values from test data
-Y_pred = (Y_pred > 0.5) # Save predicted values close to 1 as boolean
-Y_test = (Y_test > 0.5) # Save test values close to 1 as boolean
+network = Sequential()
+network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal', input_dim = input)) # First Hidden Layer
+network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal')) # Second Hidden Layer
+network.add(Dense(1, activation = 'sigmoid', kernel_initializer = 'random_normal')) # Output Layer
+network.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy']) # Compile network with ADAM ("Adaptive moment estimation" or RMSProp + Momentum)
+final = network.fit(X_train, Y_train, batch_size = 10, epochs = 100) # Fitting the data to the train outcome
+
+#### Predict Values and Complete ROC test
+Y = network.predict(X_test) # Predict values from testing model
+Y_pred = (Y > 0.5)
+Y_train = (Y_train > 0)
 fpr, tpr, threshold = roc_curve(Y_test, Y_pred) # Create ROC outputs, true positive rate and false positive rate
-auc_mrfpctwc = auc(fpr, tpr) # Plot ROC and get AUC score
+auc_s = auc(fpr, tpr) # Plot ROC and get AUC score
 
 ### Append to Text File
-text_file = open(path + name + '_' + day + '.txt', 'a') # Open corresponding text file
-text_file.write(s8 + '\n\n') # Step description
-text_file.write(d1 + '\n') # Dataset description
-text_file.write(d2 + '\n') # Dataset description
-text_file.write(d3 + '\n\n') # Dataset description
-text_file.write('Target labels: binary = Diabetes Related (K00-K99) Raw Mortality Rate per 1000k above 50% percentile' + '\n') # Target labels
-text_file.write('Target processing: train, test random 50-50 split' + '\n\n') # Model methods description
-text_file.write(m7 + '\n') # Model description
-text_file.write('Layers: Dense, Dense, Activation' + '\n') # Model methods description
-text_file.write('Functions: ReLU, ReLU, Sigmoid' + '\n') # Model methods description
-text_file.write('Epochs: 100' + '\n\n') # Model methods description
-text_file.write('AUC Score from all features, all layers = ' + str(auc_a) + '\n') # Result description and result dataframe
-text_file.write('AUC Score from Fractureproof Features = ' + str(auc_mrfp) + '\n\n') # Result description and result dataframe
-text_file.write('AUC Score from Woodcarving Features = ' + str(auc_wc) + '\n\n') # Result description and result dataframe
-text_file.write('AUC Score from Mr. Fracture Proofs Woodcarving Features = ' + str(auc_mrfpctwc) + '\n\n') # Result description and result dataframe
-text_file.write('Final List of features' + '\n') # Result description
-text_file.write('Mr. Fracture Proof (1st layer): ' + str(l_lmrfp)  + '\n\n') # Result list
-text_file.write('Woodcarving (2nd layer): ' + str(l_lwc)  + '\n\n') # Result list
-text_file.write('####################' + '\n\n')
+text_file = open(path + name + "_" + day + ".txt", "a") # Open text file and name with subproject, content, and result suffix
+text_file.write(s7 + "\n\n") # Line of text with space after
+text_file.write(m6 + "\n") # Add two lines of blank text at end of every section text
+text_file.write("Layers: Dense, Dense, Activation" + "\n") # Add two lines of blank text at end of every section text
+text_file.write("Functions: ReLU, ReLU, Sigmoid" + "\n") # Add two lines of blank text at end of every section text
+text_file.write("Epochs: 100" + "\n") # Add two lines of blank text at end of every section text
+text_file.write("Targets: train, test random 50-50 split" + "\n\n")
+text_file.write("AUC Scores (all features, all layers) = " + str(auc_a) + "\n") # Add two lines of blank text at end of every section text
+text_file.write("AUC Scores (selected features, all layers) = " + str(auc_s) + "\n\n") # Add two lines of blank text at end of every section text
+text_file.write("####################" + "\n\n")
 text_file.close() # Close file

@@ -253,6 +253,8 @@ Warnings:
 [2] The condition number is large, 2.56e+03. This might indicate that there are
 strong multicollinearity or other numerical problems.
 
+Final List of selected 1st and 2nd layer features
+
 [('DP05_0064PE', 'Race alone or in combination with one or more other races Total population White'), 
 ('DP02_0018PE', 'RELATIONSHIP Population in households Householder'), 
 ('DP02_0114PE', 'LANGUAGE SPOKEN AT HOME Population 5 years and over Spanish'), 
