@@ -1,0 +1,105 @@
+####################
+
+Title: FractureProof v2.1 - Mr. Fracture Proofs Contemplative Woodcarving for Diabetes Mortality in Florida
+Author: Andrew S. Cistola, MPH
+Filename: mrfpsctwc_fldm2_code.py
+Realtive Path: fracture-proof/version_2/v2-1/
+Working Directory: /home/drewc/GitHub/
+Time Run: 2020-11-06 08:34:00.979747
+
+####################
+
+Step 1: Raw Data Processing and Feature Engineering
+
+Florida Deaprtment of Health Vital Statistics 113 Leading Mortality Causes 2014-2018 Zip Code 5-year Average
+US Census American Community Survey 2014-2018 Zip Code 5-year Average
+
+Target labels: quant = Diabetes Related (K00-K99) Raw Mortality Rate per 1000k
+Target processing: None
+
+            quant
+count  924.000000
+mean     1.000011
+std      0.617704
+min      0.000000
+25%      0.590000
+50%      0.910000
+75%      1.300000
+max      5.160000
+
+Features labels: ACS Percent Estimates
+Feature processing: 75% nonNA, Median Imputed NA, Standard Scaled
+
+Rows, Columns: (924, 427)
+
+####################
+
+Step 2: Identify Predictors with Open Models
+
+Models: Principal Component Analysis, Random Forests, Recursive feature Elimination
+
+Values: Eigenvectors, Gini Impurity, Boolean
+Thresholds: Mean, Mean, Cross Validation
+
+       Feature     MaxEV      Gini   RFE
+0  DP05_0064PE  0.134268  0.003289  True
+1  DP02_0018PE  0.111311  0.002496  True
+2  DP02_0114PE  0.103326  0.002422  True
+3  DP02_0029PE  0.101915  0.017297  True
+4  DP03_0098PE  0.099141  0.023578  True
+5  DP03_0106PE  0.096418  0.003621  True
+
+('DP05_0064PE', 'Race alone or in combination with one or more other races Total population White'), 
+('DP02_0018PE', 'RELATIONSHIP Population in households Householder'), 
+('DP02_0114PE', 'LANGUAGE SPOKEN AT HOME Population 5 years and over Spanish'), 
+('DP02_0029PE', 'MARITAL STATUS Males 15 years and over Divorced'), 
+('DP03_0098PE', 'HEALTH INSURANCE COVERAGE Civilian noninstitutionalized population With health insurance coverage With public coverage'), 
+('DP03_0106PE', 'HEALTH INSURANCE COVERAGE Civilian noninstitutionalized population Civilian noninstitutionalized population 19 to 64 years In labor force Employed With health insurance coverage With private health insurance')
+
+####################
+
+Step 3: Create Informative Preidction Model
+
+Models: Multiple Linear Regression Model
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                  quant   R-squared (uncentered):                   0.856
+Model:                            OLS   Adj. R-squared (uncentered):              0.855
+Method:                 Least Squares   F-statistic:                              775.1
+Date:                Fri, 06 Nov 2020   Prob (F-statistic):                        0.00
+Time:                        09:24:17   Log-Likelihood:                         -565.16
+No. Observations:                 921   AIC:                                      1144.
+Df Residuals:                     914   BIC:                                      1178.
+Df Model:                           7                                                  
+Covariance Type:            nonrobust                                                  
+===============================================================================
+                  coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------
+DP05_0064PE     0.0076      0.001      7.448      0.000       0.006       0.010
+DP02_0018PE     0.0107      0.003      4.086      0.000       0.006       0.016
+DP02_0114PE    -0.0074      0.001     -9.161      0.000      -0.009      -0.006
+DP02_0029PE     0.0289      0.004      6.959      0.000       0.021       0.037
+DP03_0098PE     0.0127      0.002      7.940      0.000       0.010       0.016
+DP03_0106PE    -0.0105      0.001     -8.666      0.000      -0.013      -0.008
+DP05_0024PE     0.0026      0.002      1.244      0.214      -0.002       0.007
+==============================================================================
+Omnibus:                      233.045   Durbin-Watson:                   2.004
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1637.180
+Skew:                           0.962   Prob(JB):                         0.00
+Kurtosis:                       9.242   Cond. No.                         39.2
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+[('DP05_0064PE', 'Race alone or in combination with one or more other races Total population White'), 
+('DP02_0018PE', 'RELATIONSHIP Population in households Householder'), 
+('DP02_0114PE', 'LANGUAGE SPOKEN AT HOME Population 5 years and over Spanish'), 
+('DP02_0029PE', 'MARITAL STATUS Males 15 years and over Divorced'), 
+('DP03_0098PE', 'HEALTH INSURANCE COVERAGE Civilian noninstitutionalized population With health insurance coverage With public coverage'), 
+('DP03_0106PE', 'HEALTH INSURANCE COVERAGE Civilian noninstitutionalized population Civilian noninstitutionalized population 19 to 64 years In labor force Employed With health insurance coverage With private health insurance'), 
+('DP05_0024PE', 'SEX AND AGE Total population 65 years and over')]
+
+####################
+

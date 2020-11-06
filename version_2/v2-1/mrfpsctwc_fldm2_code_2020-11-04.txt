@@ -1,8 +1,8 @@
 ####################
 
-Title: FractureProof v2.1 Mr. Fracture Proofs Woodcarving Code template
+Title: FractureProof v2.1 - Mr. Fracture Proofs Contemplative Woodcarvings about Diabetes Mortality in Florida
 Author: Andrew S. Cistola, MPH
-Filename: mrfpwc_temp_code.py
+Filename: mrfpsctwc_temp_code.py
 Realtive Path: fracture-proof/version_2/v2-1/
 Working Directory: /home/drewc/GitHub/
 Time Run: 2020-11-04 12:43:12.965529

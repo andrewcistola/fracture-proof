@@ -1,8 +1,8 @@
 # Information
-name = 'fp_temp_code' # Inptu file name with topic, subtopic, and type
+name = 'mrfp_fldm2_code' # Inptu file name with topic, subtopic, and type
 path = 'fracture-proof/version_2/v2-1/' # Input relative path to file 
 directory = '/home/drewc/GitHub/' # Input working directory
-title = 'FractureProof v2.1 Code template' # Input descriptive title
+title = 'FractureProof v2.1 - Mr. Fracture Proof for Diabetes Mortality in Florida' # Input descriptive title
 author = 'Andrew S. Cistola, MPH' # Input Author
 
 ## Setup Workspace
@@ -16,6 +16,9 @@ from datetime import date
 import pandas as pd # Widely used data manipulation library with R/Excel like tables named 'data frames'
 import numpy as np # Widely used matrix library for numerical processes
 
+### Import statistics libraries
+import statsmodels.api as sm # Statistics package best for regression models
+
 ### Import scikit-learn libraries
 from sklearn.preprocessing import StandardScaler # Standard scaling for easier use of machine learning algorithms
 from sklearn.impute import SimpleImputer # Univariate imputation for missing data
@@ -23,7 +26,6 @@ from sklearn.decomposition import PCA # Principal compnents analysis from sklear
 from sklearn.ensemble import RandomForestRegressor # Random Forest regression component
 from sklearn.feature_selection import RFECV # Recursive Feature elimination with cross validation
 from sklearn.linear_model import LinearRegression # Used for machine learning with quantitative outcome
-
 
 ### Set Directory
 os.chdir(directory) # Set wd to project repository
@@ -51,24 +53,24 @@ d2 = 'US Census American Community Survey 2014-2018 Zip Code 5-year Average' # I
 
 ## Preprocess First Dataset
 df_d1 = pd.read_csv('fracture-proof/version_2/_data/FDOH_5Y2018_ZCTA.csv') # Import first dataset saved as csv in _data folder
+df_d1 = df_d1[df_d1['POPULATION'] > 500] # Susbet numeric column by condition
 df_d1 = df_d1.filter(['K00_K99_R1000', 'ZCTA']) # Drop or filter columns to keep only feature values and idenitifer
-df_d1 = df_d1[df_d1["POPULATION"] > 500] # Susbet numeric column by condition
+df_d1 = df_d1.rename(columns = {'ZCTA': 'ID', 'K00_K99_R1000': 'quant'}) # Apply standard name to identifier and quantitative outcome
 df_d1.info() # Get class, memory, and column info: names, data types, obs
 
 ### Preprocess Second Data
-df_d2 = pd.read_csv('fracture-proof/version_2/_data/ACS_5Y2018_ZCTA.csv') # Import dataset saved as csv in _data folder
+df_d2 = pd.read_csv('fracture-proof/version_2/_data/ACS_5Y2018_ZCTA.csv') # Import second dataset saved as csv in _data folder
 df_d2 = df_d2.drop(columns = ['ST', 'FIPS']) # Drop or filter columns to keep only feature values and idenitifer
 df_d2 = df_d2.select_dtypes(exclude = ['int64']) # Drop all unwanted data types
+df_d2 = df_d2.rename(columns = {'ZCTA': 'ID'}) # Apply standard name to identifier used for joining datasets
 df_d2.info() # Get class, memory, and column info: names, data types, obs.
 
 ### Join Datasets by ID and define targets
-df_full = pd.merge(df_d1, df_d2, on = 'ZCTA', how = 'inner') # Join datasets to create table with predictors and outcome
-df_full = df_full.dropna(subset = ['K00_K99_R1000']) # Drop all outcome rows with NA values
-df_full.info() # Get class, memory, and column info: names, data types, obs.
+df_XY = pd.merge(df_d1, df_d2, on = 'ID', how = 'inner') # Join datasets to create table with predictors and outcome
+df_XY = df_XY.dropna(subset = ['quant']) # Drop all outcome rows with NA values
+df_XY.info() # Get class, memory, and column info: names, data types, obs.
 
 ### Create outcome table
-df_XY =  df_full.rename(columns = {'ZCTA': 'ID'}) # Apply standard name to identifier used for joining datasets
-df_XY = df_XY.rename(columns = {'K00_K99_R1000': 'quant'}) # Apply standard name to identifier used for joining datasets
 df_Y = df_XY.filter(['quant', 'ID']) # Create Outcome table
 df_Y = df_Y.set_index('ID') # Set identifier as index
 df_Y.info() # Get class, memory, and column info: names, data types, obs.
@@ -83,6 +85,15 @@ df_X['ID'] = df_XY['ID'] # Save ID as column in predictor table
 df_X = df_X.set_index('ID') # Set identifier as index
 df_X.info() # Get class, memory, and column info: names, data types, obs.
 
+### Add feature labels
+df_l1 = pd.read_csv('fracture-proof/version_2/_data/ACS_5Y2018_labels.csv') # Import feature lables for first dataset saved as csv in _data folder
+df_l2 = pd.read_csv('fracture-proof/version_2/_data/FDOH_5Y2018_labels.csv') # Import feature lables for second dataset saved as csv in _data folder
+df_l1_l2 = pd.concat([df_l1, df_l2]) # Combine rows with same columns
+df_l1_l2 = df_l1_l2.filter(['Feature', 'Label']) # Keep only selected columns
+df_l1_l2 = df_l1_l2.set_index('Feature') # Set column as index
+df_l1_l2 = df_l1_l2.transpose() # Switch rows and columns
+df_l1_l2.info # Get class, memory, and column info: names, data types, obs.
+
 ## Append to Text File
 text_file = open(path + name + '_' + day + '.txt', 'a') # Open text file and name with subproject, content, and result suffix
 text_file.write(s1 + '\n\n') # Step 1 descriptive title
@@ -94,22 +105,22 @@ text_file.write(str(df_Y.describe())  + '\n\n') # Descriptive statistics for tar
 text_file.write('Features labels: ACS Percent Estimates' + '\n') # Number of observations and variables
 text_file.write('Feature processing: 75% nonNA, Median Imputed NA, Standard Scaled' + '\n\n') # Feature processing
 text_file.write('Rows, Columns: ' + str(df_X.shape) + '\n\n') # Number of observations and variables
-text_file.write('####################' + '\n\n')
+text_file.write('####################' + '\n\n') # Add section break for end of step
 text_file.close() # Close file
 
-# Step 2: Identify Predictors with Open Box Models
-s2 = "Step 2: Identify Predictors with Open Models" # Step 1 descriptive title
+## Step 2: Identify Predictors with Open Box Models
+s2 = "Step 2: Identify Predictors with Open Models" # Step 2 descriptive title
 m1 = "Principal Component Analysis" # Model 1 descriptive title
 m2 = "Random Forests" # Model 2 descriptive title
 m3 = "Recursive feature Elimination" # Model 3 descriptive title
 
-## Principal Component Analysis
+### Principal Component Analysis
 degree = len(df_X.columns) - 1  # Save number of features -1 to get degrees of freedom
 pca = PCA(n_components = degree) # Pass the number of components to make PCA model based on degrees of freedom
 pca.fit(df_X) # Fit initial PCA model
 df_comp = pd.DataFrame(pca.explained_variance_) # Print explained variance of components
 df_comp = df_comp[(df_comp[0] > 1)] # Save eigenvalues above 1 to identify components
-components = len(df_comp.index) - 3 # Save count of components for Variable reduction
+components = len(df_comp.index) - 1 # Save count of components for Variable reduction
 pca = PCA(n_components = components) # you will pass the number of components to make PCA model
 pca.fit_transform(df_X) # finally call fit_transform on the aggregate data to create PCA results object
 df_pc = pd.DataFrame(pca.components_, columns = df_X.columns) # Export eigenvectors to data frame with column names from original data
@@ -126,17 +137,17 @@ df_pca.info() # Get class, memory, and column info: names, data types, obs.
 
 ### Random Forest Regressor
 forest = RandomForestRegressor(n_estimators = 1000, max_depth = 10) #Use default values except for number of trees. For a further explanation see readme included in repository. 
-forest.fit(df_X, df_Y["quant"]) # Fit Forest model, This will take time
+forest.fit(df_X, df_Y['quant']) # Fit Forest model, This will take time
 rf = forest.feature_importances_ # Output importances of features
 l_rf = list(zip(df_X, rf)) # Create list of variables alongside importance scores 
-df_rf = pd.DataFrame(l_rf, columns = ["Feature", "Gini"]) # Create data frame of importances with variables and gini column names
-df_rf = df_rf[(df_rf["Gini"] > df_rf["Gini"].mean())] # Subset by Gini values higher than mean
-df_rf = df_rf.sort_values(by = ["Gini"], ascending = False) # Sort Columns by Value
+df_rf = pd.DataFrame(l_rf, columns = ['Feature', 'Gini']) # Create data frame of importances with variables and gini column names
+df_rf = df_rf[(df_rf['Gini'] > df_rf['Gini'].mean())] # Subset by Gini values higher than mean
+df_rf = df_rf.sort_values(by = ['Gini'], ascending = False) # Sort Columns by Value
 df_rf.info() # Get class, memory, and column info: names, data types, obs.
 
 ### Fracture: Join RF and PCA 
-df_fr = pd.merge(df_pca, df_rf, on = "Feature", how = "inner") # Join by column while keeping only items that exist in both, select outer or left for other options
-fracture = df_fr["Feature"].tolist() # Save features from data frame
+df_fr = pd.merge(df_pca, df_rf, on = 'Feature', how = 'inner') # Join by column while keeping only items that exist in both, select outer or left for other options
+fracture = df_fr['Feature'].tolist() # Save features from data frame
 df_fr.info() # Get class, memory, and column info: names, data types, obs.
 
 ### Recursive Feature Elimination
@@ -144,36 +155,68 @@ recursive = RFECV(estimator = LinearRegression(), min_features_to_select = 5) # 
 recursive.fit(df_X[fracture], df_Y['quant']) # This will take time
 rfe = recursive.support_ # Save Boolean values as numpy array
 l_rfe = list(zip(df_X[fracture], rfe)) # Create list of variables alongside RFE value 
-df_rfe = pd.DataFrame(l_rfe, columns = ["Feature", "RFE"]) # Create data frame of importances with variables and gini column names
-df_rfe = df_rfe.sort_values(by = ["RFE"], ascending = True) # Sort Columns by Value
-df_rfe = df_rfe[df_rfe["RFE"] == True] # Select Variables that were True
+df_rfe = pd.DataFrame(l_rfe, columns = ['Feature', 'RFE']) # Create data frame of importances with variables and gini column names
+df_rfe = df_rfe.sort_values(by = ['RFE'], ascending = True) # Sort Columns by Value
+df_rfe = df_rfe[df_rfe['RFE'] == True] # Select Variables that were True
 df_rfe.info() # Get class, memory, and column info: names, data types, obs.
 
 ### FractureProof: Join RFE with Fracture
-df_fp = pd.merge(df_fr, df_rfe, on = "Feature", how = "inner") # Join by column while keeping only items that exist in both, select outer or left for other options
-fractureproof = df_fp["Feature"].tolist() # Save chosen featres as list
+df_fp = pd.merge(df_fr, df_rfe, on = 'Feature', how = 'inner') # Join by column while keeping only items that exist in both, select outer or left for other options
+fractureproof = df_fp['Feature'].tolist() # Save chosen featres as list
 df_fp.info() # Get class, memory, and column info: names, data types, obs.
 
-### Add feature labels
-df_l1 = pd.read_csv('fracture-proof/version_2/_data/ACS_5Y2018_labels.csv') # Import dataset saved as csv in _data folder
-df_l2 = pd.read_csv('fracture-proof/version_2/_data/FDOH_5Y2018_labels.csv')
-df_label = pd.concat([df_l1, df_l2]) # Combine rows with same columns
-df_label = df_label.filter(["Feature", "Label"]) # Keep only selected columns
-df_label = df_label.set_index("Feature") # Set column as index
-df_label = df_label.transpose() # Switch rows and columns
-df_label = df_label[fractureproof] # Save chosen featres as list
-df_label = df_label.transpose() # Switch rows and columns
-df_label = df_label.reset_index() # Reset index
-l_label = list(zip(df_label["Feature"], df_label["Label"])) # Create list of variables alongside RFE value 
-df_label.info() # Get class, memory, and column info: names, data types, obs.
+### Get FractureProof feature labels
+df_lfp = df_l1_l2[fractureproof] # Save chosen featres as list
+df_lfp = df_lfp.transpose() # Switch rows and columns
+df_lfp = df_lfp.reset_index() # Reset index
+l_lfp = list(zip(df_lfp['Feature'], df_lfp['Label'])) # Create list of variables alongside RFE value 
+df_lfp.info() # Get class, memory, and column info: names, data types, obs.
 
 ### Append to Text File
-text_file = open(path + name + "_" + day + ".txt", "a") # Open text file and name with subproject, content, and result suffix
-text_file.write(s2 + "\n\n") # Line of text with space after
-text_file.write("Models: " + m1 + ", " + m2 + ", " + m3 + "\n\n") # Add two lines of blank text at end of every section text
-text_file.write("Values: Eigenvectors, Gini Impurity, Boolean" + "\n") # Add two lines of blank text at end of every section text
-text_file.write("Thresholds: Mean, Mean, Cross Validation" + "\n\n") # Add two lines of blank text at end of every section text
-text_file.write(str(df_fp)  + "\n\n") # Add two lines of blank text at end of every section text
-text_file.write(str(l_label)  + "\n\n") # Add two lines of blank text at end of every section text
-text_file.write("####################" + "\n\n")
+text_file = open(path + name + '_' + day + '.txt', 'a') # Open text file and name with subproject, content, and result suffix
+text_file.write(s2 + '\n\n') # Line of text with space after
+text_file.write('Models: ' + m1 + ', ' + m2 + ', ' + m3 + '\n\n') # Add two lines of blank text at end of every section text
+text_file.write('Values: Eigenvectors, Gini Impurity, Boolean' + '\n') # Add two lines of blank text at end of every section text
+text_file.write('Thresholds: Mean, Mean, Cross Validation' + '\n\n') # Add two lines of blank text at end of every section text
+text_file.write(str(df_fp)  + '\n\n') # Add two lines of blank text at end of every section text
+text_file.write(str(l_lfp)  + '\n\n') # Add two lines of blank text at end of every section text
+text_file.write('####################' + '\n\n') # Add section break for end of step
+text_file.close() # Close file
+
+## Step 3: Create Informative Prediction Model
+s3 = 'Step 3: Create Informative Preidction Model' # Step 1 descriptive title
+m4 = 'Multiple Linear Regression Model' # Model 3 descriptive title
+
+### Principal Component Analysis
+mrfractureproof = df_X[fractureproof].columns.to_list() # Save list of selected variables for multiple regression model
+
+### Add confounders to multiple regression model
+mrfractureproof.append('quant') # Add outcome to list of selected variables for multiple regression model
+mrfractureproof.append('DP05_0024PE') # Add confounder (Over 65) to list of selected variables for multiple regression model
+
+### Create Multiple Regression Model
+df_mrfp = df_XY[mrfractureproof] # Subset original nonscaled data for regression
+df_mrfp = df_mrfp.dropna() # Drop all rows with NA values
+X = df_mrfp.drop(columns = ['quant']) # Susbet predictors for regression
+Y = df_mrfp['quant'] # Subset quantitative outcome for regression
+mod = sm.OLS(Y, X) # Create linear regression model
+res = mod.fit() # Fit model to create result
+res.summary() # Print results of regression model
+
+### Add feature labels
+mrfractureproof.remove('quant') # Remove outcome to list of features used for collecting lables
+df_lmrfp = df_l1_l2[mrfractureproof] # Save selected features as list for collecting labels
+mrfractureproof.append('quant') # Add outcome to to list of selected variables for multiple regression model
+df_lmrfp = df_lmrfp.transpose() # Switch rows and columns
+df_lmrfp = df_lmrfp.reset_index() # Reset index
+l_lmrfp = list(zip(df_lmrfp['Feature'], df_lmrfp['Label'])) # Create list of variables alongside RFE value 
+df_lmrfp.info() # Get class, memory, and column info: names, data types, obs.
+
+### Append to Text File
+text_file = open(path + name + '_' + day + '.txt', 'a') # Open text file and name with subproject, content, and result suffix
+text_file.write(s3 + '\n\n') # Line of text with space after
+text_file.write('Models: ' + m4 + '\n\n') # Add two lines of blank text at end of every section text
+text_file.write(str(res.summary())  + '\n\n') # Add two lines of blank text at end of every section text
+text_file.write(str(l_lmrfp)  + '\n\n') # Add two lines of blank text at end of every section text
+text_file.write('####################' + '\n\n') # Add section break for end of step
 text_file.close() # Close file
