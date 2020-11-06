@@ -34,31 +34,31 @@ os.chdir(directory) # Set wd to project repository
 day = str(date.today())
 stamp = str(datetime.now())
 
-### Append to Text File
-text_file = open(path + name + '_' + day + '.txt', 'w') # Open text file and name with subproject, content, and result suffix
-text_file.write('####################' + '\n\n')
+### Write corresponding text file for collecting results
+text_file = open(path + name + '_' + day + '.txt', 'w') # Write new corresponding text file
+text_file.write('####################' + '\n\n') # Add section break for end of step
 text_file.write('Title: ' + title + '\n') # Script title
 text_file.write('Author: ' + author + '\n') # Script Author
 text_file.write('Filename: ' + name + '.py' + '\n') # Filename of script
 text_file.write('Realtive Path: ' + path + '\n') # Relative path to script
 text_file.write('Working Directory: ' + directory + '\n') # Directory used for script run
 text_file.write('Time Run: ' + stamp + '\n') # Timestamp of script run
-text_file.write('\n' + '####################' + '\n\n')
+text_file.write('\n' + '####################' + '\n\n') # Add section break for end of step
 text_file.close() # Close file
 
-# Step 1: Data Processing of Predictors and Outcomes
+## Step 1: Data Processing of Predictors and Outcomes
 s1 = 'Step 1: Raw Data Processing and Feature Engineering' # Step 1 descriptive title
-d1 = 'Florida Deaprtment of Health Vital Statistics 113 Leading Mortality Causes 2014-2018 Zip Code 5-year Average' # Input descriptive title for 1st dataset
-d2 = 'US Census American Community Survey 2014-2018 Zip Code 5-year Average' # Input descriptive title for 2nd dataset
+d1 = 'Florida Deaprtment of Health Vital Statistics 113 Leading Mortality Causes 2014-2018 Zip Code 5-year Average' # Dataset 1 descriptive title
+d2 = 'US Census American Community Survey 2014-2018 Zip Code 5-year Average' # Dataset 2 descriptive title
 
-## Preprocess First Dataset
+### Preprocess First Dataset
 df_d1 = pd.read_csv('fracture-proof/version_2/_data/FDOH_5Y2018_ZCTA.csv') # Import first dataset saved as csv in _data folder
 df_d1 = df_d1[df_d1['POPULATION'] > 500] # Susbet numeric column by condition
 df_d1 = df_d1.filter(['K00_K99_R1000', 'ZCTA']) # Drop or filter columns to keep only feature values and idenitifer
 df_d1 = df_d1.rename(columns = {'ZCTA': 'ID', 'K00_K99_R1000': 'quant'}) # Apply standard name to identifier and quantitative outcome
 df_d1.info() # Get class, memory, and column info: names, data types, obs
 
-### Preprocess Second Data
+### Preprocess Second Dataset
 df_d2 = pd.read_csv('fracture-proof/version_2/_data/ACS_5Y2018_ZCTA.csv') # Import second dataset saved as csv in _data folder
 df_d2 = df_d2.drop(columns = ['ST', 'FIPS']) # Drop or filter columns to keep only feature values and idenitifer
 df_d2 = df_d2.select_dtypes(exclude = ['int64']) # Drop all unwanted data types
@@ -94,11 +94,11 @@ df_l1_l2 = df_l1_l2.set_index('Feature') # Set column as index
 df_l1_l2 = df_l1_l2.transpose() # Switch rows and columns
 df_l1_l2.info # Get class, memory, and column info: names, data types, obs.
 
-## Append to Text File
-text_file = open(path + name + '_' + day + '.txt', 'a') # Open text file and name with subproject, content, and result suffix
-text_file.write(s1 + '\n\n') # Step 1 descriptive title
-text_file.write(d1 + '\n') # First dataset descriptive title
-text_file.write(d2 + '\n\n') # Second dataset descriptive title
+### Append step 1 results to corresponding text file
+text_file = open(path + name + '_' + day + '.txt', 'a') # Open corresponding text file
+text_file.write(s1 + '\n\n') # Step description
+text_file.write(d1 + '\n') # Dataset description
+text_file.write(d2 + '\n\n') # Dataset description
 text_file.write('Target labels: quant = Diabetes Related (K00-K99) Raw Mortality Rate per 1000k' + '\n') # Target labels
 text_file.write('Target processing: None' + '\n\n') # Target processing
 text_file.write(str(df_Y.describe())  + '\n\n') # Descriptive statistics for target
@@ -108,7 +108,7 @@ text_file.write('Rows, Columns: ' + str(df_X.shape) + '\n\n') # Number of observ
 text_file.write('####################' + '\n\n') # Add section break for end of step
 text_file.close() # Close file
 
-## Step 2: Identify Predictors with Open Box Models
+## Step 2: Identify Predictors
 s2 = "Step 2: Identify Predictors with Open Models" # Step 2 descriptive title
 m1 = "Principal Component Analysis" # Model 1 descriptive title
 m2 = "Random Forests" # Model 2 descriptive title
@@ -172,25 +172,24 @@ df_lfp = df_lfp.reset_index() # Reset index
 l_lfp = list(zip(df_lfp['Feature'], df_lfp['Label'])) # Create list of variables alongside RFE value 
 df_lfp.info() # Get class, memory, and column info: names, data types, obs.
 
-### Append to Text File
-text_file = open(path + name + '_' + day + '.txt', 'a') # Open text file and name with subproject, content, and result suffix
-text_file.write(s2 + '\n\n') # Line of text with space after
-text_file.write('Models: ' + m1 + ', ' + m2 + ', ' + m3 + '\n\n') # Add two lines of blank text at end of every section text
-text_file.write('Values: Eigenvectors, Gini Impurity, Boolean' + '\n') # Add two lines of blank text at end of every section text
-text_file.write('Thresholds: Mean, Mean, Cross Validation' + '\n\n') # Add two lines of blank text at end of every section text
-text_file.write(str(df_fp)  + '\n\n') # Add two lines of blank text at end of every section text
-text_file.write(str(l_lfp)  + '\n\n') # Add two lines of blank text at end of every section text
+### Append step 2 results to corresponding text file
+text_file = open(path + name + '_' + day + '.txt', 'a') # Open corresponding text file
+text_file.write(s2 + '\n\n') # Step description
+text_file.write('Models: ' + m1 + ', ' + m2 + ', ' + m3 + '\n\n') # Model description
+text_file.write('Values: Eigenvectors, Gini Impurity, Boolean' + '\n') # Model methods description
+text_file.write('Thresholds: Mean, Mean, Cross Validation' + '\n\n') # Model methods description
+text_file.write(str(df_fp)  + '\n\n') # Result dataframe
+text_file.write("Final list of selected features" + "\n") # Add two lines of blank text at end of every section text
+text_file.write(str(l_lfp)  + '\n\n') # Result list
 text_file.write('####################' + '\n\n') # Add section break for end of step
 text_file.close() # Close file
 
 ## Step 3: Create Informative Prediction Model
-s3 = 'Step 3: Create Informative Preidction Model' # Step 1 descriptive title
-m4 = 'Multiple Linear Regression Model' # Model 3 descriptive title
-
-### Principal Component Analysis
-mrfractureproof = df_X[fractureproof].columns.to_list() # Save list of selected variables for multiple regression model
+s3 = 'Step 3: Create Informative Preidction Model' # Step 3 descriptive title
+m4 = 'Multiple Linear Regression Model' # Model 4 descriptive title
 
 ### Add confounders to multiple regression model
+mrfractureproof = df_X[fractureproof].columns.to_list() # Save list of selected variables for multiple regression model
 mrfractureproof.append('quant') # Add outcome to list of selected variables for multiple regression model
 mrfractureproof.append('DP05_0024PE') # Add confounder (Over 65) to list of selected variables for multiple regression model
 
@@ -212,11 +211,11 @@ df_lmrfp = df_lmrfp.reset_index() # Reset index
 l_lmrfp = list(zip(df_lmrfp['Feature'], df_lmrfp['Label'])) # Create list of variables alongside RFE value 
 df_lmrfp.info() # Get class, memory, and column info: names, data types, obs.
 
-### Append to Text File
-text_file = open(path + name + '_' + day + '.txt', 'a') # Open text file and name with subproject, content, and result suffix
-text_file.write(s3 + '\n\n') # Line of text with space after
-text_file.write('Models: ' + m4 + '\n\n') # Add two lines of blank text at end of every section text
-text_file.write(str(res.summary())  + '\n\n') # Add two lines of blank text at end of every section text
-text_file.write(str(l_lmrfp)  + '\n\n') # Add two lines of blank text at end of every section text
+### Append step 3 results to corresponding text file
+text_file = open(path + name + '_' + day + '.txt', 'a') # Open corresponding text file 
+text_file.write(s3 + '\n\n') # Step title
+text_file.write('Models: ' + m4 + '\n\n') # Model description
+text_file.write(str(res.summary())  + '\n\n') # Result summary
+text_file.write(str(l_lmrfp)  + '\n\n') # Result list
 text_file.write('####################' + '\n\n') # Add section break for end of step
 text_file.close() # Close file
