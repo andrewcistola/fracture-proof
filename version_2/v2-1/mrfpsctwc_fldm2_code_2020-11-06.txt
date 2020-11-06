@@ -271,3 +271,41 @@ Final List of selected 1st and 2nd layer features
 
 ####################
 
+Step 8: Predict Categorical targets with Artificial Neural Networks
+
+Florida Deaprtment of Health Vital Statistics 113 Leading Mortality Causes 2014-2018 Zip Code 5-year Average
+US Census American Community Survey 2014-2018 Zip Code 5-year Average
+Health Resources and Servcies Administration Area Heath Resource File Populaton Rates by County 2014-2018 5-year Average
+
+Target labels: binary = Diabetes Related (K00-K99) Raw Mortality Rate per 1000k above 50% percentile
+Target processing: train, test random 50-50 split
+
+Multi-Layer Perceptron
+Layers: Dense, Dense, Activation
+Functions: ReLU, ReLU, Sigmoid
+All features, all layers: AUC = 0.793801652892562, Epochs = 50
+Fractureproof Features: AUC = 0.808078245673375, Epochs = 500
+Woodcarving Features: AUC = 0.6343403864535113, Epochs = 500
+Mr. Fracture Proofs Woodcarving Features: AUC = 0.8231786216596344, Epochs = 500
+
+Mr. Fracture Proofs Woodcarving Features, Final list:
+
+Mr. Fracture Proof (1st layer): 
+Population % White 
+Population % Householders 
+Population % 5 years and over Spanish spoke at home
+Population % Males 15 years and over Divorced
+Population % with public health insurance coverage 
+Population % employed with private health insurancehealth insurance coverage
+Population % 65 years and over'
+
+Woodcarving (2nd layer): 
+('AHRF1029', 'Manufacturing-Dep Typology Code'), 
+('AHRF919', 'Low Education Typology Code'), 
+('AHRF284', '# ST Gen Hosp, 050-099 Beds'), 
+('AHRF361', '% Medicare FFS Benef Female Fee for Service'), 
+('AHRF852', 'HPSA Code - Primary Care 05/16 1=Whole, 2=Part County'), 
+('AHRF1421', 'Persistent Povrty Typology Code')
+
+####################
+

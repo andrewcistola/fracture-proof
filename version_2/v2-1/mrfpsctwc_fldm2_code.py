@@ -435,6 +435,7 @@ df_XY_f.info() # Get class, memory, and column info: names, data types, obs.
 
 ### Create Multiple Regression Model
 mrfractureproofswoodcarvings = mrfractureproof + woodcarving # Combine 2nd layer slected features with first layer regression model features
+mrfractureproofswoodcarvings.append('quant') # Remove outcome from 1st and 2nd layer regression feature list
 df_mrfpwc = df_XY_f[mrfractureproofswoodcarvings] # Subset full dataframe with 1st and 2nd layer regression model features
 df_mrfpwc = df_mrfpwc.dropna() # Drop all NA values from subset dataframe
 X = df_mrfpwc.drop(columns = ['quant']) # Create dataframe of predictors
@@ -450,7 +451,6 @@ df_lf = df_lf.set_index('Feature') # Set column as index
 df_lf = df_lf.transpose() # Switch rows and columns
 mrfractureproofswoodcarvings.remove('quant') # Remove outcome from 1st and 2nd layer regression feature list
 df_lmfpwc = df_lf[mrfractureproofswoodcarvings] # Save chosen featres as list
-mrfractureproofswoodcarvings.append('quant') # Remove outcome from 1st and 2nd layer regression feature list
 df_lmfpwc = df_lmfpwc.transpose() # Switch rows and columns
 df_lmfpwc = df_lmfpwc.reset_index() # Reset index
 l_lmfpwc = list(zip(df_lmfpwc['Feature'], df_lmfpwc['Label'])) # Create list of variables alongside RFE value 
@@ -496,7 +496,6 @@ df_X_f = df_X_f.set_index('ID') # Set identifier as index
 df_X_f.info() # Get class, memory, and column info: names, data types, obs.
 
 ### Save FractureProof and Woodcarving feature list
-mrfractureproof.remove('quant') # Remove outcome from 1st and 2nd layer regression feature list
 mrfractureproofscontemplativewoodcarvings = mrfractureproof + woodcarving # Combine 2nd layer slected features with first layer regression model features
 
 ### Multi-Layered Perceptron with all predictors from all layers
@@ -505,17 +504,20 @@ X = df_X_f # Save all predictors as MLP input
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.50) # Random 50/50 Train/Test Split
 input = X.shape[1] # Save number of columns as input dimension
 nodes = round(input / 2) # Number of input dimensions divided by two for nodes in each layer
+epochs = 50
 network = Sequential() # Build Network with keras Sequential API
 network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal', input_dim = input)) # First dense layer
 network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal')) # Second dense layer
 network.add(Dense(1, activation = 'sigmoid', kernel_initializer = 'random_normal')) # Output layer with binary activation
 network.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy']) # Compile network with Adaptive moment estimation, and follow loss and accuracy
-final = network.fit(X_train, Y_train, batch_size = 10, epochs = 100) # Fitting the data to the train outcome, with batch size and number of epochs
+final = network.fit(X_train, Y_train, batch_size = 10, epochs = epochs) # Fitting the data to the train outcome, with batch size and number of epochs
 Y_pred = network.predict(X_test) # Predict values from test data
 Y_pred = (Y_pred > 0.5) # Save predicted values close to 1 as boolean
 Y_test = (Y_test > 0.5) # Save test values close to 1 as boolean
 fpr, tpr, threshold = roc_curve(Y_test, Y_pred) # Create ROC outputs, true positive rate and false positive rate
 auc_a = auc(fpr, tpr) # Plot ROC and get AUC score
+e_a = epochs # Save epochs used for mlp
+print(auc_a) # Display object
 
 ### Multi-Layered Perceptron with Mr. Fracture Proof predictors
 Y = df_Y_f.filter(['binary']) # Save binary outcome as MLP Input
@@ -523,17 +525,20 @@ X = df_X_f[mrfractureproof] # Save selected predictors from all layers predictor
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.50) # Random 50/50 Train/Test Split
 input = X.shape[1] # Save number of columns as input dimension
 nodes = round(input / 2) # Number of input dimensions divided by two for nodes in each layer
+epochs = 500
 network = Sequential() # Build Network with keras Sequential API
 network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal', input_dim = input)) # First dense layer
 network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal')) # Second dense layer
 network.add(Dense(1, activation = 'sigmoid', kernel_initializer = 'random_normal')) # Output layer with binary activation
 network.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy']) # Compile network with Adaptive moment estimation, and follow loss and accuracy
-final = network.fit(X_train, Y_train, batch_size = 10, epochs = 100) # Fitting the data to the train outcome, with batch size and number of epochs
+final = network.fit(X_train, Y_train, batch_size = 10, epochs = epochs) # Fitting the data to the train outcome, with batch size and number of epochs
 Y_pred = network.predict(X_test) # Predict values from test data
 Y_pred = (Y_pred > 0.5) # Save predicted values close to 1 as boolean
 Y_test = (Y_test > 0.5) # Save test values close to 1 as boolean
 fpr, tpr, threshold = roc_curve(Y_test, Y_pred) # Create ROC outputs, true positive rate and false positive rate
 auc_mrfp = auc(fpr, tpr) # Plot ROC and get AUC score
+e_mrfp = epochs # Save epochs used for mlp
+print(auc_mrfp) # Display object
 
 ### Multi-Layered Perceptron with Woodcarving predictors
 Y = df_Y_f.filter(['binary']) # Save binary outcome as MLP Input
@@ -541,17 +546,20 @@ X = df_X_f[woodcarving] # Save selected predictors from all layers predictors as
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.50) # Random 50/50 Train/Test Split
 input = X.shape[1] # Save number of columns as input dimension
 nodes = round(input / 2) # Number of input dimensions divided by two for nodes in each layer
+epochs = 500
 network = Sequential() # Build Network with keras Sequential API
 network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal', input_dim = input)) # First dense layer
 network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal')) # Second dense layer
 network.add(Dense(1, activation = 'sigmoid', kernel_initializer = 'random_normal')) # Output layer with binary activation
 network.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy']) # Compile network with Adaptive moment estimation, and follow loss and accuracy
-final = network.fit(X_train, Y_train, batch_size = 10, epochs = 100) # Fitting the data to the train outcome, with batch size and number of epochs
+final = network.fit(X_train, Y_train, batch_size = 10, epochs = epochs) # Fitting the data to the train outcome, with batch size and number of epochs
 Y_pred = network.predict(X_test) # Predict values from test data
 Y_pred = (Y_pred > 0.5) # Save predicted values close to 1 as boolean
 Y_test = (Y_test > 0.5) # Save test values close to 1 as boolean
 fpr, tpr, threshold = roc_curve(Y_test, Y_pred) # Create ROC outputs, true positive rate and false positive rate
 auc_wc = auc(fpr, tpr) # Plot ROC and get AUC score
+e_wc = epochs # Save epochs used for mlp
+print(auc_wc) # Display object
 
 ### Multi-Layered Perceptron with Mr. Fracture Proof's Contemplative Woodcarving predictors
 Y = df_Y_f.filter(['binary']) # Save binary outcome as MLP Input
@@ -559,19 +567,22 @@ X = df_X_f[mrfractureproofscontemplativewoodcarvings] # Save selected predictors
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.50) # Random 50/50 Train/Test Split
 input = X.shape[1] # Save number of columns as input dimension
 nodes = round(input / 2) # Number of input dimensions divided by two for nodes in each layer
+epochs = 500
 network = Sequential() # Build Network with keras Sequential API
 network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal', input_dim = input)) # First dense layer
 network.add(Dense(nodes, activation = 'relu', kernel_initializer = 'random_normal')) # Second dense layer
 network.add(Dense(1, activation = 'sigmoid', kernel_initializer = 'random_normal')) # Output layer with binary activation
 network.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy']) # Compile network with Adaptive moment estimation, and follow loss and accuracy
-final = network.fit(X_train, Y_train, batch_size = 10, epochs = 100) # Fitting the data to the train outcome, with batch size and number of epochs
+final = network.fit(X_train, Y_train, batch_size = 10, epochs = epochs) # Fitting the data to the train outcome, with batch size and number of epochs
 Y_pred = network.predict(X_test) # Predict values from test data
 Y_pred = (Y_pred > 0.5) # Save predicted values close to 1 as boolean
 Y_test = (Y_test > 0.5) # Save test values close to 1 as boolean
 fpr, tpr, threshold = roc_curve(Y_test, Y_pred) # Create ROC outputs, true positive rate and false positive rate
 auc_mrfpctwc = auc(fpr, tpr) # Plot ROC and get AUC score
+e_mrfpctwc = epochs # Save epochs used for mlp
+print(auc_mrfpctwc) # Display object
 
-### Append to Text File
+### Append step 8 results to corresponding text file
 text_file = open(path + name + '_' + day + '.txt', 'a') # Open corresponding text file
 text_file.write(s8 + '\n\n') # Step description
 text_file.write(d1 + '\n') # Dataset description
@@ -582,12 +593,11 @@ text_file.write('Target processing: train, test random 50-50 split' + '\n\n') # 
 text_file.write(m7 + '\n') # Model description
 text_file.write('Layers: Dense, Dense, Activation' + '\n') # Model methods description
 text_file.write('Functions: ReLU, ReLU, Sigmoid' + '\n') # Model methods description
-text_file.write('Epochs: 100' + '\n\n') # Model methods description
-text_file.write('AUC Score from all features, all layers = ' + str(auc_a) + '\n') # Result description and result dataframe
-text_file.write('AUC Score from Fractureproof Features = ' + str(auc_mrfp) + '\n\n') # Result description and result dataframe
-text_file.write('AUC Score from Woodcarving Features = ' + str(auc_wc) + '\n\n') # Result description and result dataframe
-text_file.write('AUC Score from Mr. Fracture Proofs Woodcarving Features = ' + str(auc_mrfpctwc) + '\n\n') # Result description and result dataframe
-text_file.write('Final List of features' + '\n') # Result description
+text_file.write('All features, all layers: AUC = ' + str(auc_a) + ', Epochs = ' + str(e_a) + '\n') # Result description and result dataframe
+text_file.write('Fractureproof Features: AUC = ' + str(auc_mrfp) + ', Epochs = ' + str(e_mrfp) + '\n') # Result description and result dataframe
+text_file.write('Woodcarving Features: AUC = ' + str(auc_wc) + ', Epochs = ' + str(e_wc) + '\n') # Result description and result dataframe
+text_file.write('Mr. Fracture Proofs Woodcarving Features: AUC = ' + str(auc_mrfpctwc) + ', Epochs = ' + str(e_mrfpctwc) + '\n\n') # Result description and result dataframe
+text_file.write('Mr. Fracture Proofs Woodcarving Features, Final list:' + '\n\n') # Result description
 text_file.write('Mr. Fracture Proof (1st layer): ' + str(l_lmrfp)  + '\n\n') # Result list
 text_file.write('Woodcarving (2nd layer): ' + str(l_lwc)  + '\n\n') # Result list
 text_file.write('####################' + '\n\n')
