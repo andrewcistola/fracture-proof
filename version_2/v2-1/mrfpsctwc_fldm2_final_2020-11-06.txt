@@ -190,12 +190,18 @@ Final List of selected 2nd layer features
 
 Step 7: Create Informative Preidction Model with both geographic layers
 
+Datasets-
 Florida Deaprtment of Health Vital Statistics 113 Leading Mortality Causes 2014-2018 Zip Code 5-year Average
 US Census American Community Survey 2014-2018 Zip Code 5-year Average
 Health Resources and Servcies Administration Area Heath Resource File Populaton Rates by County 2014-2018 5-year Average
 
+Processing-
+Feature labels: ACS Percent Estimates
+Feature processing: All rows with NA removed
+Feature observations, feature count: (924, 2230)
 Target labels: quant = Diabetes Related (K00-K99) Raw Mortality Rate per 1000k
-Target processing: None
+Target processing: All NA values removed
+Target descriptive statistics: 
 
 count    924.000000
 mean       1.000011
@@ -207,12 +213,8 @@ min        0.000000
 max        5.160000
 Name: quant, dtype: float64
 
-Features labels: ACS Percent Estimates
-Feature processing: 75% nonNA, Median Imputed NA, Standard Scaled
-
-Rows, Columns: (924, 2230)
-
-Models: Multiple Linear Regression Model
+Models-
+Multiple Linear Regression Model:
 
                                  OLS Regression Results                                
 =======================================================================================
@@ -253,8 +255,7 @@ Warnings:
 [2] The condition number is large, 2.56e+03. This might indicate that there are
 strong multicollinearity or other numerical problems.
 
-Final List of selected 1st and 2nd layer features
-
+Features with labels:
 [('DP05_0064PE', 'Race alone or in combination with one or more other races Total population White'), 
 ('DP02_0018PE', 'RELATIONSHIP Population in households Householder'), 
 ('DP02_0114PE', 'LANGUAGE SPOKEN AT HOME Population 5 years and over Spanish'), 
@@ -273,39 +274,51 @@ Final List of selected 1st and 2nd layer features
 
 Step 8: Predict Categorical targets with Artificial Neural Networks
 
-Florida Deaprtment of Health Vital Statistics 113 Leading Mortality Causes 2014-2018 Zip Code 5-year Average
-US Census American Community Survey 2014-2018 Zip Code 5-year Average
-Health Resources and Servcies Administration Area Heath Resource File Populaton Rates by County 2014-2018 5-year Average
+Datasets-
+Layer 1: Florida Deaprtment of Health Vital Statistics 113 Leading Mortality Causes 2014-2018 Zip Code 5-year Average
+Layer 1: US Census American Community Survey 2014-2018 Zip Code 5-year Average
+Layer 2: Health Resources and Servcies Administration Area Heath Resource File Populaton Rates by County 2014-2018 5-year Average
 
+Processing-
+Feature labels: ACS Percent Estimates
+Feature processing: 75% nonNA, Median Imputed NA, Standard Scaled
 Target labels: binary = Diabetes Related (K00-K99) Raw Mortality Rate per 1000k above 50% percentile
 Target processing: train, test random 50-50 split
 
-Multi-Layer Perceptron
+Modeling-
+Models: Multi-Layer Perceptron
 Layers: Dense, Dense, Activation
 Functions: ReLU, ReLU, Sigmoid
 All features, all layers: AUC = 0.793801652892562, Epochs = 50
-Fractureproof Features: AUC = 0.808078245673375, Epochs = 500
+mr. Fractureproof Features: AUC = 0.808078245673375, Epochs = 500
 Woodcarving Features: AUC = 0.6343403864535113, Epochs = 500
 Mr. Fracture Proofs Woodcarving Features: AUC = 0.8231786216596344, Epochs = 500
 
-Mr. Fracture Proofs Woodcarving Features, Final list:
-
-Mr. Fracture Proof (1st layer): 
-Population % White 
-Population % Householders 
-Population % 5 years and over Spanish spoke at home
-Population % Males 15 years and over Divorced
-Population % with public health insurance coverage 
-Population % employed with private health insurancehealth insurance coverage
-Population % 65 years and over'
-
-Woodcarving (2nd layer): 
-('AHRF1029', 'Manufacturing-Dep Typology Code'), 
-('AHRF919', 'Low Education Typology Code'), 
-('AHRF284', '# ST Gen Hosp, 050-099 Beds'), 
-('AHRF361', '% Medicare FFS Benef Female Fee for Service'), 
-('AHRF852', 'HPSA Code - Primary Care 05/16 1=Whole, 2=Part County'), 
-('AHRF1421', 'Persistent Povrty Typology Code')
-
 ####################
 
+Summary: Mr. Fracture Proofs Contemplative Woodcarving for Diabates Mortality in Florida
+
+Final features-
+Mr. Fracture Proof (1st layer): 
+       Population % White 
+       Population % Householders 
+       Population % Spanish spoken at home
+       Population % Divorced males 
+       Population % With public health insurance coverage 
+       Population % Employed with private health insurance coverage
+       Population % Aged 65 years and over'
+Woodcarving (2nd layer): 
+       ('AHRF1029', 'Manufacturing-Dep Typology Code'), 
+       ('AHRF919', 'Low Education Typology Code'), 
+       ('AHRF284', '# ST Gen Hosp, 050-099 Beds'), 
+       ('AHRF361', '% Medicare FFS Benef Female Fee for Service'), 
+       ('AHRF852', 'HPSA Code - Primary Care 05/16 1=Whole, 2=Part County'), 
+       ('AHRF1421', 'Persistent Povrty Typology Code')
+
+Prediction scores-
+R^2 Final features > 1st Layer features: True
+R^2 Difference: 0.8%
+AUC Final features > Full features: True 
+AUC Difference: 3.7%
+
+####################
