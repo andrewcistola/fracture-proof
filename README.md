@@ -109,26 +109,29 @@ The repository uses the following file organization and naming convenstions. Thi
 `version/subdirectory/_option_topic_suffix.ext`
 
 ### Subdirectories
-`v#.#`: All code files deployed for that specific release
-<br>`_data`: staged data files related to the project
-<br>`_fig`: graphs, images, and maps related to the project
+`v#.#` All code files deployed for that specific release
+<br>`_data` staged data files related to the project
+<br>`_fig` graphs, images, and maps related to the project
 
 ### Options:
-`fp_`: FractureProof
-<br>`: mrfp_` Mr Fracture Proof
-<br>`: mrfpswc_` Mr Fracture Proofs Woodcarvings
-<br>`: mrfpsctwc_` Mr Fracture Proofs Contemplative Woodcarvings
+`fp_` FractureProof
+<br>`mrfp_` Mr Fracture Proof
+<br>`mrfpswc_` Mr Fracture Proofs Woodcarvings
+<br>`mrfpsctwc_` Mr Fracture Proofs Contemplative Woodcarvings
 
 ### Topics:
-`fldm2_`: Diabetes in Florida case study files
+`fldm2_` Diabetes in Florida case study files
 
 ### Suffixes:
-`code_`: Development code script for working in an IDE
-<br>`book_`: Jupyter notebook 
-<br>`stage_`: Data files that have been modified from raw source
-<br>`2020-01-01`: Text scripts displaying results output from a script are marked with date stamp they were created
-<br>`map_`: 2D geographic display
-<br>`graph_`: 2D chart or graph representing numeric data
+`code_` Development code script for working in an IDE
+<br>`book_` Jupyter notebook 
+<br>`stage_` Data files that have been modified from raw source
+<br>`2020-01-01` Text scripts displaying results output from a script are marked with date stamp they were created
+<br>`map_` 2D geographic display
+<br>`graph_` 2D chart or graph representing numeric data
+
+### PEP-8
+Whenever possible code scripts follow PEP-8 standards. 
 
 ## Disclaimer
 While the author (Andrew Cistola) is a Florida DOH employee and a University of Florida PhD student, these are NOT official publications by the Florida DOH, the University of Florida, or any other agency. 
