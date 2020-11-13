@@ -1,7 +1,7 @@
 # FractureProof
-An Artificial Intelligence process for feature selection for multiple geographic layers wiothout the need of human selection for the purpose of informative policy analysis.
+An Artificial Intelligence process for identifying significant predictors of public health outcomes among among multiple geographic layers in large scale population datasets.
 
-## Feature Selection
+## Multi-Dimensional Feature Selection
 For many health outcomes, there are many possible causes with large quantites of observed variables. In order to find these possible but unknown causes, an analysis of structured datasets containling large numbers of variables (N > 1000), multiple dimensions, different variable types, and chunks of missing data. This process is designed to process, identify, and evaluate imprtant features in a small actionable list informative to policy analysis and decision making. These features can also be processed from multiple geographic layers for informative GIS analyses. 
 
 ## Open Source Models
