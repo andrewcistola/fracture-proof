@@ -26,7 +26,7 @@ Using linear transformations on a normalized covariace matrix, PCA creates combi
 #### Random Forests (RF)
 By aggregating decision trees from a bootstrapped sample of features, random forests can measure the importance of a given feature in predicting the outcome of interest. By calculating the change in prediction capability when the feature is removed, the importance value (Gini Impurity) of a feature can be compared to others. Features that are not important compared to the others can be dropped. 
 
-#### Recursive Feature Elimination
+#### Recursive Feature Elimination (RFE)
 Using regression methods, RFE creates a predictive model and removes weakest features by comparing prediction scores. RFE can cross-validate to remove cosnistently weaker features until a ideal feature set is defined. A minimum or predefined set of features can be used. 
 
 #### Feature Processing
@@ -64,8 +64,11 @@ Scrips labeled `mrfspwc_` add 2 extra steps to the `mrfp_` scrips for the purpos
 #### Geographic Weighted Regression (GWR)
 Using GIS data for for observations from the first layer, regression models are caluclated from existing features with coefficients weighted based on location. Locations where the given features are highest are labeled for the purpose of identifying 2nd layer locations where sleected features have higher predictive weight. This process utilizes the PySal library (https://pysal.org)
 
-#### Support Vector Machines
+#### Support Vector Machines (SVM)
 Using the labeles creted by the GWR, support vector mahcines are used to identify 2nd layer features with the highest weights for the given location. Since the 2nd layer will often have signficiantly fewer obserrvations and predicts a multi-level categorical target, SVMs were slected for their ability to handle these constraints better than other available models. The result is a set of 2nd layer features that independently contribute or interact with the 1st layer features. 
+
+#### Feature Processing
+Before features are input into the above models, features are selected if they have over 75% non-NA values. The remaining NA values are imputed with the median values for each feature. Users can also eliminate observations that do not fit a certain critera (ex. population under 100). The resulting values are then standard scaled. All observations missing a target value are dropped and descriptive statistics are calculated.
 
 #### The 'Mr. Fracture Proofs Woodcarvings' Process
 The FP process uses these methods above in the following sequence:
@@ -74,7 +77,7 @@ The FP process uses these methods above in the following sequence:
 2. GWR identifies weighted coefficients for the selected features for each 1st layer observation
 3. 1st layer observations are averaged by 2nd layer location boundaires. 
 4. Each 2nd layer location is labeled with a categorical target based on the 1st layer feature with the highest coefficient.
-5. SVM are used to identify the 2nd layer feature with the highest average cofficients for each category.
+5. SVM are used to identify the 2nd layer feature with the highest average cofficients for each category after processing. 
 6. 2nd layer features are selected and placed into a second multiple regression model along side 1st layer features. 
 7. Results are automatically exported to the corresponding textfile for easy reference. 
 
@@ -103,7 +106,6 @@ The FP process uses these methods above in the following sequence:
 The repository uses the following file organization and naming convenstions.
 
 ### File Organization
-`_code`: code files related to the project
 <br>`_data`: staged data files related to the project
 <br>`_fig`: graphs, images, and maps related to the project
 <br>`_pubs`: presentations and manuscrips related to the project
@@ -114,19 +116,13 @@ The repository uses the following file organization and naming convenstions.
 `subrepo_suffix_version.ext`
 
 #### Suffixes:
-`dev_`: Development script for working in an IDE
+`code_`: Development code script for working in an IDE
 <br>`book_`: Jupyter notebook 
 <br>`stage_`: Data files that have been modified from raw source
 <br>`2020-01-01`: Text scripts displaying results output from a script are marked with date stamp they were created
 <br>`map_`: 2D geographic display
 <br>`graph_`: 2D chart or graph representing numeric data
-
-#### Versions:
-`alpha_`: first version of the file
-<br>`beta_` : second version of the file
-<br>`gamma_` : third version of the file
-<br>`delta_` : fourth version of the file
-<br>etc...
+<br> fldm2_`: Diabetes in Florida case study files
 
 ### Disclaimer
 While the author (Andrew Cistola) is a Florida DOH employee and a University of Florida PhD student, these are NOT official publications by the Florida DOH, the University of Florida, or any other agency. 
