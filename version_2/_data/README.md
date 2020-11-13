@@ -1,5 +1,5 @@
 # FractureProof
-An Artificial Intelligence process for feature selection for multiple geographic layers wiothout the need of human selection for the purpose of informative policy analysis.
+An Artificial Intelligence process for identifying significant predictors of public health outcomes among among multiple geographic layers in large scale population datasets.
 
 ## Version 2 Data files
 This directory contains all data files used in the Version 2 case studies. Raw data, documentation, and similar files are located at https://github.com/andrewcistola/healthly-neighborhoods.git
