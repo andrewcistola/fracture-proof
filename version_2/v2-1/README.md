@@ -3,11 +3,11 @@ An Artificial Intelligence process for feature selection for multiple geographic
 
 ## Version 2.1
 Updates from v1.6 include:
-Standardized scripts
-'Mr. Fracture Proof' option that adds multiple regression modeling
-'Mr. Fracture Proofs Woodcarvings' option that adds geographically weighted regression and analysis of a 2nd layer
-'Mr. Fracture Proofs Contemplative Woodcarvings' option that adds binary target prediction with artifical neural netwokrs
-Case study of Diabetes mortality by Zip Code in Florida `fldm2_`
+<br>Standardized scripts
+<br>'Mr. Fracture Proof' option that adds multiple regression modeling
+<br>'Mr. Fracture Proofs Woodcarvings' option that adds geographically weighted regression and analysis of a 2nd layer
+<br>'Mr. Fracture Proofs Contemplative Woodcarvings' option that adds binary target prediction with artifical neural netwokrs
+<br> Case study using `Mrfpsctwc_` to invesitgate Diabetes mortality by Zip Code in Florida `fldm2`
 
 ### Case Study: Diabetes Mortality in Florida
 Version 2.1 includes a case stuidy using the Mr Fracture proof's Contemplative Woodcarvings option to conduct research on social and infastructural factors related to Diabetes mortality in Florida.

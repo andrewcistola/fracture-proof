@@ -1,17 +1,18 @@
 # FractureProof
 An Artificial Intelligence process for feature selection for multiple geographic layers wiothout the need of human selection for the purpose of informative policy analysis.
 
-## Version 2.1
-Updates from v1.6 include:
-<br>Standardized scripts
-<br>'Mr. Fracture Proof' option that adds multiple regression modeling
-<br>'Mr. Fracture Proofs Woodcarvings' option that adds geographically weighted regression and analysis of a 2nd layer
-<br>'Mr. Fracture Proofs Contemplative Woodcarvings' option that adds binary target prediction with artifical neural netwokrs
-<br> Case study using `Mrfpsctwc_` to invesitgate Diabetes mortality by Zip Code in Florida `fldm2`
+## Version 2 Data files
+This directory contains all data files used in the Version 2 case studies. Raw data, documentation, and similar files are located at https://github.com/andrewcistola/health-neighborhoods.git
 
 ### Repository contents:
-`_data` Data files used for Version 2 case studies<br>
-`_v2.1_` All files deplopyed in the Version 2.1 release<br>
+`cb_2018_us_zcta510_500k` Shape files for U.S. zip codes<br>
+`ACS_5Y2018_ZCTA.csv` U.S. Census American Community Survey 5 year estimates for 2014-2018<br>
+`ACS_5Y2018_labels.csv` U.S Census American Community Survey feature labels<br>
+`AHRF_5Y2018_FIPS.csv` HRSA Area health Resource File 2019 release<br>
+`AHRF_5Y2018_labels.csv` HRSA Area health Resource File feature labels<br>
+`FDOH_5Y2018_ZCTA.csv` Florida DOH Mortality Counts by Zip Code 2014-2018<br>
+`FDOH_5Y2018_labels.csv`Florida DOH Mortality Counts feature labels<br>
+`FIPS_ZCTA_key.csv` Zip Code to County Corsswalk file from HUD<br>
 
 ### Disclaimer
 While the author (Andrew Cistola) is a Florida DOH employee and a University of Florida PhD student, these are NOT official publications by the Florida DOH, the University of Florida, or any other agency. 
