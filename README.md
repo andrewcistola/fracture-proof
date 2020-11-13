@@ -103,17 +103,24 @@ The FP process uses these methods above in the following sequence:
 5. Results are automatically exported to the corresponding textfile for easy reference. 
 
 ## Repository Structure
-The repository uses the following file organization and naming convenstions.
-
-### File Organization
-<br>`_data`: staged data files related to the project
-<br>`_fig`: graphs, images, and maps related to the project
-<br>`_pubs`: presentations and manuscrips related to the project
-<br>`_raw`: raw data downloads related to the project
-<br>`_refs`: selected literature related to the project
+The repository uses the following file organization and naming convenstions. This applies to all files in v2.1 and forward.
 
 ### File Naming Structure:
-`subrepo_suffix_version.ext`
+`version/subdirectory/_option_topic_suffix.ext`
+
+### Subdirectories
+`v#.#`: All code files deployed for that specific release
+<br>`_data`: staged data files related to the project
+<br>`_fig`: graphs, images, and maps related to the project
+
+### Options:
+`fp_`: FractureProof
+<br>`: mrfp_` Mr Fracture Proof
+<br>`: mrfpswc_` Mr Fracture Proofs Woodcarvings
+<br>`: mrfpsctwc_` Mr Fracture Proofs Contemplative Woodcarvings
+
+### Topics:
+`fldm2_`: Diabetes in Florida case study files
 
 ### Suffixes:
 `code_`: Development code script for working in an IDE
@@ -122,7 +129,6 @@ The repository uses the following file organization and naming convenstions.
 <br>`2020-01-01`: Text scripts displaying results output from a script are marked with date stamp they were created
 <br>`map_`: 2D geographic display
 <br>`graph_`: 2D chart or graph representing numeric data
-<br> fldm2_`: Diabetes in Florida case study files
 
 ## Disclaimer
 While the author (Andrew Cistola) is a Florida DOH employee and a University of Florida PhD student, these are NOT official publications by the Florida DOH, the University of Florida, or any other agency. 
