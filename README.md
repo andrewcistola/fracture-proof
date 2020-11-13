@@ -115,7 +115,7 @@ The repository uses the following file organization and naming convenstions.
 ### File Naming Structure:
 `subrepo_suffix_version.ext`
 
-#### Suffixes:
+### Suffixes:
 `code_`: Development code script for working in an IDE
 <br>`book_`: Jupyter notebook 
 <br>`stage_`: Data files that have been modified from raw source
@@ -124,7 +124,7 @@ The repository uses the following file organization and naming convenstions.
 <br>`graph_`: 2D chart or graph representing numeric data
 <br> fldm2_`: Diabetes in Florida case study files
 
-### Disclaimer
+## Disclaimer
 While the author (Andrew Cistola) is a Florida DOH employee and a University of Florida PhD student, these are NOT official publications by the Florida DOH, the University of Florida, or any other agency. 
 No information is included in this repository that is not available to any member of the public. 
 All information in this repository is available for public review and dissemination but is not to be used for making medical decisions. 
