@@ -1,5 +1,5 @@
 # FractureProof
-An Artificial Intelligence process for feature selection for multiple geographic layers wiothout the need of human selection for the purpose of informative policy analysis.
+An Artificial Intelligence process for identifying significant predictors of public health outcomes among among multiple geographic layers in large scale population datasets.
 
 ## Version 2.1
 Updates from v1.6 include:
