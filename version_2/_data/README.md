@@ -2,7 +2,7 @@
 An Artificial Intelligence process for feature selection for multiple geographic layers wiothout the need of human selection for the purpose of informative policy analysis.
 
 ## Version 2 Data files
-This directory contains all data files used in the Version 2 case studies. Raw data, documentation, and similar files are located at https://github.com/andrewcistola/health-neighborhoods.git
+This directory contains all data files used in the Version 2 case studies. Raw data, documentation, and similar files are located at https://github.com/andrewcistola/healthly-neighborhoods.git
 
 ### Repository contents:
 `cb_2018_us_zcta510_500k` Shape files for U.S. zip codes<br>
