@@ -26,14 +26,14 @@ University of Florida
 **Discussion**: This indicates that these factors are highly relevant for DM mortality in Florida. This process was completed without the need of human variable selection and indicates how AI can be used for informative precision public health analyses for targeted population health management efforts.
 
 ### Repository contents:
-`FindingEquity_v1` Manuscript for Diabates Mortality in Florida case study
-`fp_code.py` FractureProof option generic code script
-`mrfp_code.py` Mr. Fracture Proof option generic code script
-`mrfpsctwc_code.py` Mr. fracture Proofs Contemplative Woodcarvings option generic code script
-`mrfpsctwc_fldm2_2020-11-06.txt` Results file from Diabates Mortality in Florida case study
-`mrfpsctwc_fldm2_book.ipynb` Jupyter notebook for Diabetes Mortality in Florida case study
-`mrfpsctwc_fldm2_code.py` Development script for Diabates Mortality in Florida case study
-`mrfpswc_code.py` Mr. fracture Proofs Woodcarvings option generic code script
+`FindingEquity_v1` Manuscript for Diabates Mortality in Florida case study<br>
+`fp_code.py` FractureProof option generic code script<br>
+`mrfp_code.py` Mr. Fracture Proof option generic code script<br>
+`mrfpsctwc_code.py` Mr. fracture Proofs Contemplative Woodcarvings option generic code script<br>
+`mrfpsctwc_fldm2_2020-11-06.txt` Results file from Diabates Mortality in Florida case study<br>
+`mrfpsctwc_fldm2_book.ipynb` Jupyter notebook for Diabetes Mortality in Florida case study<br>
+`mrfpsctwc_fldm2_code.py` Development script for Diabates Mortality in Florida case study<br>
+`mrfpswc_code.py` Mr. fracture Proofs Woodcarvings option generic code script<br>
 
 ### Disclaimer
 While the author (Andrew Cistola) is a Florida DOH employee and a University of Florida PhD student, these are NOT official publications by the Florida DOH, the University of Florida, or any other agency. 
