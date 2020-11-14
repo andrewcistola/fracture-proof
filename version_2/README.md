@@ -10,8 +10,7 @@ Updates from v1.6 include:
 <br> Case study using `Mrfpsctwc_` to invesitgate Diabetes mortality by Zip Code in Florida `fldm2`
 
 ## Repository contents:
-`_data` Data files used for Version 2 case studies<br>
-`_v2.1_` All files deplopyed in the Version 2.1 release<br>
+`v2.1` All files deplopyed in the Version 2.1 release<br>
 `fldm2` Diabetes Mortality in Florida Case study
 
 ### Disclaimer
