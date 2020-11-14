@@ -9,9 +9,10 @@ Updates from v1.6 include:
 <br>'Mr. Fracture Proofs Contemplative Woodcarvings' option that adds binary target prediction with artifical neural netwokrs
 <br> Case study using `Mrfpsctwc_` to invesitgate Diabetes mortality by Zip Code in Florida `fldm2`
 
-### Repository contents:
+## Repository contents:
 `_data` Data files used for Version 2 case studies<br>
 `_v2.1_` All files deplopyed in the Version 2.1 release<br>
+`fldm2` Diabetes Mortality in Florida Case study
 
 ### Disclaimer
 While the author (Andrew Cistola) is a Florida DOH employee and a University of Florida PhD student, these are NOT official publications by the Florida DOH, the University of Florida, or any other agency. 

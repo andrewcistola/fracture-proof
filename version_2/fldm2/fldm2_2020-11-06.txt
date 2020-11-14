@@ -1,0 +1,324 @@
+####################
+
+Title: FractureProof v2.1 - Mr. Fracture Proofs Contemplative Woodcarving for Diabetes Mortality in Florida
+Author: Andrew S. Cistola, MPH
+Filename: mrfpsctwc_fldm2_code.py
+Realtive Path: fracture-proof/version_2/v2-1/
+Working Directory: /home/drewc/GitHub/
+Time Run: 2020-11-06 08:34:00.979747
+
+####################
+
+Step 1: Raw Data Processing and Feature Engineering
+
+Florida Deaprtment of Health Vital Statistics 113 Leading Mortality Causes 2014-2018 Zip Code 5-year Average
+US Census American Community Survey 2014-2018 Zip Code 5-year Average
+
+Target labels: quant = Diabetes Related (K00-K99) Raw Mortality Rate per 1000k
+Target processing: None
+
+            quant
+count  924.000000
+mean     1.000011
+std      0.617704
+min      0.000000
+25%      0.590000
+50%      0.910000
+75%      1.300000
+max      5.160000
+
+Features labels: ACS Percent Estimates
+Feature processing: 75% nonNA, Median Imputed NA, Standard Scaled
+
+Rows, Columns: (924, 427)
+
+####################
+
+Step 2: Identify Predictors with Open Models
+
+Models: Principal Component Analysis, Random Forests, Recursive feature Elimination
+
+Values: Eigenvectors, Gini Impurity, Boolean
+Thresholds: Mean, Mean, Cross Validation
+
+       Feature     MaxEV      Gini   RFE
+0  DP05_0064PE  0.134268  0.003289  True
+1  DP02_0018PE  0.111311  0.002496  True
+2  DP02_0114PE  0.103326  0.002422  True
+3  DP02_0029PE  0.101915  0.017297  True
+4  DP03_0098PE  0.099141  0.023578  True
+5  DP03_0106PE  0.096418  0.003621  True
+
+Final List of selected 2nd layer features
+
+('DP05_0064PE', 'Race alone or in combination with one or more other races Total population White'), 
+('DP02_0018PE', 'RELATIONSHIP Population in households Householder'), 
+('DP02_0114PE', 'LANGUAGE SPOKEN AT HOME Population 5 years and over Spanish'), 
+('DP02_0029PE', 'MARITAL STATUS Males 15 years and over Divorced'), 
+('DP03_0098PE', 'HEALTH INSURANCE COVERAGE Civilian noninstitutionalized population With health insurance coverage With public coverage'), 
+('DP03_0106PE', 'HEALTH INSURANCE COVERAGE Civilian noninstitutionalized population Civilian noninstitutionalized population 19 to 64 years In labor force Employed With health insurance coverage With private health insurance')
+
+####################
+
+Step 3: Create Informative Preidction Model
+
+Models: Multiple Linear Regression Model
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                  quant   R-squared (uncentered):                   0.856
+Model:                            OLS   Adj. R-squared (uncentered):              0.855
+Method:                 Least Squares   F-statistic:                              775.1
+Date:                Fri, 06 Nov 2020   Prob (F-statistic):                        0.00
+Time:                        09:24:17   Log-Likelihood:                         -565.16
+No. Observations:                 921   AIC:                                      1144.
+Df Residuals:                     914   BIC:                                      1178.
+Df Model:                           7                                                  
+Covariance Type:            nonrobust                                                  
+===============================================================================
+                  coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------
+DP05_0064PE     0.0076      0.001      7.448      0.000       0.006       0.010
+DP02_0018PE     0.0107      0.003      4.086      0.000       0.006       0.016
+DP02_0114PE    -0.0074      0.001     -9.161      0.000      -0.009      -0.006
+DP02_0029PE     0.0289      0.004      6.959      0.000       0.021       0.037
+DP03_0098PE     0.0127      0.002      7.940      0.000       0.010       0.016
+DP03_0106PE    -0.0105      0.001     -8.666      0.000      -0.013      -0.008
+DP05_0024PE     0.0026      0.002      1.244      0.214      -0.002       0.007
+==============================================================================
+Omnibus:                      233.045   Durbin-Watson:                   2.004
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1637.180
+Skew:                           0.962   Prob(JB):                         0.00
+Kurtosis:                       9.242   Cond. No.                         39.2
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+[('DP05_0064PE', 'Race alone or in combination with one or more other races Total population White'), 
+('DP02_0018PE', 'RELATIONSHIP Population in households Householder'), 
+('DP02_0114PE', 'LANGUAGE SPOKEN AT HOME Population 5 years and over Spanish'), 
+('DP02_0029PE', 'MARITAL STATUS Males 15 years and over Divorced'), 
+('DP03_0098PE', 'HEALTH INSURANCE COVERAGE Civilian noninstitutionalized population With health insurance coverage With public coverage'), 
+('DP03_0106PE', 'HEALTH INSURANCE COVERAGE Civilian noninstitutionalized population Civilian noninstitutionalized population 19 to 64 years In labor force Employed With health insurance coverage With private health insurance'), 
+('DP05_0024PE', 'SEX AND AGE Total population 65 years and over')]
+
+####################
+
+Step 4: Geographic Weighted Regression
+
+Models: Multi-scale Geographic Weighted Regression
+
+Bandwidths: [920. 920.  34. 302. 920. 920. 920.]
+
+Mean Coefficients by County: 
+
+       DP05_0064PE  DP02_0018PE  DP02_0114PE  DP02_0029PE  DP03_0098PE  DP03_0106PE
+count    67.000000    67.000000    67.000000    67.000000    67.000000    67.000000
+mean     82.727360    39.235861    10.655280    12.565443    42.283257    74.646314
+std       9.973156     3.608605    11.243260     2.803521     8.022223     6.914463
+min      38.085714    28.600000     1.675000     8.740000    27.640000    49.966667
+25%      76.121078    37.757692     4.005000    10.348106    35.925000    71.468060
+50%      85.944681    39.400000     6.195745    12.161538    43.171429    75.762500
+75%      89.610000    41.157051    14.250000    13.662500    47.894444    80.197868
+max      94.361538    47.266667    62.485526    22.300000    58.600000    86.180000
+
+####################
+
+Step 5: Raw Data Processing and Feature Engineering (2nd Geographic Layer)
+
+Health Resources and Servcies Administration Area Heath Resource File Populaton Rates by County 2014-2018 5-year Average
+Target labels: multi = selected varibles from step 2 with highest average absolute value of z-score by identifier
+Target processing: None
+
+           multi
+count  67.000000
+mean    2.746269
+std     1.726296
+min     0.000000
+25%     1.000000
+50%     3.000000
+75%     4.000000
+max     5.000000
+
+Feature labels: AHRF Population Rates
+Feature processing: 75% nonNA, Median Imputed NA, Standard Scaled
+
+Rows, Columns: (67, 1733)
+
+####################
+
+Step 6: Identify 2nd Layer Predictors
+
+Models: Support Vcector Machines
+
+Values: Coefficients
+Thresholds: Max Absolute Value
+
+              GWR   Feature
+0  (DP05_0064PE,)  AHRF1029
+1  (DP02_0018PE,)   AHRF919
+2  (DP02_0114PE,)   AHRF284
+3  (DP02_0029PE,)   AHRF361
+4  (DP03_0098PE,)   AHRF852
+5  (DP03_0106PE,)  AHRF1421
+
+Models: Principal Component Analysis
+
+Cumulative Variance: Threshold = 95%
+[0.33258802 0.53294468 0.70449797 0.83991127 0.92903529]
+
+Component Loadings
+                 0         1         2         3         4
+AHRF1029       NaN  0.636159  0.556557       NaN       NaN
+AHRF919   0.774234       NaN       NaN       NaN  0.521427
+AHRF284        NaN       NaN  0.589482  0.563567       NaN
+AHRF361   0.605082       NaN  0.536292       NaN       NaN
+AHRF852   0.753687       NaN       NaN       NaN       NaN
+AHRF1421       NaN  0.639135       NaN  0.553491       NaN
+
+Final List of selected 2nd layer features
+
+[('AHRF1029', 'Manufacturing-Dep Typology Code'), 
+('AHRF919', 'Low Education Typology Code'), 
+('AHRF284', '# ST Gen Hosp, 050-099 Beds'), 
+('AHRF361', '% Medicare FFS Benef Female Fee for Service'), 
+('AHRF852', 'HPSA Code - Primary Care 05/16 1=Whole, 2=Part County'), 
+('AHRF1421', 'Persistent Povrty Typology Code')]
+
+####################
+
+Step 7: Create Informative Preidction Model with both geographic layers
+
+Datasets-
+Florida Deaprtment of Health Vital Statistics 113 Leading Mortality Causes 2014-2018 Zip Code 5-year Average
+US Census American Community Survey 2014-2018 Zip Code 5-year Average
+Health Resources and Servcies Administration Area Heath Resource File Populaton Rates by County 2014-2018 5-year Average
+
+Processing-
+Feature labels: ACS Percent Estimates
+Feature processing: All rows with NA removed
+Feature observations, feature count: (924, 2230)
+Target labels: quant = Diabetes Related (K00-K99) Raw Mortality Rate per 1000k
+Target processing: All NA values removed
+Target descriptive statistics: 
+
+count    924.000000
+mean       1.000011
+std        0.617704
+min        0.000000
+25%        0.590000
+50%        0.910000
+75%        1.300000
+max        5.160000
+Name: quant, dtype: float64
+
+Models-
+Multiple Linear Regression Model:
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                  quant   R-squared (uncentered):                   0.863
+Model:                            OLS   Adj. R-squared (uncentered):              0.861
+Method:                 Least Squares   F-statistic:                              440.3
+Date:                Fri, 06 Nov 2020   Prob (F-statistic):                        0.00
+Time:                        11:36:48   Log-Likelihood:                         -541.43
+No. Observations:                 921   AIC:                                      1109.
+Df Residuals:                     908   BIC:                                      1172.
+Df Model:                          13                                                  
+Covariance Type:            nonrobust                                                  
+===============================================================================
+                  coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------
+DP05_0064PE     0.0077      0.001      7.447      0.000       0.006       0.010
+DP02_0018PE     0.0105      0.003      3.723      0.000       0.005       0.016
+DP02_0114PE    -0.0079      0.001     -7.950      0.000      -0.010      -0.006
+DP02_0029PE     0.0275      0.004      6.667      0.000       0.019       0.036
+DP03_0098PE     0.0149      0.003      5.678      0.000       0.010       0.020
+DP03_0106PE    -0.0110      0.002     -4.905      0.000      -0.015      -0.007
+DP05_0024PE    -0.0001      0.003     -0.036      0.971      -0.006       0.006
+AHRF1029        0.9891      0.264      3.753      0.000       0.472       1.506
+AHRF919        -0.2176      0.071     -3.077      0.002      -0.356      -0.079
+AHRF284        -0.0303      0.028     -1.076      0.282      -0.086       0.025
+AHRF361        -0.0069      0.006     -1.234      0.218      -0.018       0.004
+AHRF852         0.2299      0.084      2.749      0.006       0.066       0.394
+AHRF1421       -0.1750      0.093     -1.878      0.061      -0.358       0.008
+==============================================================================
+Omnibus:                      225.458   Durbin-Watson:                   1.995
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1308.879
+Skew:                           0.983   Prob(JB):                    6.03e-285
+Kurtosis:                       8.499   Cond. No.                     2.56e+03
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 2.56e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+Features with labels:
+[('DP05_0064PE', 'Race alone or in combination with one or more other races Total population White'), 
+('DP02_0018PE', 'RELATIONSHIP Population in households Householder'), 
+('DP02_0114PE', 'LANGUAGE SPOKEN AT HOME Population 5 years and over Spanish'), 
+('DP02_0029PE', 'MARITAL STATUS Males 15 years and over Divorced'), 
+('DP03_0098PE', 'HEALTH INSURANCE COVERAGE Civilian noninstitutionalized population With health insurance coverage With public coverage'), 
+('DP03_0106PE', 'HEALTH INSURANCE COVERAGE Civilian noninstitutionalized population Civilian noninstitutionalized population 19 to 64 years In labor force Employed With health insurance coverage With private health insurance'), 
+('DP05_0024PE', 'SEX AND AGE Total population 65 years and over'), 
+('AHRF1029', 'Manufacturing-Dep Typology Code'), 
+('AHRF919', 'Low Education Typology Code'), 
+('AHRF284', '# ST Gen Hosp, 050-099 Beds'), 
+('AHRF361', '% Medicare FFS Benef Female Fee for Service'), 
+('AHRF852', 'HPSA Code - Primary Care 05/16 1=Whole, 2=Part County'), 
+('AHRF1421', 'Persistent Povrty Typology Code')]
+
+####################
+
+Step 8: Predict Categorical targets with Artificial Neural Networks
+
+Datasets-
+Layer 1: Florida Deaprtment of Health Vital Statistics 113 Leading Mortality Causes 2014-2018 Zip Code 5-year Average
+Layer 1: US Census American Community Survey 2014-2018 Zip Code 5-year Average
+Layer 2: Health Resources and Servcies Administration Area Heath Resource File Populaton Rates by County 2014-2018 5-year Average
+
+Processing-
+Feature labels: ACS Percent Estimates
+Feature processing: 75% nonNA, Median Imputed NA, Standard Scaled
+Target labels: binary = Diabetes Related (K00-K99) Raw Mortality Rate per 1000k above 50% percentile
+Target processing: train, test random 50-50 split
+
+Modeling-
+Models: Multi-Layer Perceptron
+Layers: Dense, Dense, Activation
+Functions: ReLU, ReLU, Sigmoid
+All features, all layers: AUC = 0.793801652892562, Epochs = 50
+1st layer selected features: AUC = 0.808078245673375, Epochs = 500
+2nd layer selected features: AUC = 0.6343403864535113, Epochs = 500
+1st and 2nd layer selected features: AUC = 0.8231786216596344, Epochs = 500
+
+####################
+
+Summary: Mr. Fracture Proofs Contemplative Woodcarving for Diabates Mortality in Florida
+
+Final features-
+Mr. Fracture Proof (1st layer): 
+       Population % White 
+       Population % Householders 
+       Population % Spanish spoken at home
+       Population % Divorced males 
+       Population % With public health insurance coverage 
+       Population % Employed with private health insurance coverage
+       Population % Aged 65 years and over
+Woodcarving (2nd layer): 
+       Manufacturing-Dependent Designation
+       Low Education Designation
+       Persistent Poverty Designation
+       Health Professions Shortage Area for Primary Care Physicians Designation
+       Population % Medicare Part A & B Female Beneficiaries
+       Number of Short Term General Hospitals with 50-99 Beds
+
+Prediction scores-
+R^2 1st and 2nd layer sleected features > 1st layer selected features: True
+R^2 Difference: 0.8%
+AUC 1st and 2nd layer sleected features > 1st layer selected features: True 
+AUC Difference: 3.7%
+
+####################
