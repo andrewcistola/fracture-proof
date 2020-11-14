@@ -24,6 +24,8 @@ University of Florida
 `fldm2_2020-11-06.txt` Results file from Diabates Mortality in Florida case study<br>
 `fldm2_book.ipynb` Jupyter notebook for Diabetes Mortality in Florida case study<br>
 `fldm2_code.py` Development script for Diabates Mortality in Florida case study<br>
+`_data` Subrepository for data files
+`_fig` Subrepository for images
 
 ### Disclaimer
 While the author (Andrew Cistola) is a Florida DOH employee and a University of Florida PhD student, these are NOT official publications by the Florida DOH, the University of Florida, or any other agency. 

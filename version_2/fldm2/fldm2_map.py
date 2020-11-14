@@ -1,6 +1,6 @@
 # Information
 name = 'fldm2_map' # Inptu file name with topic, subtopic, and type
-path = 'fracture-proof/version_2/' # Input relative path to file 
+path = 'fracture-proof/version_2/fldm2/' # Input relative path to file 
 directory = '/home/drewc/GitHub/' # Input working directory
 title = 'FractureProof v2.1 - Diabetes Mortality in Florida' # Input descriptive title
 author = 'Andrew S. Cistola, MPH' # Input Author
@@ -56,7 +56,7 @@ map.annotate('N', xy = (0.51, 0.01), xycoords = 'axes fraction', fontsize = 16)
 map.annotate('Andrew S. Cistola, MPH', xy = (0.0, 0.15), xycoords = 'axes fraction', fontsize = 10)
 map.annotate(stamp, xy = (0.0, 0.1), xycoords = 'axes fraction', fontsize = 10)
 map.add_artist(AnchoredSizeBar(map.transData, 3, '300 km', loc = 'lower left'))
-plt.savefig(path + '/_fig/' + name + '_test.png', dpi = 1000)
+plt.savefig(path + '_fig/' + name + '.png', dpi = 1000, bbox_inches = 'tight')
 
 
 
