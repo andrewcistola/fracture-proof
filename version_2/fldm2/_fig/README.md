@@ -2,18 +2,10 @@
 An Artificial Intelligence process for identifying significant predictors of public health outcomes among among multiple geographic layers in large scale population datasets.
 
 ## Repository contents:
-`cb_2018_us_zcta510_500k` Shape files for U.S. zip codes<br>
-`ACS_5Y2018_ZCTA.csv` U.S. Census American Community Survey 5 year estimates for 2014-2018<br>
-`ACS_5Y2018_labels.csv` U.S Census American Community Survey feature labels<br>
-`AHRF_5Y2018_FIPS.csv` HRSA Area health Resource File 2019 release<br>
-`AHRF_5Y2018_labels.csv` HRSA Area health Resource File feature labels<br>
-`FDOH_5Y2018_ZCTA.csv` Florida DOH Mortality Counts by Zip Code 2014-2018<br>
-`FDOH_5Y2018_labels.csv`Florida DOH Mortality Counts feature labels<br>
-`FIPS_ZCTA_key.csv` Zip Code to County Corsswalk file from HUD<br>
+`fld2_map.png` Map of outcomes from Diabetes in Florida Case Study
 
 ### Notes:
-- These data files were used for the Diabetes in Florida Case Study
-- Raw data, documentation, and similar files are located at https://github.com/andrewcistola/healthly-neighborhoods.git
+- Figures are used in flldm2_manuscript
 
 ## Disclaimer
 While the author (Andrew Cistola) is a Florida DOH employee and a University of Florida PhD student, these are NOT official publications by the Florida DOH, the University of Florida, or any other agency. 
