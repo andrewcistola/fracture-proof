@@ -2,7 +2,7 @@
 An open source artificial intelligence process for precision public health research.
 
 ## About this Repository
-FractureProof uses a variety of machine learning algorithms to identify an informative subset social determinants of health from multi-layered high dimensional public use datasets. FractureProof is built with commonly used Python Libraries included in the Anaconda Distribution and deployed as open-source package under the MIT license on GitHub. 
+FractureProof uses a variety of machine learning algorithms to identify an informative subset social determinants of health from multi-layered high dimensional public use datasets. FractureProof is built with commonly used Python Libraries included in the Anaconda Distribution and deployed as an open-source package under the MIT license on GitHub. 
  
 ### Precion Public Health Research
 Improving public health outcomes will require comprehensive population health management (PHM) that considers marked disparities among minority groups, seeks to address upstream factors related to socio-economic status, and includes updates to institutional policies, particularly at the state level. PHM efforts will need to be driven by location-based analyses that incorporate social stratification and community infrastructure relevant to public health. While studies have identified that neighborhood level disadvantage is a significant predictor of clinical outcomes the full extent of ecological health impacts needs further investigation. Interoperability issues related to health care information technology present significant hurdles for researching the effect of social determinants on public health outcomes.<br>
